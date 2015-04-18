@@ -13,7 +13,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
-NeoBundle 'tomasr/molokai'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -33,9 +32,8 @@ NeoBundleCheck
 " 行番号を表示
 set number
 
-" molokai colorscheme
+" シンタックスハイライト
 syntax enable
-colorscheme molokai
 
 " 大文字小文字を区別しない
 set ignorecase
