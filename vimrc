@@ -13,6 +13,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'altercation/vim-colors-solarized'
