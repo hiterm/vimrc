@@ -15,6 +15,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -56,3 +57,6 @@ set macmeta
 
 " クリップボードを共有
 set clipboard=unnamed
+
+" NERD Tree
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
