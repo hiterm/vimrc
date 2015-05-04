@@ -19,6 +19,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'lervag/vimtex'
 
 call neobundle#end()
 
@@ -60,3 +61,7 @@ set clipboard=unnamed
 
 " NERD Tree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+" vimtex
+let g:tex_flavor='latex'
+let g:Tex_ViewRule_pdf = 'Skim'
