@@ -20,6 +20,7 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'lervag/vimtex'
 
 call neobundle#end()
