@@ -57,7 +57,7 @@ set expandtab
 set macmeta
 
 " クリップボードを共有
-set clipboard=unnamed
+set clipboard+=unnamed
 
 " NERD Tree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
