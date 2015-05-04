@@ -19,6 +19,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'lervag/vimtex'
 
 call neobundle#end()
@@ -61,6 +62,11 @@ set clipboard+=unnamed
 
 " NERD Tree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+" airline
+set laststatus=2
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 " vimtex
 let g:tex_flavor='latex'
