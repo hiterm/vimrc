@@ -72,3 +72,10 @@ let g:airline_right_sep=''
 " vimtex
 let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf = 'Skim'
+let g:tex_conceal = ''
+
+" easy-align
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
