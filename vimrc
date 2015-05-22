@@ -22,6 +22,8 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'lervag/vimtex'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tomtom/tcomment_vim'
 
 call neobundle#end()
 
