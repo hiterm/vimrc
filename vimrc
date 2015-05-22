@@ -18,7 +18,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'lervag/vimtex'
@@ -38,11 +39,19 @@ NeoBundleCheck
 " ここまでNeoBundleの設定
 " ここから普通の設定
 
+" フォント
+set guifont=monaco:h12
+
 " 行番号を表示
 set number
 
 " シンタックスハイライト
 syntax enable
+if has("gui_running")
+  colorscheme hybrid
+else
+  colorscheme jellybeans
+endif
 
 " 大文字小文字を区別しない
 set ignorecase
