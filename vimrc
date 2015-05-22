@@ -22,6 +22,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'lervag/vimtex'
+NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tomtom/tcomment_vim'
 
