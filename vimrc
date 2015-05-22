@@ -64,6 +64,21 @@ set macmeta
 " クリップボードを共有
 set clipboard+=unnamed
 
+" unite.vimの設定
+" The prefix key.
+nnoremap    [unite]   <Nop>
+nmap    ,u [unite]
+
+" unite.vim keymap
+" https://github.com/alwei/dotfiles/blob/3760650625663f3b08f24bc75762ec843ca7e112/.vimrc
+nnoremap [unite]u  :<C-u>Unite<Space>
+nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
+nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
+nnoremap <silent> [unite]o :<C-u>Unite<Space>bookmark<CR>
+nnoremap <silent> [unite]r :<C-u>Unite<Space>file_mru<CR>
+nnoremap <silent> [unite]e :<C-u>Unite<Space>register<CR>
+nnoremap <silent> ,vr :UniteResume<CR>
+
 " NERD Tree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
