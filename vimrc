@@ -70,9 +70,6 @@ set expandtab
 " MetaキーをOptionキーに
 set macmeta
 
-" クリップボードを共有
-set clipboard+=unnamed
-
 " unite.vimの設定
 " The prefix key.
 nnoremap    [unite]   <Nop>
