@@ -16,7 +16,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jiangmiao/auto-pairs'
+"NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nanotech/jellybeans.vim'
@@ -100,6 +101,10 @@ let g:tex_conceal = ''
 let g:vimtex_latexmk_options = ''
 " auto-pairs
 au Filetype tex let b:AutoPairs = {'(':')', '[':']', '{':'}', "'":"'", '"':'"', '$':'$'}
+" delimitMate
+au FileType tex let b:delimitMate_quotes = "\" $"
+au FileType tex let b:delimitMate_smart_quotes = ''
+au FileType tex let b:delimitMate_smart_matchpairs = ''
 
 " easy-align
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
