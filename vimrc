@@ -57,6 +57,10 @@ endif
 " 大文字小文字を区別しない
 set ignorecase
 
+" insertモードでEmacs風のカーソル移動
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+
 " indentLine
 let g:indentLine_char = '¦'
 :set list lcs=tab:\|\ 
