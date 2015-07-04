@@ -122,5 +122,9 @@ function! s:FixWhitespace(line1,line2)
 endfunction
 " Run :FixWhitespace to remove end of line white space
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
-NeoBundle 'cohama/lexima.vim
-'NeoBundle 'Yggdroot/indentLine'
+
+" lexima
+" tex
+call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'tex'})
+call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'tex'})
+call lexima#add_rule({'char': '', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'tex'})
