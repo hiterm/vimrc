@@ -137,6 +137,9 @@ call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'tex'}
 call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'tex'})
 call lexima#add_rule({'char': '{', 'at': '\\\%#', 'input_after': '\}', 'filetype': 'tex'})
 call lexima#add_rule({'char': '[', 'at': '\\\%#', 'input_after': '\]', 'filetype': 'tex'})
+call lexima#add_rule({'char': '<Space>', 'at': '\\{\%#\\}', 'input_after': '<Space>', 'filetype': 'tex'})
+call lexima#add_rule({'char': '<Space>', 'at': '\\\[\%#\\\]', 'input_after': '<Space>', 'filetype': 'tex'})
+" 句読点をカンマとピリオドに
 call lexima#add_rule({'char': '。', 'input': '．', 'filetype': 'tex'})
 call lexima#add_rule({'char': '、', 'input': '，', 'filetype': 'tex'})
 
