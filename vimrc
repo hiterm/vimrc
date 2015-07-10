@@ -102,7 +102,6 @@ let g:airline_right_sep=''
 
 " vimtex
 let g:tex_flavor='latex'
-let g:Tex_ViewRule_pdf = 'Skim'
 let g:tex_conceal = ''
 let g:vimtex_latexmk_options = ''
 " auto-pairs
