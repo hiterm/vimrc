@@ -2,8 +2,8 @@ inoremap <buffer> `a \alpha
 inoremap <buffer> `b \beta
 inoremap <buffer> `c \chi
 inoremap <buffer> `d \delta
-inoremap <buffer> `e \varepsilon
-inoremap <buffer> `f \varphi
+inoremap <buffer> `e \epsilon
+inoremap <buffer> `f \phi
 inoremap <buffer> `g \gamma
 inoremap <buffer> `h \eta
 inoremap <buffer> `i \int_{}^{}<Esc>F}i
