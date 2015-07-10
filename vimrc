@@ -104,8 +104,6 @@ let g:airline_right_sep=''
 let g:tex_flavor='latex'
 let g:tex_conceal = ''
 let g:vimtex_latexmk_options = ''
-" auto-pairs
-au Filetype tex let b:AutoPairs = {'(':')', '[':']', '{':'}', "'":"'", '"':'"', '$':'$'}
 
 " easy-align
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
