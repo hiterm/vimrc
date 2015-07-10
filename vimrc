@@ -104,6 +104,10 @@ let g:airline_right_sep=''
 let g:tex_flavor='latex'
 let g:tex_conceal = ''
 let g:vimtex_latexmk_options = ''
+" viewer
+let g:vimtex_view_general_viewer
+\ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '@line @pdf @tex'
 
 " easy-align
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
