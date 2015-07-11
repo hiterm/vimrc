@@ -1,3 +1,9 @@
+" インデントの深さ
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+" greek letters
 inoremap <buffer> `a \alpha
 inoremap <buffer> `b \beta
 inoremap <buffer> `c \chi
