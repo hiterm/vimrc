@@ -84,3 +84,12 @@ inoremap <buffer> `<C-S> \sin
 inoremap <buffer> `<C-T> \tan
 inoremap <buffer> `<M-l> \ell
 inoremap <buffer> `<CR> \nonumber\\<CR><HOME>&&<Left>
+
+" other letters
+inoremap <buffer> `-> \rightarrow
+inoremap <buffer> `--> \longrightarrow
+inoremap <buffer> `=> \Rightarrow
+inoremap <buffer> `==> \Longrightarrow
+inoremap <buffer> `<= \Leftarrow
+inoremap <buffer> `<=> \Leftrightarrow
+inoremap <buffer> `<==> \Longleftrightarrow
