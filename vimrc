@@ -167,6 +167,9 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
+" snippets directory
+let g:neosnippet#snippets_directory = '~/.vim/snippets'
+
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
