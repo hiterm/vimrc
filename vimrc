@@ -356,3 +356,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
+
+" template
+autocmd BufNewFile *.tex 0r $HOME/.vim/template/tex.txt

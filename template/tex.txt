@@ -1,0 +1,33 @@
+\documentclass{jsarticle}
+
+\title{title}
+\author{author}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathmacros}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{remark}[theorem]{注意}
+\newtheorem{example}{例}[section]
+
+% epsilon,phiの書体を変える
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+% enumerateの書式を変える
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+
+% 数式番号にセクションの数を付ける
+\numberwithin{equation}{section}
+
+\begin{document}
+\maketitle
+
+\end{document}
