@@ -124,9 +124,7 @@ nmap ga <Plug>(EasyAlign)
 augroup HighlightTrailingSpaces
   autocmd!
   autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
-  autocmd VimEnter,WinEnter * if &filetype != 'help'
-      match TrailingSpaces /\s\+$/
-    endif
+  autocmd VimEnter,WinEnter * if &filetype != 'help' | match TrailingSpaces /\s\+$/ | endif
 augroup END
 " 削除する関数
 function! s:FixWhitespace(line1,line2)
