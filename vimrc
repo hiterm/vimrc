@@ -377,3 +377,5 @@ call lexima#add_rule({'char': '[', 'at': '\\l\%#', 'input': 'eft[ ',
 " 句読点をカンマとピリオドに
 call lexima#add_rule({'char': '。', 'input': '．', 'filetype': 'tex'})
 call lexima#add_rule({'char': '、', 'input': '，', 'filetype': 'tex'})
+" かっこ
+call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]', 'input_after': '<Enter>', 'filetype': 'tex'})
