@@ -28,6 +28,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'easymotion/vim-easymotion'
 
 if has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 )
   NeoBundle 'Shougo/neocomplete'
