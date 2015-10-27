@@ -57,6 +57,7 @@ set number
 " シンタックスハイライト
 syntax enable
 if has("gui_running")
+  set background=dark
   colorscheme hybrid
 else
   colorscheme jellybeans
