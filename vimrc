@@ -381,3 +381,8 @@ call lexima#add_rule({'char': '。', 'input': '．', 'filetype': 'tex'})
 call lexima#add_rule({'char': '、', 'input': '，', 'filetype': 'tex'})
 " かっこ
 call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]', 'input_after': '<Enter>', 'filetype': 'tex'})
+
+" lilypond
+filetype off
+set runtimepath+=/usr/local/share/lilypond/current/vim/
+filetype on
