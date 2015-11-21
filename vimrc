@@ -50,7 +50,7 @@ NeoBundleCheck
 " ここから普通の設定
 
 " フォント
-set guifont=monaco:h12
+set guifont=monaco:h13
 
 " 行番号を表示
 set number
