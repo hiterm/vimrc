@@ -119,6 +119,7 @@ let g:vimtex_latexmk_options = ''
 let g:vimtex_view_general_viewer
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '@line @pdf @tex'
+autocmd FileType tex syntax spell toplevel
 
 " easy-align
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
