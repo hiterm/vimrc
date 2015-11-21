@@ -29,6 +29,7 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'easymotion/vim-easymotion'
+NeoBundle 'bronson/vim-trailing-whitespace'
 
 if has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 )
   NeoBundle 'Shougo/neocomplete'
@@ -126,21 +127,6 @@ autocmd FileType tex syntax spell toplevel
 vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" 末尾の空白を強調
-augroup HighlightTrailingSpaces
-  autocmd!
-  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
-  autocmd VimEnter,WinEnter * if &filetype != 'help' | match TrailingSpaces /\s\+$/ | endif
-augroup END
-" 削除する関数
-function! s:FixWhitespace(line1,line2)
-  let l:save_cursor = getpos(".")
-  silent! execute ':' . a:line1 . ',' . a:line2 . 's/\s\+$//'
-  call setpos('.', l:save_cursor)
-endfunction
-" Run :FixWhitespace to remove end of line white space
-command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
 " neosnippet
 " Plugin key-mappings.
