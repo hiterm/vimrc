@@ -354,6 +354,7 @@ call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'tex'}
 call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'tex'})
 call lexima#add_rule({'char': '{', 'at': '\\\%#', 'input_after': '\}', 'filetype': 'tex'})
 call lexima#add_rule({'char': '[', 'at': '\\\%#', 'input_after': '\]', 'filetype': 'tex'})
+call lexima#add_rule({'char': '<BS>', 'at': '\\\[\%#\\\]', 'input': '<BS><BS><Del><Del>', 'filetype': 'tex'})
 call lexima#add_rule({'char': '<Space>', 'at': '\\{\%#\\}', 'input_after': '<Space>', 'filetype': 'tex'})
 call lexima#add_rule({'char': '<Space>', 'at': '\\\[\%#\\\]', 'input_after': '<Space>', 'filetype': 'tex'})
 " \left(など
