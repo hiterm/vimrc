@@ -387,3 +387,6 @@ call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]', 'input_after': '<E
 filetype off
 set runtimepath+=/usr/local/share/lilypond/current/vim/
 filetype on
+
+" spell check
+set spelllang=en,cjk
