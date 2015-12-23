@@ -61,6 +61,8 @@ inoremap <buffer> `- \bigcap
 inoremap <buffer> `+ \bigcup
 inoremap <buffer> `( \subset
 inoremap <buffer> `) \supset
+inoremap <buffer> `[ \subsetneq
+inoremap <buffer> `] \supsetneq
 inoremap <buffer> `< \leq
 inoremap <buffer> `> \geq
 inoremap <buffer> `, \nonumber
