@@ -55,6 +55,9 @@ set guifont=monaco:h13
 " 行番号を表示
 set number
 
+" コマンドラインを便利に
+set wildmenu
+
 " シンタックスハイライト
 syntax enable
 if has("gui_running")
