@@ -94,8 +94,8 @@ set macmeta
 
 " unite.vimの設定
 " The prefix key.
-nnoremap    [unite]   <Nop>
-nmap    ,u [unite]
+nnoremap [unite] <Nop>
+nmap     ,u      [unite]
 
 " unite.vim keymap
 " https://github.com/alwei/dotfiles/blob/3760650625663f3b08f24bc75762ec843ca7e112/.vimrc
@@ -133,9 +133,9 @@ nmap ga <Plug>(EasyAlign)
 
 " neosnippet
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
