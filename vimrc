@@ -344,7 +344,7 @@ endif
 
 
 " template
-autocmd BufNewFile *.tex 0r $HOME/.vim/template/tex.txt
+autocmd BufNewFile *.tex 0r $HOME/.vim/template/tex.tex
 
 
 " lexima
