@@ -119,6 +119,7 @@ let g:airline_right_sep=''
 let g:tex_flavor='latex'
 let g:tex_conceal = ''
 let g:vimtex_latexmk_options = '-pdfdvi'
+let g:vimtex_imaps_enabled = 0
 " viewer
 let g:vimtex_view_general_viewer
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
