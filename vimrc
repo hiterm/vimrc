@@ -13,23 +13,27 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
+" UI
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'cohama/lexima.vim'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'easymotion/vim-easymotion'
+" colorscheme
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'bling/vim-airline'
+" edit
+NeoBundle 'cohama/lexima.vim'
 NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'lervag/vimtex'
-NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'easymotion/vim-easymotion'
-NeoBundle 'bronson/vim-trailing-whitespace'
+" language
+NeoBundle 'lervag/vimtex'
+NeoBundle 'derekwyatt/vim-scala'
 
 if has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 )
   NeoBundle 'Shougo/neocomplete'
