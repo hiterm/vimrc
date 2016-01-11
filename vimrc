@@ -24,6 +24,10 @@ NeoBundle 'easymotion/vim-easymotion'
 " colorscheme
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'joshdick/onedark.vim'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'zenorocha/dracula-theme', {'rtp': 'vim'}
 " edit
 NeoBundle 'cohama/lexima.vim'
 NeoBundle 'junegunn/vim-easy-align'
@@ -62,7 +66,7 @@ set number
 " コマンドラインを便利に
 set wildmenu
 
-" シンタックスハイライト
+" colorscheme
 syntax enable
 if has("gui_running")
   set background=dark
