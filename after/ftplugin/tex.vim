@@ -110,3 +110,5 @@ inoremap <buffer> `qhll \Longleftrightarrow
 inoremap <buffer> `qHLL \Longleftrightarrow
 inoremap <buffer> `qj \downarrow
 inoremap <buffer> `qk \uparrow
+
+inoremap <buffer> " ``''<Esc>hi
