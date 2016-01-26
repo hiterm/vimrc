@@ -68,12 +68,7 @@ set wildmenu
 
 " colorscheme
 syntax enable
-if has("gui_running")
-  set background=dark
-  colorscheme hybrid
-else
-  colorscheme jellybeans
-endif
+colorscheme jellybeans
 
 " 大文字小文字を区別しない
 set ignorecase
