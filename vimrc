@@ -404,7 +404,16 @@ filetype on
 set spelllang=en,cjk
 
 " easymotion
+map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_use_migemo = 1
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+" Extend search motions with vital-over command line interface
+" " `<Tab>` & `<S-Tab>` to scroll up/down a page of next match
+" " :h easymotion-command-line
+nmap ,/ <Plug>(easymotion-sn)
+xmap ,/ <Plug>(easymotion-sn)
+omap ,/ <Plug>(easymotion-tn)
 
 " migemo
 if executable('cmigemo')
