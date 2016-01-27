@@ -38,6 +38,10 @@ NeoBundle 'Shougo/neosnippet-snippets'
 " language
 NeoBundle 'lervag/vimtex'
 NeoBundle 'derekwyatt/vim-scala'
+" Japanese
+NeoBundle 'haya14busa/vim-migemo'
+NeoBundle 'deton/jasegment.vim'
+NeoBundle 'rhysd/clever-f.vim'
 
 if has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 )
   NeoBundle 'Shougo/neocomplete'
@@ -384,3 +388,14 @@ filetype on
 
 " spell check
 set spelllang=en,cjk
+
+" easymotion
+let g:EasyMotion_use_migemo = 1
+
+" migemo
+if executable('cmigemo')
+  nnoremap g/ :Migemo<CR>
+endif
+
+" clever-f
+let g:clever_f_use_migemo = 1
