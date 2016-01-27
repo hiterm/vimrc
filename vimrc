@@ -99,6 +99,17 @@ set expandtab
 " MetaキーをOptionキーに
 set macmeta
 
+" いらないキーを無効化
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q <Nop>
+
+" jkで表示上の行を動くように
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+
 " unite.vimの設定
 " The prefix key.
 nnoremap [unite] <Nop>
