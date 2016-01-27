@@ -61,6 +61,9 @@ NeoBundleCheck
 " ここまでNeoBundleの設定
 " ここから普通の設定
 
+let mapleader = ","
+let maplocalleader = " "
+
 " フォント
 set guifont=monaco:h13
 
