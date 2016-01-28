@@ -121,6 +121,7 @@ nmap     ,u      [unite]
 " unite.vim keymap
 " https://github.com/alwei/dotfiles/blob/3760650625663f3b08f24bc75762ec843ca7e112/.vimrc
 nnoremap [unite]u  :<C-u>Unite<Space>
+nnoremap [unite]<Space> :<C-u>Unite<Space>
 nnoremap <silent> [unite]f :<C-u>Unite<Space>file<Space>file/new<CR>
 nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
 nnoremap <silent> [unite]o :<C-u>Unite<Space>bookmark<CR>
