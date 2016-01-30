@@ -439,12 +439,15 @@ if executable('cmigemo')
 endif
 
 " clever-f
-let g:clever_f_not_overwrites_standard_mappings = 1
-nmap <silent> f :let g:clever_f_use_migemo=0<CR><Plug>(clever-f-f)
-nmap <silent> <Space>f :let g:clever_f_use_migemo = 1<CR><Plug>(clever-f-f)
-nmap <silent> F :let g:clever_f_use_migemo=0<CR><Plug>(clever-f-F)
-nmap <silent> <Space>F :let g:clever_f_use_migemo = 1<CR><Plug>(clever-f-F)
-nmap <silent> t :let g:clever_f_use_migemo=0<CR><Plug>(clever-f-t)
-nmap <silent> <Space>t :let g:clever_f_use_migemo = 1<CR><Plug>(clever-f-F)
-nmap <silent> T :let g:clever_f_use_migemo=0<CR><Plug>(clever-f-T)
-nmap <silent> <Space>T :let g:clever_f_use_migemo = 1<CR><Plug>(clever-f-T)
+" toggle migemo
+let clever_f_use_migemo = 0
+function Clever_f_toggle_migemo()
+  if g:clever_f_use_migemo == 0
+    let g:clever_f_use_migemo = 1
+    echo "g:clever_f_use_migemo = 1"
+  else
+    let g:clever_f_use_migemo = 0
+    echo "g:clever_f_use_migemo = 0"
+  endif
+endfunction
+nmap <silent> <Space>f :call Clever_f_toggle_migemo()<CR>
