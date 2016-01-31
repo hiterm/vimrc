@@ -38,6 +38,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 " language
 NeoBundle 'lervag/vimtex'
 NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'hynek/vim-python-pep8-indent'
 " Japanese
 NeoBundle 'haya14busa/vim-migemo'
 NeoBundle 'deton/jasegment.vim'
