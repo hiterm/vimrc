@@ -3,6 +3,9 @@ setlocal tabstop=2
 setlocal softtabstop=2
 setlocal shiftwidth=2
 
+" wqを無効に
+cmap <buffer> wq w
+
 " mappings
 inoremap <buffer> `a \alpha
 inoremap <buffer> `b \beta
