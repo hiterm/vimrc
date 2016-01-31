@@ -42,6 +42,8 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'haya14busa/vim-migemo'
 NeoBundle 'deton/jasegment.vim'
 NeoBundle 'rhysd/clever-f.vim'
+" others
+NeoBundle 'thinca/vim-quickrun'
 
 if has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 )
   NeoBundle 'Shougo/neocomplete'
