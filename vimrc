@@ -149,6 +149,13 @@ let g:vimtex_view_general_viewer
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '@line @pdf @tex'
 autocmd FileType tex syntax spell toplevel
+" package silenceでも消えない警告を消す
+let g:vimtex_quickfix_ignored_warnings = [
+      \ 'Module luatexbase Warning',
+      \ 'JT3/mc/m/sl',
+      \ 'JT3/mc/m/it',
+      \ 'JT3/HiraginoMinchoProW3(0)/m/n',
+      \ ]
 
 " easy-align
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
