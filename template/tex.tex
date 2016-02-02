@@ -17,6 +17,11 @@ bookmarks=true, bookmarksnumbered=true,%
 bookmarksopen=true]{hyperref}
 \usepackage{cleveref}
 
+% font関係の警告を表示しない
+\usepackage{silence}
+\WarningFilter{latexfont}{Font shape}
+\WarningFilter{latexfont}{Some font}
+
 \theoremstyle{definition}
 \newtheorem{theorem}{定理}[section]
 \newtheorem{definition}[theorem]{定義}
