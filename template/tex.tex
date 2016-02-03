@@ -3,10 +3,6 @@
 \title{title}
 \author{author}
 
-\usepackage{luatexja-fontspec}
-\setmainjfont[BoldFont=Hiragino Kaku Gothic Pro W3]{Hiragino Mincho Pro W3}
-\setsansjfont{Hiragino Kaku Gothic Pro W3}
-
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -16,6 +12,11 @@
 bookmarks=true, bookmarksnumbered=true,%
 bookmarksopen=true]{hyperref}
 \usepackage{cleveref}
+
+\usepackage[libertine]{newtxmath}
+\usepackage[no-math, hiragino-pron, deluxe, bold]{luatexja-preset}
+\setmainfont{Linux Libertine O}
+\usepackage{bm}
 
 % font関係の警告を表示しない
 \usepackage{silence}
