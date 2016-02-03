@@ -8,6 +8,7 @@
 \usepackage{amssymb}
 \usepackage{mathmacros}
 \usepackage{amsthm-pfja}
+\usepackage{thmtools}
 \usepackage[pdfencoding=auto, setpagesize=false,%
 bookmarks=true, bookmarksnumbered=true,%
 bookmarksopen=true]{hyperref}
@@ -24,15 +25,22 @@ bookmarksopen=true]{hyperref}
 \WarningFilter{latexfont}{Some font}
 \WarningFilter{latexfont}{Size}
 
-\theoremstyle{definition}
-\newtheorem{theorem}{定理}[section]
-\newtheorem{definition}[theorem]{定義}
-\newtheorem{lemma}[theorem]{補題}
-\newtheorem{corollary}[theorem]{系}
-\newtheorem{proposition}[theorem]{命題}
-\newtheorem{remark}[theorem]{注意}
-\newtheorem{example}{例}[section]
-\newtheorem{question}{問題}[section]
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\bfseries,
+  % notefont=\normalfont,
+  notebraces={（}{）},
+  % bodyfont=\normalfont
+  postheadspace=1em
+]{definition}
+\declaretheorem[title=定理, style=definition, parent=section]{theorem}
+\declaretheorem[title=定義, style=definition, sibling=theorem]{definition}
+\declaretheorem[title=補題, style=definition, sibling=theorem]{lemma}
+\declaretheorem[title=系,   style=definition, sibling=theorem]{corollary}
+\declaretheorem[title=命題, style=definition, sibling=theorem]{proposition}
+\declaretheorem[title=注意, style=definition, sibling=theorem]{remark}
+\declaretheorem[title=例,   style=definition, parent=section]{example}
+\declaretheorem[title=問題, style=definition, parent=section]{question}
 
 % cleveref
 \crefformat{theorem}{定理#2#1#3}
