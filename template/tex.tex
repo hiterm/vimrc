@@ -13,14 +13,15 @@ bookmarks=true, bookmarksnumbered=true,%
 bookmarksopen=true]{hyperref}
 \usepackage{cleveref}
 
-\usepackage[libertine]{newtxmath}
-\usepackage[no-math, hiragino-pron, deluxe, bold]{luatexja-preset}
+\usepackage[libertine, bigdelims]{newtxmath}
+\usepackage[no-math, hiragino-pron, deluxe]{luatexja-preset}
 \setmainfont{Linux Libertine O}
+\setsansfont{TeX Gyre Heros}[Scale=MatchUppercase]
+\setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
 \usepackage{bm}
 
 % 書体を揃える
-% \renewcommand{\textbf}[1]{{\bfseries\sffamily#1}}
-% \renewcommand{\emph}[1]{\textsf{\textgt{#1}}}
+\renewcommand{\emph}[1]{\textbf{\textsf{#1}}}
 
 % font関係の警告を表示しない
 \usepackage{silence}
