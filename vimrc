@@ -154,7 +154,9 @@ let g:vimtex_quickfix_ignored_warnings = [
       \ 'Module luatexbase Warning',
       \ 'JT3/mc/m/sl',
       \ 'JT3/mc/m/it',
-      \ 'JT3/HiraginoMinchoProW3(0)/m/n',
+      \ 'luatexja-preset',
+      \ 'luatexja-fontspec',
+      \ 'JT3/HiraMinProN-W3(0)/m/n',
       \ ]
 
 " easy-align
