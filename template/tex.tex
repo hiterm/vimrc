@@ -7,7 +7,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathmacros}
-\usepackage{amsthm-pfja}
 \usepackage{thmtools}
 \usepackage[pdfencoding=auto, setpagesize=false,%
 bookmarks=true, bookmarksnumbered=true,%
@@ -46,6 +45,20 @@ bookmarksopen=true]{hyperref}
 \declaretheorem[title=注意, style=definition, sibling=theorem]{remark}
 \declaretheorem[title=例,   style=definition, parent=section]{example}
 \declaretheorem[title=問題, style=definition, parent=section]{question}
+% proofの再定義
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\bfseries\sffamily,
+  % notefont=\normalfont,
+  notefont=\mdseries\sffamily,
+  notebraces={（}{）},
+  % bodyfont=\normalfont
+  postheadspace=1em,
+  numbered=no,
+  qed=\blacksquare
+]{myproof}
+\declaretheorem[title=証明, style=myproof]{myproof}
+\renewenvironment{proof}{\begin{myproof}}{\end{myproof}}
 
 % cleveref
 \crefformat{theorem}{定理#2#1#3}
