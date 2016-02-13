@@ -120,7 +120,7 @@ nnoremap gk k
 " unite.vimの設定
 " The prefix key.
 nnoremap [unite] <Nop>
-nmap     ,u      [unite]
+nmap     <Space>u      [unite]
 
 " unite.vim keymap
 " https://github.com/alwei/dotfiles/blob/3760650625663f3b08f24bc75762ec843ca7e112/.vimrc
