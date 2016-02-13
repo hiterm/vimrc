@@ -421,9 +421,9 @@ call lexima#add_rule({'char': '<BS>', 'at': '\\left\\{ \%# \\right\\}',
 "" 句読点をカンマとピリオドに
 call lexima#add_rule({'char': '。', 'input': '．', 'filetype': 'tex'})
 call lexima#add_rule({'char': '、', 'input': '，', 'filetype': 'tex'})
-"" かっこ
+"" \[\]でEnter
 call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]',
-      \ 'input_after': '<Enter>', 'filetype': 'tex'})
+      \ 'input': '<Enter><Enter><BS><Esc>kA', 'filetype': 'tex'})
 
 " lilypond
 filetype off
