@@ -88,6 +88,9 @@ set smartcase
 " 検索結果をハイライト
 set hlsearch
 
+" ビープ音をvisualbellに
+set visualbell
+
 " insertモードでEmacs風のカーソル移動
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
