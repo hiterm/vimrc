@@ -90,6 +90,9 @@ set hlsearch
 " ビープ音をvisualbellに
 set visualbell
 
+" current directoryを自動移動
+autocmd BufEnter * silent! lcd %:p:h
+
 " insertモードでEmacs風のカーソル移動
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
