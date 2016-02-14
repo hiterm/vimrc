@@ -43,7 +43,6 @@ NeoBundle 'hynek/vim-python-pep8-indent'
 " Japanese
 NeoBundle 'haya14busa/vim-migemo'
 NeoBundle 'deton/jasegment.vim'
-NeoBundle 'rhysd/clever-f.vim'
 " others
 NeoBundle 'thinca/vim-quickrun'
 
@@ -436,33 +435,28 @@ filetype on
 " spell check
 set spelllang=en,cjk
 
+" migemo
+if executable('cmigemo')
+  nnoremap g/ :Migemo<CR>
+endif
+
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_use_migemo = 1
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
+xmap s <Plug>(easymotion-overwin-f2)
+omap s <Plug>(easymotion-overwin-f2)
 " Extend search motions with vital-over command line interface
 " " `<Tab>` & `<S-Tab>` to scroll up/down a page of next match
 " " :h easymotion-command-line
 nmap ,/ <Plug>(easymotion-sn)
 xmap ,/ <Plug>(easymotion-sn)
 omap ,/ <Plug>(easymotion-tn)
-
-" migemo
-if executable('cmigemo')
-  nnoremap g/ :Migemo<CR>
-endif
-
-" clever-f
-" toggle migemo
-let clever_f_use_migemo = 0
-function Clever_f_toggle_migemo()
-  if g:clever_f_use_migemo == 0
-    let g:clever_f_use_migemo = 1
-    echo "g:clever_f_use_migemo = 1"
-  else
-    let g:clever_f_use_migemo = 0
-    echo "g:clever_f_use_migemo = 0"
-  endif
-endfunction
-nmap <silent> <Space>f :call Clever_f_toggle_migemo()<CR>
+" overwrite f, F
+nmap f <Plug>(easymotion-f)
+xmap f <Plug>(easymotion-f)
+omap f <Plug>(easymotion-f)
+nmap F <Plug>(easymotion-F)
+xmap F <Plug>(easymotion-F)
+omap F <Plug>(easymotion-F)
