@@ -131,20 +131,27 @@ nnoremap gk k
 
 " Linux fcitx IME制御
 if has('unix') && !(has('mac'))
-  set iminsert=0
-  set imsearch=0
-  set imactivatefunc=ImActivate
-  function! ImActivate(active)
-    if a:active
-      call system('fcitx-remote -o')
-    else
+  if has('gui_running')
+    set iminsert=0
+    set imsearch=0
+    set imactivatefunc=ImActivate
+    function! ImActivate(active)
+      if a:active
+        call system('fcitx-remote -o')
+      else
+        call system('fcitx-remote -c')
+      endif
+    endfunction
+    set imstatusfunc=ImStatus
+    function! ImStatus()
+      return system('fcitx-remote')[0] is# '2'
+    endfunction
+  else
+    function! ImInActivate ()
       call system('fcitx-remote -c')
-    endif
-  endfunction
-  set imstatusfunc=ImStatus
-  function! ImStatus()
-    return system('fcitx-remote')[0] is# '2'
-  endfunction
+    endfunction
+    autocmd InsertLeave * call ImInActivate()
+  endif
 endif
 
 " unite.vimの設定
