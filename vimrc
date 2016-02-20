@@ -446,6 +446,8 @@ endif
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_use_migemo = 1
+" keep cursor colum JK motion
+let g:EasyMotion_startofline = 0
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
 xmap s <Plug>(easymotion-overwin-f2)
@@ -457,9 +459,15 @@ nmap ,/ <Plug>(easymotion-sn)
 xmap ,/ <Plug>(easymotion-sn)
 omap ,/ <Plug>(easymotion-tn)
 " overwrite f, F
-nmap f <Plug>(easymotion-f)
-xmap f <Plug>(easymotion-f)
-omap f <Plug>(easymotion-f)
-nmap F <Plug>(easymotion-F)
-xmap F <Plug>(easymotion-F)
-omap F <Plug>(easymotion-F)
+nmap f <Plug>(easymotion-fl)
+xmap f <Plug>(easymotion-fl)
+omap f <Plug>(easymotion-fl)
+nmap F <Plug>(easymotion-Fl)
+xmap F <Plug>(easymotion-Fl)
+omap F <Plug>(easymotion-Fl)
+nmap t <Plug>(easymotion-tl)
+xmap t <Plug>(easymotion-tl)
+omap t <Plug>(easymotion-tl)
+nmap T <Plug>(easymotion-Tl)
+xmap T <Plug>(easymotion-Tl)
+omap T <Plug>(easymotion-Tl)
