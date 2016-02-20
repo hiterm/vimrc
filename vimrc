@@ -68,7 +68,12 @@ let mapleader = ","
 let maplocalleader = " "
 
 " フォント
-set guifont=monaco:h13
+if has('mac')
+  set guifont=monaco:h13
+elseif has('unix')
+  " set guifont=Inconsolata:h15
+  set guifont=Ricty\ 13
+endif
 
 " 行番号を表示
 set number
@@ -109,7 +114,9 @@ set shiftwidth=4
 set expandtab
 
 " MetaキーをOptionキーに
-set macmeta
+if has('mac')
+  set macmeta
+endif
 
 " いらないキーを無効化
 nnoremap ZZ <Nop>
@@ -121,6 +128,31 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
+
+" Linux fcitx IME制御
+if has('unix') && !(has('mac'))
+  if has('gui_running')
+    set iminsert=0
+    set imsearch=0
+    set imactivatefunc=ImActivate
+    function! ImActivate(active)
+      if a:active
+        call system('fcitx-remote -o')
+      else
+        call system('fcitx-remote -c')
+      endif
+    endfunction
+    set imstatusfunc=ImStatus
+    function! ImStatus()
+      return system('fcitx-remote')[0] is# '2'
+    endfunction
+  else
+    function! ImInActivate ()
+      call system('fcitx-remote -c')
+    endfunction
+    autocmd InsertLeave * call ImInActivate()
+  endif
+endif
 
 " unite.vimの設定
 " The prefix key.
@@ -445,7 +477,9 @@ endif
 
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
-let g:EasyMotion_use_migemo = 1
+if executable('cmigemo')
+  let g:EasyMotion_use_migemo = 1
+endif
 " keep cursor colum JK motion
 let g:EasyMotion_startofline = 0
 " s{char}{char} to move to {char}{char}
