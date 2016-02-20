@@ -68,7 +68,12 @@ let mapleader = ","
 let maplocalleader = " "
 
 " フォント
-set guifont=monaco:h13
+if has('mac')
+  set guifont=monaco:h13
+elseif has('unix')
+  " set guifont=Inconsolata:h15
+  set guifont=Ricty\ 13
+endif
 
 " 行番号を表示
 set number
@@ -109,7 +114,9 @@ set shiftwidth=4
 set expandtab
 
 " MetaキーをOptionキーに
-set macmeta
+if has('mac')
+  set macmeta
+endif
 
 " いらないキーを無効化
 nnoremap ZZ <Nop>
@@ -445,7 +452,9 @@ endif
 
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
-let g:EasyMotion_use_migemo = 1
+if executable('cmigemo')
+  let g:EasyMotion_use_migemo = 1
+endif
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
 xmap s <Plug>(easymotion-overwin-f2)
