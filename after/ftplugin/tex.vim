@@ -7,6 +7,8 @@ setlocal shiftwidth=2
 cmap <buffer> wq w
 
 " mappings
+nnoremap <silent><buffer> <Space>e :,$s/\v\\\[(\n(.*\n){-} *)\\]/\\begin\{equation\}\1\\end\{equation\}<CR>:noh<CR>
+
 inoremap <buffer> `a \alpha
 inoremap <buffer> `b \beta
 inoremap <buffer> `c \chi
