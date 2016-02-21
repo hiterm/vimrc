@@ -151,6 +151,7 @@ if has('unix') && !(has('mac'))
       call system('fcitx-remote -c')
     endfunction
     autocmd InsertLeave * call ImInActivate()
+    autocmd CmdwinLeave * call ImInActivate()
   endif
 endif
 
