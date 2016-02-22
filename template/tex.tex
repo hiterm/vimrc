@@ -61,16 +61,20 @@ bookmarksopen=true]{hyperref}
 \renewenvironment{proof}{\begin{myproof}}{\end{myproof}}
 
 % cleveref
-\crefformat{theorem}{定理#2#1#3}
-\crefformat{definition}{定義#2#1#3}
-\crefformat{lemma}{補題#2#1#3}
-\crefformat{corollary}{系#2#1#3}
-\crefformat{proposition}{命題#2#1#3}
-\crefformat{remark}{注意#2#1#3}
-\crefformat{question}{問題#2#1#3}
-\crefformat{example}{例#2#1#3}
-\crefname{figure}{図}{図}
-\crefname{equation}{式}{式}
+\newcommand{\mycrefname}[2]{\crefname{#1}{#2}{#2}}
+% theorem環境
+\mycrefname{theorem}{定理}
+\mycrefname{difinition}{定義}
+\mycrefname{lemma}{補題}
+\mycrefname{corollary}{系}
+\mycrefname{proposition}{命題}
+\mycrefname{remark}{注意}
+\mycrefname{question}{問題}
+\mycrefname{example}{例}
+% それ以外
+\mycrefname{figure}{図}
+\mycrefname{equation}{式}
+\crefname{page}{p.}{pp.}
 
 % epsilon,phiの書体を変える
 \renewcommand{\epsilon}{\varepsilon}
