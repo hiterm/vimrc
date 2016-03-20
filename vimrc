@@ -465,9 +465,7 @@ call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]',
       \ 'input': '<Enter><Enter><BS><Esc>kA', 'filetype': 'tex'})
 
 " lilypond
-filetype off
-set runtimepath+=/usr/local/share/lilypond/current/vim/
-filetype on
+autocmd FileType lilypond setlocal tabstop=2 shiftwidth=2
 
 " spell check
 set spelllang=en,cjk
