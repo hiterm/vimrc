@@ -466,6 +466,12 @@ call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]',
 
 " lilypond
 autocmd FileType lilypond setlocal tabstop=2 shiftwidth=2
+call lexima#add_rule({'char': '<', 'input_after': '>',
+      \ 'filetype': 'lilypond'})
+if has('mac')
+  autocmd FileType lilypond
+        \ nmap <buffer> <LocalLeader>lv :!FILE="%" && open "${FILE\%.*}.pdf"<CR><CR>
+endif
 
 " spell check
 set spelllang=en,cjk
