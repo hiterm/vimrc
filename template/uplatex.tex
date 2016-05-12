@@ -20,20 +20,20 @@ bookmarksopen=true]{hyperref}
 \usepackage[deluxe, uplatex]{otf}
 \usepackage[libertine, bigdelims]{newtxmath}
 \usepackage{bm}
-% ボールドゴシックが有効になるおまじない
-\DeclareFontShape{JY2}{hgt}{b}{n}{<->ssub*mc/bx/n}{}
-\DeclareFontShape{JT2}{hgt}{b}{n}{<->ssub*mc/bx/n}{}
+% エラーの回避
+\DeclareFontShape{JY2}{hmc}{b}{n}{<->ssub*hmc/bx/n}{}
+\DeclareFontShape{JT2}{hmc}{b}{n}{<->ssub*hmc/bx/n}{}
+\DeclareFontShape{JY2}{hgt}{b}{n}{<->ssub*gt/bx/n}{}
+\DeclareFontShape{JT2}{hgt}{b}{n}{<->ssub*gt/bx/n}{}
 
 % 書体を揃える
-\renewcommand{\emph}[1]{\textbf{\textsf{#1}}}
+\renewcommand{\emph}[1]{\textbf{\textsf{\textgt{#1}}}}
 
 \declaretheoremstyle[
   spaceabove=6pt, spacebelow=6pt,
-  headfont=\bfseries\sffamily,
-  % notefont=\normalfont,
-  notefont=\mdseries\sffamily,
+  headfont=\bfseries\sffamily\gtfamily,
+  notefont=\mdseries\sffamily\gtfamily,
   notebraces={（}{）},
-  % bodyfont=\normalfont
   postheadspace=1em
 ]{definition}
 \declaretheorem[title=定理, style=definition, parent=section]{theorem}
@@ -47,8 +47,8 @@ bookmarksopen=true]{hyperref}
 % proofの再定義
 \declaretheoremstyle[
   spaceabove=6pt, spacebelow=6pt,
-  headfont=\bfseries\sffamily,
-  notefont=\mdseries\sffamily,
+  headfont=\bfseries\sffamily\gtfamily,
+  notefont=\mdseries\sffamily\gtfamily,
   notebraces={（}{）},
   postheadspace=1em,
   numbered=no,
@@ -82,9 +82,6 @@ bookmarksopen=true]{hyperref}
 
 % 数式番号にセクションの数を付ける
 \numberwithin{equation}{section}
-
-% 全ての数式をdisplaystyleに
-% \everymath{\displaystyle}
 
 \begin{document}
 \maketitle
