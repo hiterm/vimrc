@@ -175,6 +175,7 @@ set laststatus=2
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
+" latex settings
 " vimtex
 let g:tex_flavor='latex'
 let g:tex_conceal = ''
@@ -193,6 +194,8 @@ let g:vimtex_quickfix_ignored_warnings = [
       \ 'luatexja-fontspec',
       \ 'JT3/HiraMinProN-W3(0)/m/n',
       \ ]
+" template commands
+command TeXTemplateLuatex 0r ~/.vim/template/luatex.tex
 
 " easy-align
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
@@ -416,7 +419,7 @@ endif
 
 
 " template
-autocmd BufNewFile *.tex 0r $HOME/.vim/template/luatex.tex
+autocmd BufNewFile *.tex 0r ~/.vim/template/luatex.tex
 
 
 " lexima
