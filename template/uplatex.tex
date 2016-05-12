@@ -1,0 +1,95 @@
+\documentclass[uplatex]{jsarticle}
+
+\title{title}
+\author{author}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathmacros}
+\usepackage{thmtools}
+\usepackage[pdfencoding=auto, setpagesize=false,%
+bookmarks=true, bookmarksnumbered=true,%
+bookmarksopen=true]{hyperref}
+\usepackage{cleveref}
+
+\usepackage[libertine, bigdelims]{newtxmath}
+\usepackage[no-math, hiragino-pron, deluxe]{luatexja-preset}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Linux Libertine O}
+\setsansfont{TeX Gyre Heros}[Scale=MatchUppercase]
+\setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
+\usepackage{bm}
+
+% 書体を揃える
+\renewcommand{\emph}[1]{\textbf{\textsf{#1}}}
+
+% font関係の警告を表示しない
+\usepackage{silence}
+\WarningFilter{latexfont}{Font shape}
+\WarningFilter{latexfont}{Some font}
+\WarningFilter{latexfont}{Size}
+
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\bfseries\sffamily,
+  % notefont=\normalfont,
+  notefont=\mdseries\sffamily,
+  notebraces={（}{）},
+  % bodyfont=\normalfont
+  postheadspace=1em
+]{definition}
+\declaretheorem[title=定理, style=definition, parent=section]{theorem}
+\declaretheorem[title=定義, style=definition, sibling=theorem]{definition}
+\declaretheorem[title=補題, style=definition, sibling=theorem]{lemma}
+\declaretheorem[title=系,   style=definition, sibling=theorem]{corollary}
+\declaretheorem[title=命題, style=definition, sibling=theorem]{proposition}
+\declaretheorem[title=注意, style=definition, sibling=theorem]{remark}
+\declaretheorem[title=例,   style=definition, parent=section]{example}
+\declaretheorem[title=問題, style=definition, parent=section]{question}
+% proofの再定義
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\bfseries\sffamily,
+  notefont=\mdseries\sffamily,
+  notebraces={（}{）},
+  postheadspace=1em,
+  numbered=no,
+  qed=\blacksquare
+]{myproof}
+\declaretheorem[title=証明, style=myproof]{myproof}
+\renewenvironment{proof}{\begin{myproof}}{\end{myproof}}
+
+% cleveref
+\newcommand{\mycrefname}[2]{\crefname{#1}{#2}{#2}}
+% theorem環境
+\mycrefname{theorem}{定理}
+\mycrefname{difinition}{定義}
+\mycrefname{lemma}{補題}
+\mycrefname{corollary}{系}
+\mycrefname{proposition}{命題}
+\mycrefname{remark}{注意}
+\mycrefname{question}{問題}
+\mycrefname{example}{例}
+% それ以外
+\mycrefname{figure}{図}
+\mycrefname{equation}{式}
+\crefname{page}{p.}{pp.}
+
+% epsilon,phiの書体を変える
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+% enumerateの書式を変える
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+
+% 数式番号にセクションの数を付ける
+\numberwithin{equation}{section}
+
+% 全ての数式をdisplaystyleに
+% \everymath{\displaystyle}
+
+\begin{document}
+\maketitle
+
+\end{document}
