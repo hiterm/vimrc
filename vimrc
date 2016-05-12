@@ -31,7 +31,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'aperezdc/vim-template'
 " language
 NeoBundle 'lervag/vimtex'
 NeoBundle 'derekwyatt/vim-scala'
