@@ -1,34 +1,31 @@
-\documentclass[uplatex]{jsarticle}
+\documentclass[uplatex, dvipdfmx]{jsarticle}
 
 \title{title}
 \author{author}
 
-\usepackage{amsthm}
 \usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{mathmacros}
 \usepackage{thmtools}
-\usepackage[pdfencoding=auto, setpagesize=false,%
+\usepackage[dvipdfmx, setpagesize=false,%
 bookmarks=true, bookmarksnumbered=true,%
 bookmarksopen=true]{hyperref}
+\usepackage{pxjahyper}
 \usepackage{cleveref}
 
+\usepackage[T1]{fontenc}
+\usepackage{libertine}
+\usepackage[scale=0.95]{tgheros}
+\usepackage{tgcursor}
+\usepackage[deluxe, uplatex]{otf}
 \usepackage[libertine, bigdelims]{newtxmath}
-\usepackage[no-math, hiragino-pron, deluxe]{luatexja-preset}
-\defaultfontfeatures{Ligatures=TeX}
-\setmainfont{Linux Libertine O}
-\setsansfont{TeX Gyre Heros}[Scale=MatchUppercase]
-\setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
 \usepackage{bm}
+% ボールドゴシックが有効になるおまじない
+\DeclareFontShape{JY2}{hgt}{b}{n}{<->ssub*mc/bx/n}{}
+\DeclareFontShape{JT2}{hgt}{b}{n}{<->ssub*mc/bx/n}{}
 
 % 書体を揃える
 \renewcommand{\emph}[1]{\textbf{\textsf{#1}}}
-
-% font関係の警告を表示しない
-\usepackage{silence}
-\WarningFilter{latexfont}{Font shape}
-\WarningFilter{latexfont}{Some font}
-\WarningFilter{latexfont}{Size}
 
 \declaretheoremstyle[
   spaceabove=6pt, spacebelow=6pt,
