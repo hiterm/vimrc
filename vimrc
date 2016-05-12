@@ -195,7 +195,8 @@ let g:vimtex_quickfix_ignored_warnings = [
       \ 'JT3/HiraMinProN-W3(0)/m/n',
       \ ]
 " template commands
-command TeXTemplateLuatex 0r ~/.vim/template/luatex.tex
+command TeXTemplateLuaTeX 0r ~/.vim/template/luatex.tex
+command TeXTemplateUpLaTeX 0r ~/.vim/template/uplatex.tex
 
 " easy-align
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
