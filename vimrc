@@ -421,7 +421,7 @@ endif
 
 
 " template
-autocmd BufNewFile *.tex 0r ~/.vim/template/luatex.tex
+autocmd BufNewFile *.tex 0r ~/.vim/template/uplatex.tex
 
 
 " lexima
