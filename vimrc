@@ -462,7 +462,7 @@ call lexima#add_rule({'char': '。', 'input': '．', 'filetype': 'tex'})
 call lexima#add_rule({'char': '、', 'input': '，', 'filetype': 'tex'})
 "" \[\]でEnter
 call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]',
-      \ 'input': '<Enter><Enter><BS><Esc>kA', 'filetype': 'tex'})
+      \ 'input_after': '<Enter>', 'filetype': 'tex'})
 
 " lilypond
 autocmd FileType lilypond setlocal tabstop=2 shiftwidth=2
