@@ -511,3 +511,7 @@ omap t <Plug>(easymotion-tl)
 nmap T <Plug>(easymotion-Tl)
 xmap T <Plug>(easymotion-Tl)
 omap T <Plug>(easymotion-Tl)
+
+" surround.vim
+" $でも効くように
+nnoremap ds$ f$x<Esc>F$x<Esc>
