@@ -1,3 +1,7 @@
+" My vimrc
+
+" NeoBundle {{{1
+
 if has('vim_starting')
   set nocompatible
 
@@ -58,8 +62,7 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-" ここまでNeoBundleの設定
-" ここから普通の設定
+" 基本設定 {{{1
 
 let mapleader = ","
 let maplocalleader = " "
@@ -126,6 +129,14 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
+" spell check
+set spelllang=en,cjk
+
+" migemo
+if executable('cmigemo')
+  nnoremap g/ :Migemo<CR>
+endif
+
 " Linux fcitx IME制御
 if has('unix') && !(has('mac'))
   if has('gui_running')
@@ -152,7 +163,10 @@ if has('unix') && !(has('mac'))
   endif
 endif
 
-" unite.vimの設定
+
+" plugin, filetypeの設定 {{{1
+
+" unite {{{2
 " The prefix key.
 nnoremap [unite] <Nop>
 nmap     <Space>u      [unite]
@@ -168,16 +182,15 @@ nnoremap <silent> [unite]r :<C-u>Unite<Space>file_mru<CR>
 nnoremap <silent> [unite]e :<C-u>Unite<Space>register<CR>
 nnoremap <silent> ,vr :UniteResume<CR>
 
-" NERD Tree
+" NERD Tree {{{2
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-" airline
+" airline {{{2
 set laststatus=2
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
-" latex settings
-" vimtex
+" vimtex and latex {{{2
 let g:tex_flavor='latex'
 let g:tex_conceal = ''
 let g:vimtex_imaps_enabled = 0
@@ -199,14 +212,17 @@ let g:vimtex_quickfix_ignored_warnings = [
 " template commands
 command TeXTemplateLuaTeX 0r ~/.vim/template/luatex.tex
 command TeXTemplateUpLaTeX 0r ~/.vim/template/uplatex.tex
+" load template
+autocmd BufNewFile *.tex 0r ~/.vim/template/uplatex.tex
 
-" easy-align
+
+" easy-align {{{2
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" neosnippet
+" neosnippet {{{2
 " Plugin key-mappings.
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -237,7 +253,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
-" neocomplete
+" neocomplete {{{2
 if neobundle#is_installed('neocomplete')
   " Use neocomplete.
   let g:neocomplete#enable_at_startup = 1
@@ -317,7 +333,7 @@ if neobundle#is_installed('neocomplete')
 endif
 
 
-" neocomplcache
+" neocomplcache {{{2
 if neobundle#is_installed('neocomplcache')
   " Use neocomplcache.
   let g:neocomplcache_enable_at_startup = 1
@@ -401,7 +417,7 @@ if neobundle#is_installed('neocomplcache')
 endif
 
 
-" neosnippet
+" neosnippet {{{2
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -421,11 +437,7 @@ if has('conceal')
 endif
 
 
-" template
-autocmd BufNewFile *.tex 0r ~/.vim/template/uplatex.tex
-
-
-" lexima
+" lexima {{{2
 " tex
 call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'tex'})
 call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'tex'})
@@ -465,7 +477,7 @@ call lexima#add_rule({'char': '、', 'input': '，', 'filetype': 'tex'})
 call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]',
       \ 'input_after': '<Enter>', 'filetype': 'tex'})
 
-" lilypond
+" lilypond {{{2
 autocmd FileType lilypond setlocal tabstop=2 shiftwidth=2
 call lexima#add_rule({'char': '<', 'input_after': '>',
       \ 'filetype': 'lilypond'})
@@ -474,15 +486,8 @@ if has('mac')
         \ nmap <buffer> <LocalLeader>lv :!FILE="%" && open "${FILE\%.*}.pdf"<CR><CR>
 endif
 
-" spell check
-set spelllang=en,cjk
 
-" migemo
-if executable('cmigemo')
-  nnoremap g/ :Migemo<CR>
-endif
-
-" easymotion
+" easymotion {{{2
 map <Leader> <Plug>(easymotion-prefix)
 if executable('cmigemo')
   let g:EasyMotion_use_migemo = 1
@@ -513,6 +518,9 @@ nmap T <Plug>(easymotion-Tl)
 xmap T <Plug>(easymotion-Tl)
 omap T <Plug>(easymotion-Tl)
 
-" surround.vim
+" surround.vim {{{2
 " $でも効くように
 nnoremap ds$ f$x<Esc>F$x<Esc>
+
+
+" vim: foldmethod=marker foldlevel=0
