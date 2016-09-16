@@ -1,67 +1,36 @@
 " My vimrc
 
-" NeoBundle {{{1
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-if has('vim_starting')
-  set nocompatible
+let s:dein_dir = expand('~/.vim/bundle')
+
+" Required:
+set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state(s:dein_dir)  " 失敗したら
+  call dein#begin(s:dein_dir)
+
+  call dein#load_toml('~/.vim/dein.toml', {'lazy': 0})
 
   " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call dein#end()
 endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let Neobundle manage Neobundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-" UI
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'easymotion/vim-easymotion'
-" colorscheme
-NeoBundle 'nanotech/jellybeans.vim'
-" edit
-NeoBundle 'cohama/lexima.vim'
-NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-" language
-NeoBundle 'lervag/vimtex'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'matze/vim-lilypond'
-NeoBundle 'cespare/vim-toml'
-" Japanese
-NeoBundle 'haya14busa/vim-migemo'
-NeoBundle 'deton/jasegment.vim'
-" others
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-fugitive'
-
-if has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 )
-  NeoBundle 'Shougo/neocomplete'
-else
-  NeoBundle 'Shougo/neocomplcache'
-endif
-
-call neobundle#end()
+call dein#save_state()
 
 " Required:
 filetype plugin indent on
+syntax enable
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
 
 " 基本設定 {{{1
 
@@ -255,7 +224,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
 " neocomplete {{{2
-if neobundle#is_installed('neocomplete')
+if dein#tap('neocomplete')
   " Use neocomplete.
   let g:neocomplete#enable_at_startup = 1
   " Use smartcase.
@@ -335,7 +304,7 @@ endif
 
 
 " neocomplcache {{{2
-if neobundle#is_installed('neocomplcache')
+if dein#tap('neocomplcache')
   " Use neocomplcache.
   let g:neocomplcache_enable_at_startup = 1
   " Use smartcase.

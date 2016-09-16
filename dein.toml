@@ -1,0 +1,89 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# UI
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'bling/vim-airline'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+# colorscheme
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+# edit
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+# language
+[[plugins]]
+repo = 'lervag/vimtex'
+
+[[plugins]]
+repo = 'derekwyatt/vim-scala'
+
+[[plugins]]
+repo = 'hynek/vim-python-pep8-indent'
+
+[[plugins]]
+repo = 'matze/vim-lilypond'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+# Japanese
+[[plugins]]
+repo = 'haya14busa/vim-migemo'
+
+[[plugins]]
+repo = 'deton/jasegment.vim'
+
+# others
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+
+[[plugins]]
+repo = 'Shougo/neocomplete'
+if = "has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 )"
+
+[[plugins]]
+repo = 'Shougo/neocomplcache'
+if = "!(has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 ))"
