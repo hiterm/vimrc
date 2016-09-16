@@ -40,6 +40,7 @@ NeoBundle 'lervag/vimtex'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'matze/vim-lilypond'
+NeoBundle 'cespare/vim-toml'
 " Japanese
 NeoBundle 'haya14busa/vim-migemo'
 NeoBundle 'deton/jasegment.vim'
@@ -522,5 +523,7 @@ omap T <Plug>(easymotion-Tl)
 " $でも効くように
 nnoremap ds$ f$x<Esc>F$x<Esc>
 
+" toml {{{2
+autocmd BufRead,BufNewFile *.toml setfiletype toml
 
 " vim: foldmethod=marker foldlevel=0
