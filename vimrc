@@ -33,6 +33,9 @@ endif
 "End dein Scripts-------------------------
 
 " 基本設定 {{{1
+augroup MyAutoCmd
+  autocmd!
+augroup END
 
 let mapleader = ","
 let maplocalleader = " "
@@ -67,7 +70,9 @@ set hlsearch
 set visualbell
 
 " current directoryを自動移動
-autocmd BufEnter * silent! lcd %:p:h
+augroup MyAutoCmd
+  autocmd BufEnter * silent! lcd %:p:h
+augroup END
 
 " insertモードでEmacs風のカーソル移動
 inoremap <C-f> <Right>
@@ -128,8 +133,10 @@ if has('unix') && !(has('mac'))
     function! ImInActivate ()
       call system('fcitx-remote -c')
     endfunction
-    autocmd InsertLeave * call ImInActivate()
-    autocmd CmdwinLeave * call ImInActivate()
+    augroup MyAutoCmd
+      autocmd InsertLeave * call ImInActivate()
+      autocmd CmdwinLeave * call ImInActivate()
+    augroup END
   endif
 endif
 
@@ -169,7 +176,9 @@ let g:vimtex_latexmk_options = '-verbose'
 let g:vimtex_view_general_viewer
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '@line @pdf @tex'
-autocmd FileType tex syntax spell toplevel
+augroup MyAutoCmd
+  autocmd FileType tex syntax spell toplevel
+augroup END
 " package silenceでも消えない警告を消す
 let g:vimtex_quickfix_ignored_warnings = [
       \ 'Module luatexbase Warning',
@@ -183,7 +192,9 @@ let g:vimtex_quickfix_ignored_warnings = [
 command TeXTemplateLuaTeX 0r ~/.vim/template/luatex.tex
 command TeXTemplateUpLaTeX 0r ~/.vim/template/uplatex.tex
 " load template
-autocmd BufNewFile *.tex 0r ~/.vim/template/uplatex.tex
+augroup MyAutoCmd
+  autocmd BufNewFile *.tex 0r ~/.vim/template/uplatex.tex
+augroup END
 
 
 " easy-align {{{2
@@ -216,11 +227,13 @@ let g:neosnippet#snippets_directory = '~/.vim/snippets'
 
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup MyAutoCmd
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup END
 
 
 " neocomplete {{{2
@@ -448,12 +461,16 @@ call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]',
       \ 'input_after': '<Enter>', 'filetype': 'tex'})
 
 " lilypond {{{2
-autocmd FileType lilypond setlocal tabstop=2 shiftwidth=2
+augroup MyAutoCmd
+  autocmd FileType lilypond setlocal tabstop=2 shiftwidth=2
+augroup END
 call lexima#add_rule({'char': '<', 'input_after': '>',
       \ 'filetype': 'lilypond'})
 if has('mac')
-  autocmd FileType lilypond
-        \ nmap <buffer> <LocalLeader>lv :!FILE="%" && open "${FILE\%.*}.pdf"<CR><CR>
+  augroup MyAutoCmd
+    autocmd FileType lilypond
+          \ nmap <buffer> <LocalLeader>lv :!FILE="%" && open "${FILE\%.*}.pdf"<CR><CR>
+  augroup END
 endif
 
 
@@ -493,6 +510,8 @@ omap T <Plug>(easymotion-Tl)
 nnoremap ds$ f$x<Esc>F$x<Esc>
 
 " toml {{{2
-autocmd BufRead,BufNewFile *.toml setfiletype toml
+augroup MyAutoCmd
+  autocmd BufRead,BufNewFile *.toml setfiletype toml
+augroup END
 
 " vim: foldmethod=marker foldlevel=0
