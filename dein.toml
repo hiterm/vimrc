@@ -3,6 +3,7 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'haya14busa/dein-command.vim'
+depends = 'Shougo/dein.vim'
 
 # UI
 [[plugins]]
@@ -13,6 +14,7 @@ repo = 'Shougo/vimfiler'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
+depends = 'Shougo/unite.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
