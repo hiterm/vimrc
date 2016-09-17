@@ -83,12 +83,3 @@ repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-
-
-[[plugins]]
-repo = 'Shougo/neocomplete'
-if = "has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 )"
-
-[[plugins]]
-repo = 'Shougo/neocomplcache'
-if = "!(has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 ))"
