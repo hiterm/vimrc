@@ -15,6 +15,7 @@ if dein#load_state(s:dein_dir)  " 失敗したら
   call dein#begin(s:dein_dir, split(glob('~/.vim/*.toml'), '\n'))
 
   call dein#load_toml('~/.vim/dein.toml', {'lazy': 0})
+  call dein#load_toml('~/.vim/deinlazy.toml', {'lazy': 1})
 
   " Required:
   call dein#end()
