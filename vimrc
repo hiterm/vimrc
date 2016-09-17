@@ -5,7 +5,7 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-let s:dein_dir = expand('~/.vim/bundle')
+let s:dein_dir = '~/.vim/bundle'
 
 " Required:
 set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
