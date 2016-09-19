@@ -53,9 +53,6 @@ repo = 'Shougo/neosnippet-snippets'
 
 # language
 [[plugins]]
-repo = 'lervag/vimtex'
-
-[[plugins]]
 repo = 'derekwyatt/vim-scala'
 
 [[plugins]]
