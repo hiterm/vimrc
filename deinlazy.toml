@@ -7,3 +7,8 @@ on_event = 'InsertEnter'
 repo = 'Shougo/neocomplcache'
 if = "!(has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 ))"
 on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_event = 'InsertCharPre'
+hook_post_source = 'source ~/.vim/lexima.rc.vim'
