@@ -17,6 +17,9 @@ repo = 'Shougo/neomru.vim'
 depends = 'Shougo/unite.vim'
 
 [[plugins]]
+repo = 'Shougo/neoyank.vim'
+
+[[plugins]]
 repo = 'Yggdroot/indentLine'
 
 [[plugins]]

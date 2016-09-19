@@ -152,6 +152,7 @@ nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
 nnoremap <silent> [unite]o :<C-u>Unite<Space>bookmark<CR>
 nnoremap <silent> [unite]r :<C-u>Unite<Space>file_mru<CR>
 nnoremap <silent> [unite]e :<C-u>Unite<Space>register<CR>
+nnoremap <silent> [unite]y :<C-u>Unite<Space>history/yank<CR>
 nnoremap <silent> ,vr :UniteResume<CR>
 
 " NERD Tree {{{2
