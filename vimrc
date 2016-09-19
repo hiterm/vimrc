@@ -52,7 +52,6 @@ set number
 set wildmenu
 
 " colorscheme
-syntax enable
 colorscheme jellybeans
 
 " 大文字小文字を区別しない
