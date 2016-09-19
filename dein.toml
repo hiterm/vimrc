@@ -25,9 +25,6 @@ repo = 'bling/vim-airline'
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
-
 # colorscheme
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
