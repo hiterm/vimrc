@@ -24,3 +24,7 @@ on_cmd = ['NerdTree', 'NerdTreeToggle']
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 on_map = '<Plug>'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+on_cmd = ['Git', 'Gstatus', 'Gdiff']
