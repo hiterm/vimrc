@@ -467,4 +467,9 @@ augroup MyAutoCmd
   autocmd BufRead,BufNewFile *.toml setfiletype toml
 augroup END
 
+" git
+augroup MyAutoCmd
+  autocmd FileType gitcommit setlocal spell
+augroup END
+
 " vim: foldmethod=marker foldlevel=0
