@@ -185,8 +185,8 @@ let g:vimtex_quickfix_ignored_warnings = [
       \ 'JT3/HiraMinProN-W3(0)/m/n',
       \ ]
 " template commands
-command TeXTemplateLuaTeX 0r ~/.vim/template/luatex.tex
-command TeXTemplateUpLaTeX 0r ~/.vim/template/uplatex.tex
+command! TeXTemplateLuaTeX 0r ~/.vim/template/luatex.tex
+command! TeXTemplateUpLaTeX 0r ~/.vim/template/uplatex.tex
 " load template
 augroup MyAutoCmd
   autocmd BufNewFile *.tex 0r ~/.vim/template/uplatex.tex
