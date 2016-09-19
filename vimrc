@@ -155,7 +155,7 @@ nnoremap <silent> [unite]e :<C-u>Unite<Space>register<CR>
 nnoremap <silent> ,vr :UniteResume<CR>
 
 " NERD Tree {{{2
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 
 " airline {{{2
 set laststatus=2
