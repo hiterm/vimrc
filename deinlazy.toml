@@ -23,9 +23,11 @@ on_ft = 'python'
 
 [[plugins]]
 repo = 'derekwyatt/vim-scala'
+on_ft = 'scala'
 
 [[plugins]]
 repo = 'matze/vim-lilypond'
+on_ft = 'lilypond'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
