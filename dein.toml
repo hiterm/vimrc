@@ -42,9 +42,6 @@ repo = 'tomtom/tcomment_vim'
 
 # language
 [[plugins]]
-repo = 'matze/vim-lilypond'
-
-[[plugins]]
 repo = 'cespare/vim-toml'
 
 # Japanese

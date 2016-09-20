@@ -25,6 +25,9 @@ on_ft = 'python'
 repo = 'derekwyatt/vim-scala'
 
 [[plugins]]
+repo = 'matze/vim-lilypond'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = ['NerdTree', 'NerdTreeToggle']
 
