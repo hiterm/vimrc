@@ -22,6 +22,9 @@ if dein#load_state(s:dein_dir)  " 失敗したら
   call dein#save_state()
 endif
 
+let g:dein#enable_notification = 1
+let g:dein#install_log_filename = s:dein_dir . '/dein.log'
+
 " Required:
 filetype plugin indent on
 syntax enable
