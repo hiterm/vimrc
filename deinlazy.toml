@@ -28,6 +28,10 @@ repo = 'derekwyatt/vim-scala'
 repo = 'matze/vim-lilypond'
 
 [[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = ['NerdTree', 'NerdTreeToggle']
 

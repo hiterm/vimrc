@@ -40,10 +40,6 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
-# language
-[[plugins]]
-repo = 'cespare/vim-toml'
-
 # Japanese
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
