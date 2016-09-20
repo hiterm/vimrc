@@ -18,6 +18,10 @@ repo = 'lervag/vimtex'
 on_ft = 'tex'
 
 [[plugins]]
+repo = 'hynek/vim-python-pep8-indent'
+on_ft = 'python'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = ['NerdTree', 'NerdTreeToggle']
 

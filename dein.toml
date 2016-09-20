@@ -45,9 +45,6 @@ repo = 'tomtom/tcomment_vim'
 repo = 'derekwyatt/vim-scala'
 
 [[plugins]]
-repo = 'hynek/vim-python-pep8-indent'
-
-[[plugins]]
 repo = 'matze/vim-lilypond'
 
 [[plugins]]
