@@ -28,3 +28,13 @@ on_map = '<Plug>'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 on_cmd = ['Git', 'Gstatus', 'Gdiff']
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+depends = 'neosnippet-snippets'
+on_event = 'InsertCharPre'
+on_ft = 'snippet'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
