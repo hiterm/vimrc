@@ -92,7 +92,7 @@ set shiftwidth=4
 set expandtab
 
 " MetaキーをOptionキーに
-if has('mac')
+if has('gui_macvim')
   set macmeta
 endif
 
