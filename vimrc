@@ -12,7 +12,7 @@ if !isdirectory(s:dein_repo_dir)
 endif
 
 " Required:
-set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+execute 'set runtimepath+=' . s:dein_repo_dir
 
 " Required:
 if dein#load_state(s:dein_dir)  " 失敗したら
