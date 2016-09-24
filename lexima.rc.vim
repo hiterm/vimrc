@@ -31,9 +31,6 @@ call lexima#add_rule({'char': '<BS>', 'at': '\\left\[ \%# \\right\]',
       \'input': '<Esc>7h15xi', 'filetype': 'tex'})
 call lexima#add_rule({'char': '<BS>', 'at': '\\left\\{ \%# \\right\\}',
       \'input': '<Esc>7h17xi', 'filetype': 'tex'})
-"" 句読点をカンマとピリオドに
-call lexima#add_rule({'char': '。', 'input': '．', 'filetype': 'tex'})
-call lexima#add_rule({'char': '、', 'input': '，', 'filetype': 'tex'})
 "" \[\]でEnter
 call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]',
       \ 'input_after': '<Enter>', 'filetype': 'tex'})

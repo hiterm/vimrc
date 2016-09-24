@@ -199,6 +199,11 @@ command! TeXTemplateUpLaTeX 0r ~/.vim/template/uplatex.tex
 augroup MyAutoCmd
   autocmd BufNewFile *.tex 0r ~/.vim/template/uplatex.tex
 augroup END
+" 句読点の設定
+augroup MyAutoCmd
+  autocmd FileType tex imap <buffer> 、 ，
+  autocmd FileType tex imap <buffer> 。 ．
+augroup END
 
 
 " easy-align {{{2
