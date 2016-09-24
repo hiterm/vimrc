@@ -53,3 +53,7 @@ on_ft = 'snippet'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_ft = ['ruby', 'python']
