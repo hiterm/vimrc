@@ -32,8 +32,8 @@ call lexima#add_rule({'char': '<BS>', 'at': '\\left\[ \%# \\right\]',
 call lexima#add_rule({'char': '<BS>', 'at': '\\left\\{ \%# \\right\\}',
       \'input': '<Esc>7h17xi', 'filetype': 'tex'})
 "" \[\]でEnter
-call lexima#add_rule({'char': '<Enter>', 'at': '\\\[\%#\\\]',
-      \ 'input_after': '<Enter>', 'filetype': 'tex'})
+call lexima#add_rule({'char': '<CR>', 'at': '\\\[\%#\\\]',
+      \ 'input_after': '<CR>', 'filetype': 'tex'})
 
 " lilypond
 call lexima#add_rule({'char': '<', 'input_after': '>',
