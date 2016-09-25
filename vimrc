@@ -458,7 +458,7 @@ augroup MyAutoCmd
   autocmd BufRead,BufNewFile *.toml setfiletype toml
 augroup END
 
-" git
+" git {{2
 augroup MyAutoCmd
   autocmd FileType gitcommit setlocal spell
 augroup END
