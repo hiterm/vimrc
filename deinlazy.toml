@@ -2,11 +2,16 @@
 repo = 'Shougo/neocomplete'
 if = "has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 )"
 on_event = 'InsertEnter'
+depends = 'neco-look'
 
 [[plugins]]
 repo = 'Shougo/neocomplcache'
 if = "!(has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 ))"
 on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'ujihisa/neco-look'
+if = "executable('look')"
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
