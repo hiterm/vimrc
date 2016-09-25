@@ -463,4 +463,9 @@ augroup MyAutoCmd
   autocmd FileType gitcommit setlocal spell
 augroup END
 
+" shiba {{2
+if executable('shiba')
+  command! ShibaPreview !shiba --detach %
+endif
+
 " vim: foldmethod=marker foldlevel=0
