@@ -62,3 +62,7 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'scrooloose/syntastic'
 on_ft = ['ruby', 'python']
+
+[[plugins]]
+repo = 'rhysd/committia.vim'
+on_path = 'COMMIT_EDITMSG'
