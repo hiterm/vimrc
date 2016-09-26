@@ -21,7 +21,7 @@ repo = 'Shougo/neoyank.vim'
 repo = 'Yggdroot/indentLine'
 
 [[plugins]]
-repo = 'bling/vim-airline'
+repo = 'vim-airline/vim-airline'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
