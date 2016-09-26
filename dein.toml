@@ -50,3 +50,6 @@ repo = 'deton/jasegment.vim'
 # others
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
