@@ -60,7 +60,14 @@ set number
 set wildmenu
 
 " colorscheme
-colorscheme jellybeans
+if has('gui_running')
+  call dein#source(['jellybeans.vim'])
+  colorscheme jellybeans
+else
+  call dein#source(['vim-colors-solarized'])
+  set background=dark
+  colorscheme solarized
+endif
 
 " 大文字小文字を区別しない
 set ignorecase

@@ -62,3 +62,10 @@ on_ft = ['ruby', 'python']
 [[plugins]]
 repo = 'rhysd/committia.vim'
 on_path = 'COMMIT_EDITMSG'
+
+# colorscheme
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'

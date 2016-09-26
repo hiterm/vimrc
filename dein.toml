@@ -24,11 +24,10 @@ repo = 'Yggdroot/indentLine'
 repo = 'bling/vim-airline'
 
 [[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
+repo = 'vim-airline/vim-airline-themes'
 
-# colorscheme
 [[plugins]]
-repo = 'nanotech/jellybeans.vim'
+repo = 'bronson/vim-trailing-whitespace'
 
 # edit
 [[plugins]]
