@@ -170,6 +170,7 @@ nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 set laststatus=2
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:airline#extensions#branch#enabled = 1
 
 " vimtex and latex {{{2
 let g:tex_flavor='latex'
