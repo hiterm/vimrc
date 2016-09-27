@@ -435,8 +435,8 @@ endif
 let g:EasyMotion_startofline = 0
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
-xmap s <Plug>(easymotion-overwin-f2)
-omap s <Plug>(easymotion-overwin-f2)
+xmap s <Plug>(easymotion-bd-f2)
+omap s <Plug>(easymotion-bd-f2)
 " Extend search motions with vital-over command line interface
 " " `<Tab>` & `<S-Tab>` to scroll up/down a page of next match
 " " :h easymotion-command-line
