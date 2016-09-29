@@ -63,6 +63,9 @@ set wildmenu
 if has('gui_running')
   call dein#source(['jellybeans.vim'])
   colorscheme jellybeans
+elseif exists('g:nyaovim_version')
+  call dein#source(['jellybeans.vim'])
+  colorscheme jellybeans
 else
   call dein#source(['vim-colors-solarized'])
   set background=dark
