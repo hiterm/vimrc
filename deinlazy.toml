@@ -69,3 +69,6 @@ repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
 repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'jacoborus/tender'
