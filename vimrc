@@ -60,10 +60,8 @@ set number
 set wildmenu
 
 " colorscheme
-let macvim_skip_colorscheme=1
-call dein#source(['tender'])
-colorscheme tender
-let g:airline_theme = 'tender'
+call dein#source(['jellybeans.vim'])
+colorscheme jellybeans
 
 " 大文字小文字を区別しない
 set ignorecase
