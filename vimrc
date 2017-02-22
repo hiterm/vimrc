@@ -88,9 +88,15 @@ let g:indentLine_char = '¦'
 
 " インデントの深さ
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 " ソフトタブ
 set expandtab
+
+augroup MyAutoCmd
+  autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType tex setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
 
 " MetaキーをOptionキーに
 if has('gui_macvim')
