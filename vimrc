@@ -171,14 +171,6 @@ nnoremap <silent> [unite]e :<C-u>Unite<Space>register<CR>
 nnoremap <silent> [unite]y :<C-u>Unite<Space>history/yank<CR>
 nnoremap <silent> ,vr :UniteResume<CR>
 
-" NERD Tree {{{2
-nnoremap <silent> <C-e> :NERDTreeToggle<CR>
-
-" airline {{{2
-set laststatus=2
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline#extensions#branch#enabled = 1
 
 " vimtex and latex {{{2
 let g:tex_flavor='latex'
@@ -215,12 +207,6 @@ augroup MyAutoCmd
 augroup END
 
 
-" easy-align {{{2
-" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
 " neosnippet {{{2
 " Plugin key-mappings.
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -244,6 +230,7 @@ endif
 let g:neosnippet#snippets_directory = '~/.vim/snippets'
 
 
+" omni completion{{{2
 " Enable omni completion.
 augroup MyAutoCmd
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -395,26 +382,6 @@ if dein#tap('neocomplcache')
 endif
 
 
-" neosnippet {{{2
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-
 " lilypond {{{2
 augroup MyAutoCmd
   autocmd FileType lilypond setlocal tabstop=2 shiftwidth=2
@@ -461,11 +428,6 @@ omap T <Plug>(easymotion-Tl)
 " surround.vim {{{2
 " $でも効くように
 nnoremap ds$ f$x<Esc>F$x<Esc>
-
-" toml {{{2
-augroup MyAutoCmd
-  autocmd BufRead,BufNewFile *.toml setfiletype toml
-augroup END
 
 " git {{{2
 augroup MyAutoCmd

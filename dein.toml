@@ -22,6 +22,12 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+hook_add = '''
+set laststatus=2
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#branch#enabled = 1
+'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
@@ -32,6 +38,12 @@ repo = 'bronson/vim-trailing-whitespace'
 # edit
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
+hook_add = '''
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+'''
 
 [[plugins]]
 repo = 'tpope/vim-surround'

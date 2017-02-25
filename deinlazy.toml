@@ -37,10 +37,18 @@ on_ft = 'lilypond'
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
+hook_add = '''
+augroup MyAutoCmd
+  autocmd BufRead,BufNewFile *.toml setfiletype toml
+augroup END
+'''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = ['NerdTree', 'NerdTreeToggle']
+hook_add = '''
+nnoremap <silent> <C-e> :NERDTreeToggle<CR>
+'''
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
