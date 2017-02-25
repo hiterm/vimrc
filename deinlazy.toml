@@ -73,6 +73,10 @@ nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 '''
 
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = 'context_filetype.vim'
+
 # colorscheme
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'

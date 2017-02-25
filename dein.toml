@@ -39,6 +39,10 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
+# preciousが依存
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
 # Japanese
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
