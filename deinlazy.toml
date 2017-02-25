@@ -86,6 +86,9 @@ nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
 
+[[plugins]]
+repo = 'Shougo/unite-outline'
+
 # colorscheme
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'

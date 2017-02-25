@@ -7,6 +7,7 @@ repo = 'haya14busa/dein-command.vim'
 # UI
 [[plugins]]
 repo = 'Shougo/unite.vim'
+depends = 'unite-outline'
 
 [[plugins]]
 repo = 'Shougo/vimfiler'
