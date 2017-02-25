@@ -467,12 +467,12 @@ augroup MyAutoCmd
   autocmd BufRead,BufNewFile *.toml setfiletype toml
 augroup END
 
-" git {{2
+" git {{{2
 augroup MyAutoCmd
   autocmd FileType gitcommit setlocal spell
 augroup END
 
-" shiba {{2
+" shiba {{{2
 if executable('shiba')
   command! ShibaPreview !shiba --detach %
 endif
