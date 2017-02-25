@@ -38,3 +38,23 @@ call lexima#add_rule({'char': '<CR>', 'at': '\\\[\%#\\\]',
 " lilypond
 call lexima#add_rule({'char': '<', 'input_after': '>',
       \ 'filetype': 'lilypond'})
+
+" html
+call lexima#add_rule({'char': '<', 'input_after': '>',
+      \ 'filetype': 'html'})
+call lexima#add_rule({'char': '<BS>',
+      \ 'at': '<\%#>', 'delete': 1,
+      \ 'filetype': 'html'})
+
+" eruby
+call lexima#add_rule({'char': '<', 'input_after': '>',
+      \ 'filetype': 'eruby'})
+call lexima#add_rule({'char': '<BS>',
+      \ 'at': '<\%#>', 'delete': 1,
+      \ 'filetype': 'eruby'})
+call lexima#add_rule({'char': '%', 'at': '<\%#>',
+      \ 'input': '% ', 'input_after': ' %',
+      \ 'filetype': 'eruby'})
+call lexima#add_rule({'char': '<BS>', 'at': '<% \%# %>',
+      \ 'input': '<BS><BS><BS>', 'delete': 3,
+      \ 'filetype': 'eruby'})
