@@ -85,7 +85,6 @@ nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
-depends = 'context_filetype.vim'
 
 # colorscheme
 [[plugins]]
