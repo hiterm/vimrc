@@ -56,6 +56,14 @@ repo = 'tomtom/tcomment_vim'
 repo = 'Shougo/context_filetype.vim'
 depends = 'vim-precious'
 
+[[plugins]]
+repo = "sbdchd/vim-shebang"
+hook_add = '''
+let g:shebang#shebangs = {
+      \ 'sh': '#!/bin/sh',
+      \ }
+'''
+
 # Japanese
 [[plugins]]
 repo = 'haya14busa/vim-migemo'

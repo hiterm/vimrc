@@ -439,4 +439,5 @@ if executable('shiba')
   command! ShibaPreview !shiba --detach %
 endif
 
+
 " vim: foldmethod=marker foldlevel=0
