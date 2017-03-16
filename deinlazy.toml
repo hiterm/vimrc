@@ -18,6 +18,8 @@ repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 hook_post_source = 'source ~/.vim/lexima.rc.vim'
 
+# syntax pluins
+
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = 'tex'
@@ -42,6 +44,22 @@ augroup MyAutoCmd
   autocmd BufRead,BufNewFile *.toml setfiletype toml
 augroup END
 '''
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+depends = 'vim-javascript'
+hook_add = '''
+let g:jsx_ext_required = 0
+'''
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
+
+# ここまで
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
