@@ -59,6 +59,14 @@ repo = 'pangloss/vim-javascript'
 repo = 'leafgarland/typescript-vim'
 on_ft = 'typescript'
 
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = ['ruby', 'haml', 'eruby']
+
+[[plugins]]
+repo = 'basyura/unite-rails'
+on_ft = ['ruby', 'haml', 'eruby']
+
 # ここまで
 
 [[plugins]]
