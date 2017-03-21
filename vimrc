@@ -97,6 +97,7 @@ augroup MyAutoCmd
   autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType tex setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType eruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 " MetaキーをOptionキーに
