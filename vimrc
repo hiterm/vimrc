@@ -152,6 +152,9 @@ if has('unix') && !(has('mac'))
   endif
 endif
 
+" ctags
+set tags+=./tags;
+
 
 " plugin, filetypeの設定 {{{1
 
