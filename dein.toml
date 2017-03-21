@@ -64,6 +64,12 @@ let g:shebang#shebangs = {
       \ }
 '''
 
+[[plugins]]
+repo = 'scrooloose/syntastic'
+hook_add = '''
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+'''
+
 # Japanese
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
