@@ -188,15 +188,6 @@ let g:vimtex_view_general_options = '@line @pdf @tex'
 augroup MyAutoCmd
   autocmd FileType tex syntax spell toplevel
 augroup END
-" package silenceでも消えない警告を消す
-let g:vimtex_quickfix_ignored_warnings = [
-      \ 'Module luatexbase Warning',
-      \ 'JT3/mc/m/sl',
-      \ 'JT3/mc/m/it',
-      \ 'luatexja-preset',
-      \ 'luatexja-fontspec',
-      \ 'JT3/HiraMinProN-W3(0)/m/n',
-      \ ]
 " template commands
 command! TeXTemplateLuaTeX 0r ~/.vim/template/luatex.tex
 command! TeXTemplateUpLaTeX 0r ~/.vim/template/uplatex.tex
