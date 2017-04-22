@@ -3,7 +3,7 @@ nnoremap <silent><buffer> <Space>e :s/\v(\_.{-})\\\[(\_.{-})\\]/\1\\begin\{equat
 
 " mappings
 inoremap <buffer> [latex] <Nop>
-imap  <buffer> ` [latex]
+imap  <buffer> @ [latex]
 
 inoremap <buffer> [latex]a \alpha
 inoremap <buffer> [latex]b \beta
@@ -113,3 +113,6 @@ inoremap <buffer> [latex]qj \downarrow
 inoremap <buffer> [latex]qk \uparrow
 
 inoremap <buffer> " ``''<Esc>hi
+
+inoremap <buffer> <= \leq
+inoremap <buffer> >= \geq
