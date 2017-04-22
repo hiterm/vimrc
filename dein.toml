@@ -24,10 +24,32 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
+" lightline {{{2
 set laststatus=2
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ }
+let g:lightline = {}
+let g:lightline.active = {
+      \ 'left': [ [ 'mode', 'paste' ],
+      \           [ 'readonly', 'filename', 'modified' ], 
+      \           [ 'fugitive' ] ],
+      \ 'right': [ [ 'lineinfo' ],
+      \            [ 'percent' ],
+      \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+let g:lightline.component_function = {
+      \ 'fugitive': 'LightlineFugitive', }
+function! LightlineFugitive()
+  if exists('*fugitive#head')
+    return fugitive#head()
+  endif
+  return ''
+endfunction
+let g:lightline.inactive = {
+      \ 'left': [ [ 'filename' ] ],
+      \ 'right': [ [ 'lineinfo' ],
+      \            [ 'percent' ] ] }
+let g:lightline.tabline = {
+      \ 'left': [ [ 'tabs' ] ],
+      \ 'right': [ [ 'close' ] ] }
+let g:lightline.colorscheme = 'jellybeans'
 '''
 
 [[plugins]]
