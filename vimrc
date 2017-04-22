@@ -47,7 +47,7 @@ let maplocalleader = " "
 " フォント
 if has('mac')
   set guifont=monaco:h13
-  set guifontwide=Migu\ 1M
+  set guifontwide=Migu\ 1M:h13
 elseif has('unix')
   " set guifont=Inconsolata:h15
   set guifont=Ricty\ 13
