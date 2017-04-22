@@ -98,6 +98,7 @@ augroup MyAutoCmd
   autocmd FileType tex setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType eruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType sh setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 " MetaキーをOptionキーに
@@ -204,10 +205,12 @@ augroup END
 
 " omni completion{{{2
 " Enable omni completion.
+set omnifunc=syntaxcomplete#Complete
 augroup MyAutoCmd
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup END

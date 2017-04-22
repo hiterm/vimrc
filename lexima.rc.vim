@@ -53,7 +53,7 @@ call lexima#add_rule({'char': '<BS>',
       \ 'at': '<\%#>', 'delete': 1,
       \ 'filetype': 'eruby'})
 call lexima#add_rule({'char': '%', 'at': '<\%#>',
-      \ 'input': '% ', 'input_after': ' %',
+      \ 'input': '%= ', 'input_after': ' %',
       \ 'filetype': 'eruby'})
 call lexima#add_rule({'char': '<BS>', 'at': '<% \%# %>',
       \ 'input': '<BS><BS><BS>', 'delete': 3,
