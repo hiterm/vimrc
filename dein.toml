@@ -70,6 +70,13 @@ hook_add = '''
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 '''
 
+# git
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
 # Japanese
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
@@ -80,6 +87,3 @@ repo = 'deton/jasegment.vim'
 # others
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
