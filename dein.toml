@@ -22,12 +22,12 @@ repo = 'Shougo/neoyank.vim'
 repo = 'Yggdroot/indentLine'
 
 [[plugins]]
-repo = 'vim-airline/vim-airline'
+repo = 'itchyny/lightline.vim'
 hook_add = '''
 set laststatus=2
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline#extensions#branch#enabled = 1
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
 '''
 
 [[plugins]]
