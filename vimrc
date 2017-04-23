@@ -17,7 +17,9 @@ execute 'set runtimepath+=' . s:dein_repo_dir
 
 " Required:
 if dein#load_state(s:dein_dir)  " 失敗したら
-  call dein#begin(s:dein_dir, split(glob('~/.vim/*.toml'), '\n'))
+  call dein#begin(s:dein_dir,
+        \ [expand('<sfile>:p')] + split(glob('~/.vim/*.rc.vim'))
+        \ + split(glob('~/.vim/*.toml'), '\n'))
 
   call dein#load_toml('~/.vim/dein.toml', {'lazy': 0})
   call dein#load_toml('~/.vim/deinlazy.toml', {'lazy': 1})
