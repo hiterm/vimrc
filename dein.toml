@@ -139,6 +139,7 @@ let g:shebang#shebangs = {
 repo = 'scrooloose/syntastic'
 hook_add = '''
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_vim_checkers = ['vint']
 '''
 
 # git
