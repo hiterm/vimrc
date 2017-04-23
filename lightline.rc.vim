@@ -7,7 +7,7 @@ let g:lightline.active = {
       \           [ 'fugitive', 'gitgutter' ] ],
       \ 'right': [ [ 'syntastic', 'lineinfo' ],
       \            [ 'percent' ],
-      \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \            [ 'myfileencoding', 'filetype' ] ]
       \ }
 let g:lightline.inactive = {
       \ 'left': [ [ 'filename' ] ],
@@ -19,6 +19,10 @@ let g:lightline.tabline = {
       \ 'right': [ [ 'close' ] ]
       \ }
 let g:lightline.colorscheme = 'jellybeans'
+
+let g:lightline.component = {
+      \ 'myfileencoding': '%{&fenc!=#""?&fenc:&enc}(%{&ff})',
+      \ }
 
 let g:lightline.component_function = {
       \ 'fugitive': 'LightlineFugitive',
