@@ -1,5 +1,7 @@
 " My vimrc
 
+scriptencoding utf-8
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
