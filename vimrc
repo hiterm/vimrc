@@ -57,6 +57,9 @@ elseif has('unix')
   set guifont=Ricty\ 13
 endif
 
+" 全角文字の幅
+set ambiwidth=double
+
 " 行番号を表示
 set number
 
@@ -159,6 +162,7 @@ endif
 
 " ctags
 set tags+=./tags;
+
 
 
 " plugin, filetypeの設定 {{{1
