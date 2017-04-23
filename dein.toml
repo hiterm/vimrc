@@ -88,12 +88,16 @@ function! LightlineGitgutter()
 endfunction
 
 " syntastic
+let s:syntastic_passive_filetypes = ['c', 'cpp', 'ruby', 'python']
 let g:syntastic_mode_map = {
-      \ 'passive_filetypes': ['c', 'cpp', 'ruby', 'python'],
+      \ 'passive_filetypes': s:syntastic_passive_filetypes,
       \ }
 augroup AutoSyntastic
   autocmd!
-  autocmd BufWritePost *.c,*.cpp,*.rb,*.py call s:syntastic()
+  " filetypeが指定したもので、ファイルに書き込みしたとき実行
+  autocmd BufWritePost * if count(s:syntastic_passive_filetypes, &filetype)
+        \ | call s:syntastic()
+        \ | endif
 augroup END
 function! s:syntastic()
   SyntasticCheck
