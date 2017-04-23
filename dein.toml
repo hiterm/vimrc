@@ -31,7 +31,7 @@ let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste' ],
       \           [ 'readonly', 'filename', 'modified' ],
       \           [ 'fugitive', 'gitgutter' ] ],
-      \ 'right': [ [ 'lineinfo' ],
+      \ 'right': [ [ 'syntastic', 'lineinfo' ],
       \            [ 'percent' ],
       \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ }
@@ -49,6 +49,14 @@ let g:lightline.colorscheme = 'jellybeans'
 let g:lightline.component_function = {
       \ 'fugitive': 'LightlineFugitive',
       \ 'gitgutter': 'LightlineGitgutter',
+      \ }
+
+let g:lightline.component_expand = {
+      \ 'syntastic': 'SyntasticStatuslineFlag',
+      \ }
+
+let g:lightline.component_type = {
+      \   'syntastic': 'error',
       \ }
 
 function! LightlineFugitive()
@@ -77,6 +85,19 @@ function! LightlineGitgutter()
     endif
   endfor
   return join(ret, ' ')
+endfunction
+
+" syntastic
+let g:syntastic_mode_map = {
+      \ 'passive_filetypes': ['c', 'cpp', 'ruby', 'python'],
+      \ }
+augroup AutoSyntastic
+  autocmd!
+  autocmd BufWritePost *.c,*.cpp,*.rb,*.py call s:syntastic()
+augroup END
+function! s:syntastic()
+  SyntasticCheck
+  call lightline#update()
 endfunction
 '''
 
