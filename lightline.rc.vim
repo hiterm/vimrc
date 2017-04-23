@@ -5,7 +5,7 @@ let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste' ],
       \           [ 'readonly', 'filename', 'modified' ],
       \           [ 'fugitive', 'gitgutter' ] ],
-      \ 'right': [ [ 'syntastic', 'lineinfo' ],
+      \ 'right': [ [ 'ale_error', 'ale_warning', 'ale_ok', 'lineinfo' ],
       \            [ 'percent' ],
       \            [ 'myfileencoding', 'filetype' ] ]
       \ }
@@ -30,11 +30,15 @@ let g:lightline.component_function = {
       \ }
 
 let g:lightline.component_expand = {
-      \ 'syntastic': 'SyntasticStatuslineFlag',
+      \ 'ale_error':   'Lightline_ale_error',
+      \ 'ale_warning': 'Lightline_ale_warning',
+      \ 'ale_ok':      'Lightline_ale_ok',
       \ }
 
 let g:lightline.component_type = {
-      \   'syntastic': 'error',
+      \ 'ale_error':   'error',
+      \ 'ale_warning': 'warning',
+      \ 'ale_ok':      'ok',
       \ }
 
 function! LightlineFugitive()
@@ -43,6 +47,8 @@ function! LightlineFugitive()
   endif
   return ''
 endfunction
+
+" From http://qiita.com/yuyuchu3333/items/20a0acfe7e0d0e167ccc
 
 function! LightlineGitgutter()
   if !exists('*GitGutterGetHunkSummary')
@@ -65,19 +71,39 @@ function! LightlineGitgutter()
   return join(ret, ' ')
 endfunction
 
-" syntastic
-let s:syntastic_passive_filetypes = ['c', 'cpp', 'ruby', 'python']
-let g:syntastic_mode_map = {
-      \ 'passive_filetypes': s:syntastic_passive_filetypes,
-      \ }
-augroup AutoSyntastic
-  autocmd!
-  " filetypeが指定したもので、ファイルに書き込みしたとき実行
-  autocmd BufWritePost * if count(s:syntastic_passive_filetypes, &filetype)
-        \ | call s:syntastic()
-        \ | endif
-augroup END
-function! s:syntastic()
-  SyntasticCheck
-  call lightline#update()
+" From delphinus/lightline-delphinus
+
+function! Lightline_ale_error() abort
+  return s:ale_string(0)
 endfunction
+
+function! Lightline_ale_warning() abort
+  return s:ale_string(1)
+endfunction
+
+function! Lightline_ale_ok() abort
+  return s:ale_string(2)
+endfunction
+
+function! s:ale_string(mode)
+  if !exists('g:ale_buffer_info')
+    return ''
+  endif
+
+  let l:buffer = bufnr('%')
+  let [l:error_count, l:warning_count] = ale#statusline#Count(l:buffer)
+  let [l:error_format, l:warning_format, l:no_errors] = g:ale_statusline_format
+
+  if a:mode == 0 " Error
+    return l:error_count ? printf(l:error_format, l:error_count) : ''
+  elseif a:mode == 1 " Warning
+    return l:warning_count ? printf(l:warning_format, l:warning_count) : ''
+  endif
+
+  return l:error_count == 0 && l:warning_count == 0 ? l:no_errors : ''
+endfunction
+
+augroup LightLineALE
+  autocmd!
+  autocmd User ALELint call lightline#update()
+augroup END
