@@ -183,6 +183,7 @@ nnoremap <silent> [unite]r :<C-u>Unite<Space>file_mru<CR>
 nnoremap <silent> [unite]e :<C-u>Unite<Space>register<CR>
 nnoremap <silent> [unite]y :<C-u>Unite<Space>history/yank<CR>
 nnoremap <silent> ,vr :UniteResume<CR>
+nnoremap <silent> [unite]l :<C-u>Unite<Space>location_list<CR>
 
 
 " vimtex and latex {{{2
