@@ -45,8 +45,8 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-let mapleader = ","
-let maplocalleader = " "
+let g:mapleader = ','
+let g:maplocalleader = ' '
 
 " フォント
 if has('mac')
@@ -277,7 +277,7 @@ if dein#tap('neocomplete')
   let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
   " neco-lookを全てのfiletypeで有効に
-  let g:neocomplete#text_mode_filetypes = { "_" : 1 }
+  let g:neocomplete#text_mode_filetypes = { '_' : 1 }
 endif
 
 
@@ -444,6 +444,3 @@ augroup END
 if executable('shiba')
   command! ShibaPreview !shiba --detach %
 endif
-
-
-" vim: foldmethod=marker foldlevel=0
