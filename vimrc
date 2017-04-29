@@ -2,7 +2,7 @@
 
 scriptencoding utf-8
 
-"dein Scripts-----------------------------
+" dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -38,7 +38,7 @@ let g:dein#install_log_filename = s:dein_dir . '/dein.log'
 filetype plugin indent on
 syntax enable
 
-"End dein Scripts-------------------------
+" End dein Scripts-------------------------
 
 " 基本設定 {{{1
 augroup MyAutoCmd
