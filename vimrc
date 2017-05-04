@@ -53,8 +53,8 @@ if has('mac')
   set guifont=monaco:h13
   set guifontwide=Migu\ 1M:h13
 elseif has('unix')
-  " set guifont=Inconsolata:h15
-  set guifont=Ricty\ 13
+  set guifont=Source\ Code\ Pro\ 12
+  set guifontwide=Migu\ 1M\ 12
 endif
 
 " 全角文字の幅
