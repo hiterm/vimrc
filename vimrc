@@ -192,11 +192,23 @@ nnoremap <silent> [unite]l :<C-u>Unite<Space>location_list<CR>
 let g:tex_flavor='latex'
 let g:tex_conceal = ''
 let g:vimtex_imaps_enabled = 0
-let g:vimtex_latexmk_options = '-verbose'
+" latexmk
+let g:vimtex_compiler_latexmk = {
+      \ 'options' : [
+      \   '-verbose',
+      \   '-file-line-error',
+      \   '-synctex=1',
+      \   '-interaction=nonstopmode',
+      \ ],
+      \}
 " viewer
-let g:vimtex_view_general_viewer
-      \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-let g:vimtex_view_general_options = '@line @pdf @tex'
+if has('mac')
+  let g:vimtex_view_general_viewer
+        \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+  let g:vimtex_view_general_options = '@line @pdf @tex'
+else
+  let g:vimtex_view_method='zathura'
+endif
 augroup MyAutoCmd
   autocmd FileType tex syntax spell toplevel
 augroup END
