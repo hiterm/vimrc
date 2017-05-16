@@ -163,6 +163,8 @@ endif
 " ctags
 set tags+=./tags;
 
+" 保存しなくてもバッファ間の移動ができるように
+set hidden
 
 
 " plugin, filetypeの設定 {{{1
