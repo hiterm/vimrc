@@ -166,6 +166,8 @@ set tags+=./tags;
 " 保存しなくてもバッファ間の移動ができるように
 set hidden
 
+" helpをqで閉じる
+autocmd MyAutoCmd FileType help nnoremap <buffer> q <C-w>c
 
 " plugin, filetypeの設定 {{{1
 
