@@ -4,6 +4,7 @@ nnoremap <silent><buffer> <Space>e :s/\v(\_.{-})\\\[(\_.{-})\\]/\1\\begin\{equat
 " mappings
 inoremap <buffer> [latex] <Nop>
 imap  <buffer> @ [latex]
+inoremap  <buffer> [latex] @
 
 inoremap <buffer> [latex]a \alpha
 inoremap <buffer> [latex]b \beta
