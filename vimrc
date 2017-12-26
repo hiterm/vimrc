@@ -211,6 +211,10 @@ if has('mac')
 else
   let g:vimtex_view_method='zathura'
 endif
+if has('nvim')
+  let g:vimtex_compiler_progname
+        \ = 'nvr'
+endif
 augroup MyAutoCmd
   autocmd FileType tex syntax spell toplevel
 augroup END
@@ -240,6 +244,23 @@ augroup MyAutoCmd
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup END
 
+" deoplete {{{2
+if dein#tap('deoplete.nvim')
+  " Use deoplete.
+  let g:deoplete#enable_at_startup = 1
+  " Use smartcase.
+  let g:deoplete#enable_smart_case = 1
+
+  " <C-h>, <BS>: close popup and delete backword char.
+  inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
+
+  " <CR>: close popup and save indent.
+  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+  function! s:my_cr_function() abort
+    return deoplete#close_popup() . "\<CR>"
+  endfunction
+endif
 
 " neocomplete {{{2
 if dein#tap('neocomplete')
