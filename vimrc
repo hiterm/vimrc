@@ -260,6 +260,14 @@ if dein#tap('deoplete.nvim')
   function! s:my_cr_function() abort
     return deoplete#close_popup() . "\<CR>"
   endfunction
+
+  " Enable heavy omni completion.
+  " texはdeinlazy.tomlに
+  if !exists('g:deoplete#omni_patterns')
+    let g:deoplete#omni_patterns = {}
+  endif
+  let g:deoplete#omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+  let g:deoplete#omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 endif
 
 " neosnippet {{{2

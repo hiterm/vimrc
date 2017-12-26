@@ -3,6 +3,12 @@ repo = 'Shougo/deoplete.nvim'
 if = "has('nvim') && has('python3')"
 on_event = 'InsertEnter'
 depends = 'neco-look'
+hook_post_source = '''
+let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+'''
 
 [[plugins]]
 repo = 'Shougo/neocomplete'
@@ -10,6 +16,13 @@ if = "!(has('nvim') && has('python3')) && has('lua') && ( (v:version == 703 && h
 on_event = 'InsertEnter'
 depends = 'neco-look'
 hook_add = 'source ~/.vim/neocomplete.rc.vim'
+hook_post_source = '''
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.tex =
+      \ g:vimtex#re#neocomplete
+'''
 
 [[plugins]]
 repo = 'Shougo/neocomplcache'
