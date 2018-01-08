@@ -205,9 +205,7 @@ let g:vimtex_compiler_latexmk = {
       \}
 " viewer
 if has('mac')
-  let g:vimtex_view_general_viewer
-        \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-  let g:vimtex_view_general_options = '@line @pdf @tex'
+  let g:vimtex_view_method='skim'
 else
   let g:vimtex_view_method='zathura'
 endif
