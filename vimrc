@@ -172,6 +172,11 @@ autocmd MyAutoCmd FileType help nnoremap <buffer> q <C-w>c
 " plugin, filetypeの設定 {{{1
 
 " unite {{{2
+" default action
+call unite#custom#default_action('word', 'append')
+" unite in insert mode
+inoremap <silent><expr> <C-z>
+      \ unite#start_complete('register', { 'input': unite#get_cur_text() })
 " The prefix key.
 nnoremap [unite] <Nop>
 nmap     <Space>u      [unite]
