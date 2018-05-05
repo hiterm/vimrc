@@ -11,8 +11,8 @@ if = "(has('nvim') || v:version >= 800) && has('python3')"
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
-if = "!((has('nvim') || v:version >= 800) && has('python3'))"
 depends = 'unite-outline'
+# if = "!((has('nvim') || v:version >= 800) && has('python3'))"
 
 [[plugins]]
 repo = 'Shougo/vimfiler'
