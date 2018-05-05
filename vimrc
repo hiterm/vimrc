@@ -172,6 +172,7 @@ autocmd MyAutoCmd FileType help nnoremap <buffer> q <C-w>c
 " plugin, filetypeの設定 {{{1
 
 " denite {{{2
+call denite#custom#option('default', 'prompt', '>')
 " The prefix key.
 nnoremap [denite] <Nop>
 nmap     <Space>u      [denite]
@@ -186,7 +187,7 @@ nnoremap <silent> [denite]o :<C-u>Denite<Space>-mode=normal<Space>unite:bookmark
 nnoremap <silent> [denite]r :<C-u>Denite<Space>-mode=normal<Space>file_mru<CR>
 nnoremap <silent> [denite]e :<C-u>Denite<Space>-mode=normal<Space>register<CR>
 nnoremap <silent> [denite]y :<C-u>Denite<Space>-mode=normal<Space>neoyank<CR>
-nnoremap <silent> [denite]l :<C-u>Denite<Space>-mode=normal<Space>location_list<CR>
+nnoremap <silent> [denite]l :<C-u>Denite<Space>line<CR>
 nnoremap <silent> ,vr :Denite -resume<CR>
 
 
