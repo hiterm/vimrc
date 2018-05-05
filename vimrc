@@ -171,28 +171,24 @@ autocmd MyAutoCmd FileType help nnoremap <buffer> q <C-w>c
 
 " plugin, filetypeの設定 {{{1
 
-" unite {{{2
-" default action
-call unite#custom#default_action('word', 'append')
-" unite in insert mode
-inoremap <silent><expr> <C-z>
-      \ unite#start_complete('register', { 'input': unite#get_cur_text() })
+" denite {{{2
+call denite#custom#option('default', 'prompt', '>')
 " The prefix key.
-nnoremap [unite] <Nop>
-nmap     <Space>u      [unite]
+nnoremap [denite] <Nop>
+nmap     <Space>u      [denite]
 
-" unite.vim keymap
+" denite.vim keymap
 " https://github.com/alwei/dotfiles/blob/3760650625663f3b08f24bc75762ec843ca7e112/.vimrc
-nnoremap [unite]u  :<C-u>Unite<Space>
-nnoremap [unite]<Space> :<C-u>Unite<Space>
-nnoremap <silent> [unite]f :<C-u>Unite<Space>file<Space>file/new<CR>
-nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
-nnoremap <silent> [unite]o :<C-u>Unite<Space>bookmark<CR>
-nnoremap <silent> [unite]r :<C-u>Unite<Space>file_mru<CR>
-nnoremap <silent> [unite]e :<C-u>Unite<Space>register<CR>
-nnoremap <silent> [unite]y :<C-u>Unite<Space>history/yank<CR>
-nnoremap <silent> ,vr :UniteResume<CR>
-nnoremap <silent> [unite]l :<C-u>Unite<Space>location_list<CR>
+nnoremap [denite]u          :<C-u>Denite<Space>-mode=normal<Space>
+nnoremap [denite]<Space>    :<C-u>Denite<Space>-mode=normal<Space>
+nnoremap <silent> [denite]f :<C-u>Denite<Space>-mode=normal<Space>file<Space>file:new<CR>
+nnoremap <silent> [denite]b :<C-u>Denite<Space>-mode=normal<Space>buffer<CR>
+nnoremap <silent> [denite]o :<C-u>Denite<Space>-mode=normal<Space>unite:bookmark<CR>
+nnoremap <silent> [denite]r :<C-u>Denite<Space>-mode=normal<Space>file_mru<CR>
+nnoremap <silent> [denite]e :<C-u>Denite<Space>-mode=normal<Space>register<CR>
+nnoremap <silent> [denite]y :<C-u>Denite<Space>-mode=normal<Space>neoyank<CR>
+nnoremap <silent> [denite]l :<C-u>Denite<Space>line<CR>
+nnoremap <silent> ,vr :Denite -resume<CR>
 
 
 " vimtex and latex {{{2
