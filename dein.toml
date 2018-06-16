@@ -100,6 +100,7 @@ let g:shebang#shebangs = {
 [[plugins]]
 repo = 'w0rp/ale'
 hook_add = '''
+let g:ale_lint_on_text_changed = 0
 let g:ale_linters = {'ruby': ['ruby', 'rubocop']}
 if !has('gui_macvim')
   let g:ale_sign_error = '⨉'
