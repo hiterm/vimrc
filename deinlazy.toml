@@ -102,6 +102,16 @@ on_ft = ['ruby', 'haml', 'eruby']
 repo = 'alvan/vim-closetag'
 on_ft = 'html'
 
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+on_ft = ['c', 'cpp']
+hook_add = '''
+if has('mac')
+  let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+  let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
+endif
+'''
+
 # ここまで
 
 [[plugins]]
