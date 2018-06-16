@@ -43,8 +43,6 @@ call lexima#add_rule({'char': '<', 'input_after': '>',
       \ 'filetype': 'lilypond'})
 
 " html
-call lexima#add_rule({'char': '<', 'input_after': '>',
-      \ 'filetype': 'html'})
 call lexima#add_rule({'char': '<BS>',
       \ 'at': '<\%#>', 'delete': 1,
       \ 'filetype': 'html'})

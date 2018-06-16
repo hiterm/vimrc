@@ -92,6 +92,10 @@ on_ft = ['ruby', 'haml', 'eruby']
 repo = 'basyura/unite-rails'
 on_ft = ['ruby', 'haml', 'eruby']
 
+[[plugins]]
+repo = 'alvan/vim-closetag'
+on_ft = 'html'
+
 # ここまで
 
 [[plugins]]
