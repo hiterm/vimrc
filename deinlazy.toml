@@ -3,12 +3,6 @@ repo = 'Shougo/deoplete.nvim'
 if = "has('nvim') && has('python3')"
 on_event = 'InsertEnter'
 depends = 'neco-look'
-hook_post_source = '''
-let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
-'''
 
 [[plugins]]
 repo = 'Shougo/neocomplete'
@@ -39,7 +33,7 @@ repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 hook_post_source = 'source ~/.vim/lexima.rc.vim'
 
-# syntax pluins
+# filetype pluins
 
 [[plugins]]
 repo = 'lervag/vimtex'
@@ -95,6 +89,21 @@ on_ft = ['ruby', 'haml', 'eruby']
 [[plugins]]
 repo = 'alvan/vim-closetag'
 on_ft = 'html'
+
+[[plugins]]
+# repo = 'tweekmonster/deoplete-clang2'
+repo = 'zchee/deoplete-clang'
+on_ft = ['c', 'cpp']
+hook_add = '''
+if has('mac')
+  let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+  let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
+endif
+'''
+
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+on_ft = ['c', 'cpp']
 
 # ここまで
 
