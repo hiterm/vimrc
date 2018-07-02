@@ -3,6 +3,17 @@ repo = 'Shougo/deoplete.nvim'
 if = "has('nvim') && has('python3')"
 on_event = 'InsertEnter'
 depends = 'neco-look'
+hook_post_source = '''
+call deoplete#custom#var('omni', 'input_patterns', {
+      \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
+      \ 'java': '[^. *\t]\.\w*',
+      \ 'php': '\w+|[^. \t]->\w*|\w+::\w*',
+      \})
+call deoplete#custom#source('omni', 'functions', {
+      \ 'ruby':  'rubycomplete#Complete',
+      \ 'javascript': ['tern#Complete', 'jspc#omni']
+      \})
+'''
 
 [[plugins]]
 repo = 'Shougo/neocomplete'
