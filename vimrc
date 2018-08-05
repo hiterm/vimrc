@@ -92,19 +92,15 @@ let g:indentLine_char = '¦'
 :set list lcs=tab:\|\ 
 
 " インデントの深さ
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 " ソフトタブ
 set expandtab
 
 augroup MyAutoCmd
-  autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType tex setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType eruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType sh setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType java setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 
 " MetaキーをOptionキーに
