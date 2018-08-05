@@ -144,6 +144,5 @@ build = './install.sh'
 if = "has('nvim') && has('python3')"
 hook_add = '''
 let g:LanguageClient_serverCommands = {
-      \ 'ruby': ['solargraph', 'stdio']
       \ }
 '''
