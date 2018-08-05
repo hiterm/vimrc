@@ -171,23 +171,26 @@ autocmd MyAutoCmd FileType help nnoremap <buffer> q <C-w>c
 " plugin, filetypeの設定 {{{1
 
 " denite {{{2
-call denite#custom#option('default', 'prompt', '>')
-" The prefix key.
-nnoremap [denite] <Nop>
-nmap     <Space>u      [denite]
+if dein#tap('deoplete.nvim')
+  call denite#custom#option('default', 'prompt', '>')
+  " The prefix key.
+  nnoremap [denite] <Nop>
+  nmap     <Space>u      [denite]
 
-" denite.vim keymap
-" https://github.com/alwei/dotfiles/blob/3760650625663f3b08f24bc75762ec843ca7e112/.vimrc
-nnoremap [denite]u          :<C-u>Denite<Space>-mode=normal<Space>
-nnoremap [denite]<Space>    :<C-u>Denite<Space>-mode=normal<Space>
-nnoremap <silent> [denite]f :<C-u>Denite<Space>-mode=normal<Space>file<Space>file:new<CR>
-nnoremap <silent> [denite]b :<C-u>Denite<Space>-mode=normal<Space>buffer<CR>
-nnoremap <silent> [denite]o :<C-u>Denite<Space>-mode=normal<Space>unite:bookmark<CR>
-nnoremap <silent> [denite]r :<C-u>Denite<Space>-mode=normal<Space>file_mru<CR>
-nnoremap <silent> [denite]e :<C-u>Denite<Space>-mode=normal<Space>register<CR>
-nnoremap <silent> [denite]y :<C-u>Denite<Space>-mode=normal<Space>neoyank<CR>
-nnoremap <silent> [denite]l :<C-u>Denite<Space>line<CR>
-nnoremap <silent> ,vr :Denite -resume<CR>
+  " denite.vim keymap
+  " https://github.com/alwei/dotfiles/blob/3760650625663f3b08f24bc75762ec843ca7e112/.vimrc
+  nnoremap [denite]u          :<C-u>Denite<Space>-mode=normal<Space>
+  nnoremap [denite]<Space>    :<C-u>Denite<Space>-mode=normal<Space>
+  nnoremap <silent> [denite]f :<C-u>Denite<Space>-mode=normal<Space>file<Space>file:new<CR>
+  nnoremap <silent> [denite]b :<C-u>Denite<Space>-mode=normal<Space>buffer<CR>
+  nnoremap <silent> [denite]o :<C-u>Denite<Space>-mode=normal<Space>unite:bookmark<CR>
+  nnoremap <silent> [denite]r :<C-u>Denite<Space>-mode=normal<Space>file_mru<CR>
+  nnoremap <silent> [denite]e :<C-u>Denite<Space>-mode=normal<Space>register<CR>
+  nnoremap <silent> [denite]y :<C-u>Denite<Space>-mode=normal<Space>neoyank<CR>
+  nnoremap <silent> [denite]l :<C-u>Denite<Space>line<CR>
+  nnoremap <silent> [denite]h :<C-u>Denite<Space>help<CR>
+  nnoremap <silent> ,vr :Denite -resume<CR>
+endif
 
 
 " vimtex and latex {{{2
