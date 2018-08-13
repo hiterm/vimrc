@@ -11,6 +11,7 @@ call deoplete#custom#var('omni', 'input_patterns', {
 call deoplete#custom#source('omni', 'functions', {
       \ 'javascript': ['tern#Complete', 'jspc#omni']
       \})
+call deoplete#custom#source('look', 'rank', 50)
 '''
 
 [[plugins]]
