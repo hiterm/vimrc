@@ -115,9 +115,6 @@ endif
 [[plugins]]
 repo = 'racer-rust/vim-racer'
 on_ft = ['rust']
-hook_add = '''
-let g:racer_cmd = '~/.cargo/bin/racer'
-'''
 
 # filetype pluins ここまで
 
