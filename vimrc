@@ -194,13 +194,15 @@ let g:tex_flavor='latex'
 let g:tex_conceal = ''
 let g:vimtex_imaps_enabled = 0
 " latexmk
-let g:vimtex_compiler_latexmk = {
-      \ 'options' : [
-      \   '-verbose',
-      \   '-file-line-error',
-      \   '-synctex=1',
-      \   '-interaction=nonstopmode',
-      \ ],
+let g:vimtex_compiler_latexmk_engines = {
+      \ '_'                : '-pdfdvi',
+      \ 'uplatex'          : '-pdfdvi',
+      \ 'pdflatex'         : '-pdf',
+      \ 'lualatex'         : '-lualatex',
+      \ 'xelatex'          : '-xelatex',
+      \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+      \ 'context (luatex)' : '-pdf -pdflatex=context',
+      \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
       \}
 " viewer
 if has('mac')
