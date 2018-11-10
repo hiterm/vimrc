@@ -116,6 +116,10 @@ endif
 repo = 'racer-rust/vim-racer'
 on_ft = ['rust']
 
+[[plugins]]
+repo = 'neovimhaskell/haskell-vim'
+on_ft = ['haskell']
+
 # filetype pluins ここまで
 
 [[plugins]]
