@@ -168,7 +168,7 @@ autocmd MyAutoCmd FileType help nnoremap <buffer> q <C-w>c
 " plugin, filetypeの設定 {{{1
 
 " denite {{{2
-if dein#tap('deoplete.nvim')
+if dein#tap('denite.nvim')
   call denite#custom#option('default', 'prompt', '>')
   " The prefix key.
   nnoremap [denite] <Nop>
