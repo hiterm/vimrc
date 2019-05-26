@@ -40,6 +40,18 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 
+" omni completion
+" Enable omni completion.
+set omnifunc=syntaxcomplete#Complete
+augroup MyAutoCmd
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup END
+
 " Enable heavy omni completion.
 " texはdeinlazy.tomlに
 if !exists('g:neocomplete#sources#omni#input_patterns')

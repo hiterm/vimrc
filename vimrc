@@ -231,37 +231,6 @@ augroup MyAutoCmd
   autocmd FileType tex imap <buffer> 。 ．
 augroup END
 
-
-" omni completion{{{2
-" Enable omni completion.
-set omnifunc=syntaxcomplete#Complete
-augroup MyAutoCmd
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup END
-
-" deoplete {{{2
-if dein#tap('deoplete.nvim')
-  " Use deoplete.
-  let g:deoplete#enable_at_startup = 1
-  " Use smartcase.
-  let g:deoplete#enable_smart_case = 1
-
-  " <C-h>, <BS>: close popup and delete backword char.
-  inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
-
-  " <CR>: close popup and save indent.
-  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-  function! s:my_cr_function() abort
-    return deoplete#close_popup() . "\<CR>"
-  endfunction
-endif
-
 " neosnippet {{{2
 " Plugin key-mappings.
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
