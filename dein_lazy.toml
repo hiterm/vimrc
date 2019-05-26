@@ -1,46 +1,4 @@
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-if = "has('nvim') && has('python3')"
-on_event = 'InsertEnter'
-depends = 'neco-look'
-hook_post_source = '''
-call deoplete#custom#var('omni', 'input_patterns', {
-      \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
-      \ 'java': '[^. *\t]\.\w*',
-      \ 'php': '\w+|[^. \t]->\w*|\w+::\w*',
-      \})
-call deoplete#custom#source('omni', 'functions', {
-      \ 'ruby':  'rubycomplete#Complete',
-      \ 'javascript': ['tern#Complete', 'jspc#omni']
-      \})
-call deoplete#custom#source('look', 'rank', 50)
-'''
-
-[[plugins]]
-repo = 'Shougo/neocomplete'
-if = "!(has('nvim') && has('python3')) && has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 )"
-on_event = 'InsertEnter'
-depends = 'neco-look'
-hook_add = 'source ~/.vim/neocomplete.rc.vim'
-hook_post_source = '''
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.tex =
-      \ g:vimtex#re#neocomplete
-'''
-
-[[plugins]]
-repo = 'Shougo/neocomplcache'
-if = "!(has('nvim') && has('python3')) && !(has('lua') && ( (v:version == 703 && has('patch885')) || v:version >= 704 ))"
-on_event = 'InsertEnter'
-hook_add = 'source ~/.vim/neocomplcache.rc.vim'
-
-[[plugins]]
-repo = 'ujihisa/neco-look'
-if = "executable('look')"
-
-[[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 hook_post_source = 'source ~/.vim/lexima.rc.vim'
@@ -53,10 +11,6 @@ on_ft = 'tex'
 
 [[plugins]]
 repo = 'hynek/vim-python-pep8-indent'
-on_ft = 'python'
-
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
 on_ft = 'python'
 
 [[plugins]]
@@ -91,30 +45,8 @@ repo = 'leafgarland/typescript-vim'
 on_ft = 'typescript'
 
 [[plugins]]
-repo = 'tpope/vim-rails'
-on_ft = ['ruby', 'haml', 'eruby']
-
-[[plugins]]
-repo = 'basyura/unite-rails'
-on_ft = ['ruby', 'haml', 'eruby']
-
-[[plugins]]
 repo = 'alvan/vim-closetag'
 on_ft = 'html'
-
-[[plugins]]
-repo = 'zchee/deoplete-clang'
-on_ft = ['c', 'cpp']
-hook_add = '''
-if has('mac')
-  let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
-  let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
-endif
-'''
-
-[[plugins]]
-repo = 'racer-rust/vim-racer'
-on_ft = ['rust']
 
 [[plugins]]
 repo = 'neovimhaskell/haskell-vim'
