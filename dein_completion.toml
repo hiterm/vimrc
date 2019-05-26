@@ -1,4 +1,14 @@
 [[plugins]]
+repo = 'neoclide/coc.nvim'
+merge = 0
+build =  './install.sh nightly'
+on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'neoclide/coc-neco'
+on_event = 'InsertEnter'
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if = "has('nvim') && has('python3')"
 on_event = 'InsertEnter'
