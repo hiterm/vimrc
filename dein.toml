@@ -119,9 +119,6 @@ endif
 
 # git
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
 repo = 'airblade/vim-gitgutter'
 
 # Japanese
@@ -161,4 +158,3 @@ repo = 'jacoborus/tender'
 # others
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-
