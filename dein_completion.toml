@@ -3,7 +3,3 @@ repo = 'neoclide/coc.nvim'
 merge = 0
 build =  './install.sh nightly'
 on_event = 'InsertEnter'
-
-[[plugins]]
-repo = 'ujihisa/neco-look'
-if = "executable('look')"
