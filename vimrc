@@ -99,6 +99,10 @@ set shiftwidth=2
 " ソフトタブ
 set expandtab
 
+if has('nvim')
+  set inccommand=split
+endif
+
 augroup MyAutoCmd
   autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType java setlocal tabstop=4 softtabstop=4 shiftwidth=4
@@ -169,7 +173,10 @@ autocmd MyAutoCmd FileType help nnoremap <buffer> q <C-w>c
 
 " denite {{{2
 if dein#tap('denite.nvim')
-  call denite#custom#option('default', 'prompt', '>')
+  call denite#custom#option('default', {
+        \ 'prompt': '>',
+        \ 'split': 'floating',
+        \ })
   " The prefix key.
   nnoremap [denite] <Nop>
   nmap     <Space>u      [denite]
