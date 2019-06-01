@@ -5,9 +5,5 @@ build =  './install.sh nightly'
 on_event = 'InsertEnter'
 
 [[plugins]]
-repo = 'neoclide/coc-neco'
-on_event = 'InsertEnter'
-
-[[plugins]]
 repo = 'ujihisa/neco-look'
 if = "executable('look')"
