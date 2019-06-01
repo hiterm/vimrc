@@ -131,6 +131,34 @@ repo = 'haya14busa/vim-migemo'
 [[plugins]]
 repo = 'deton/jasegment.vim'
 
+# filetype
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
+
+[[plugins]]
+repo = 'neovimhaskell/haskell-vim'
+on_ft = ['haskell']
+
+[[plugins]]
+repo = 'hynek/vim-python-pep8-indent'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'matze/vim-lilypond'
+on_ft = 'lilypond'
+
+# colorscheme
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'jacoborus/tender'
+
 # others
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+
