@@ -66,8 +66,8 @@ set number
 set wildmenu
 
 " colorscheme
-call dein#source(['jellybeans.vim'])
-colorscheme jellybeans
+call dein#source(['gruvbox'])
+colorscheme gruvbox
 
 " 大文字小文字を区別しない
 set ignorecase
