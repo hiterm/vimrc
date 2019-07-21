@@ -88,13 +88,4 @@ repo = 'Shougo/unite-outline'
 
 # colorscheme
 [[plugins]]
-repo = 'nanotech/jellybeans.vim'
-
-[[plugins]]
-repo = 'altercation/vim-colors-solarized'
-
-[[plugins]]
-repo = 'jacoborus/tender'
-
-[[plugins]]
-repo = 'morhetz/gruvbox'
+repo = 'arcticicestudio/nord-vim'

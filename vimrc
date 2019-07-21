@@ -65,9 +65,16 @@ set number
 " コマンドラインを便利に
 set wildmenu
 
+" 現在行をハイライト
+set cursorline
+
 " colorscheme
-call dein#source(['gruvbox'])
-colorscheme gruvbox
+set termguicolors
+call dein#source(['nord-vim'])
+let g:nord_cursor_line_number_background = 1
+let g:nord_uniform_diff_background = 1
+colorscheme nord
+let g:lightline.colorscheme = 'nord'
 
 " 大文字小文字を区別しない
 set ignorecase
