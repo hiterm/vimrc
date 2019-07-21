@@ -86,6 +86,9 @@ set hlsearch
 " ビープ音をvisualbellに
 set visualbell
 
+" マウス
+set mouse=a
+
 " current directoryを自動移動
 augroup MyAutoCmd
   autocmd BufEnter * silent! lcd %:p:h
