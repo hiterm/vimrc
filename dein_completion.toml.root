@@ -1,5 +1,0 @@
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-merge = 0
-build =  'yarn install --frozen-lockfile'
-on_event = 'InsertEnter'
