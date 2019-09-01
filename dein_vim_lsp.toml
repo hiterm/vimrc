@@ -87,7 +87,7 @@ repo = 'htlsne/asyncomplete-look'
 hook_add ='''
 au User asyncomplete_setup call asyncomplete#register_source({
     \ 'name': 'look',
-    \ 'whitelist': ['text'],
+    \ 'whitelist': ['text', 'gitcommit'],
     \ 'completor': function('asyncomplete#sources#look#completor'),
     \ })
 '''
