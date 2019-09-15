@@ -118,6 +118,11 @@ augroup MyAutoCmd
   autocmd FileType java setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 
+" json
+augroup MyAutoCmd
+  autocmd FileType json setlocal conceallevel=0
+augroup END
+
 " MetaキーをOptionキーに
 if has('gui_macvim')
   set macmeta
