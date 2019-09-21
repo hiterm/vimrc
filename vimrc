@@ -212,6 +212,8 @@ if dein#tap('denite.nvim')
 	  \ denite#do_map('open_filter_buffer')
 	  nnoremap <silent><buffer><expr> <Space>
 	  \ denite#do_map('toggle_select').'j'
+	  nnoremap <silent><buffer><expr> <Tab>
+	  \ denite#do_map('choose_action')
 	endfunction
 
   " The prefix key.
@@ -224,7 +226,7 @@ if dein#tap('denite.nvim')
   nnoremap [denite]<Space>    :<C-u>Denite<Space>
   nnoremap <silent> [denite]f :<C-u>Denite<Space>file<Space>file:new<CR>
   nnoremap <silent> [denite]b :<C-u>Denite<Space>buffer<CR>
-  nnoremap <silent> [denite]o :<C-u>Denite<Space>unite:bookmark<CR>
+  nnoremap <silent> [denite]o :<C-u>Denite<Space>dirmark<CR>
   nnoremap <silent> [denite]r :<C-u>Denite<Space>file_mru<CR>
   nnoremap <silent> [denite]e :<C-u>Denite<Space>register<CR>
   nnoremap <silent> [denite]y :<C-u>Denite<Space>neoyank<CR>
