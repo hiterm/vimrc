@@ -37,6 +37,10 @@ let g:dein#install_log_filename = s:dein_dir . '/dein.log'
 filetype plugin indent on
 syntax enable
 
+" Note: In Vim initializing, you must call the
+" "hook_post_source" hooks manually in |VimEnter| if needed.
+autocmd VimEnter * call dein#call_hook('post_source')
+
 " End dein Scripts-------------------------
 
 " 基本設定 {{{1
