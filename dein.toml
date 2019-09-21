@@ -7,7 +7,7 @@ let g:dein#types#git#clone_depth=1
 [[plugins]]
 repo = 'haya14busa/dein-command.vim'
 
-# UI
+# denite and unite
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 if = "(has('nvim') || v:version >= 800) && has('python3')"
@@ -35,10 +35,10 @@ repo = 'Shougo/neoyank.vim'
 [[plugins]]
 repo = 'chemzqm/unite-location'
 
+# appearance
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = 'let g:indent_guides_enable_on_vim_startup = 1'
-
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
