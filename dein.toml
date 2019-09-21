@@ -111,7 +111,13 @@ function! s:defx_my_settings() abort
 endfunction
 
 " mapping
-nnoremap <silent> <C-e> :Defx -split=vertical -winwidth=`&columns/3`<CR>
+nnoremap <silent> <C-e> :Defx<CR>
+'''
+hook_post_source = '''
+call defx#custom#column('icon', {
+    \ 'directory_icon': '▸',
+    \ 'opened_icon': '▾',
+    \ })
 '''
 
 [[plugins]]
@@ -141,10 +147,12 @@ repo = 'itchyny/lightline.vim'
 hook_add = 'source ~/.vim/lightline.rc.vim'
 
 [[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
+repo = 'ntpeters/vim-better-whitespace'
 hook_add = '''
-let g:extra_whitespace_ignored_filetypes = ['defx', 'markdown']
+let g:better_whitespace_enabled=1
+let g:better_whitespace_filetypes_blacklist = ['defx', 'markdown']
 '''
+
 
 [[plugins]]
 repo = 'luochen1990/rainbow'
