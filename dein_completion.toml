@@ -51,7 +51,7 @@ call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options
 '''
 
 [[plugins]]
-repo = 'prabirshrestha/asyncomplete-file.vim'
+repo = 'htlsne/asyncomplete-file.vim'
 hook_add = '''
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
     \ 'name': 'file',
