@@ -1,5 +1,5 @@
 " mapping
-nnoremap <silent> <C-e> :Defx -split=vertical -winwidth=50 -toggle<CR>
+nnoremap <silent> <C-e> :Defx -split=vertical -winwidth=`max([30, &columns / 3])` -toggle<CR>
 
 " configuration
 autocmd FileType defx call s:defx_my_settings()
