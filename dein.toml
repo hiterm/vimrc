@@ -153,3 +153,11 @@ on_ft = 'lilypond'
 # others
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'kassio/neoterm'
+hook_add = '''
+let g:neoterm_default_mod = 'vertical belowright'
+nnoremap <C-g> :Ttoggle<CR><C-w><C-w>i
+tnoremap <C-g> <C-\><C-n>:Ttoggle<CR>
+'''
