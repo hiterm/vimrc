@@ -65,6 +65,7 @@ set ambiwidth=double
 
 " 行番号を表示
 set number
+set relativenumber
 
 " コマンドラインを便利に
 set wildmenu
@@ -77,7 +78,13 @@ set termguicolors
 call dein#source(['nord-vim'])
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_diff_background = 1
+" override colors
+augroup nord-overrides
+  autocmd!
+  autocmd ColorScheme nord highlight LineNr guifg='#616E88'
+augroup END
 colorscheme nord
+" lightline
 let g:lightline.colorscheme = 'nord'
 
 " 大文字小文字を区別しない

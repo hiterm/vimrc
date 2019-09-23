@@ -91,6 +91,7 @@ repo = 'Shougo/neco-syntax'
 
 [[plugins]]
 repo = 'htlsne/asyncomplete-look'
+# repo = '~/.ghq/github.com/htlsne/asyncomplete-look'
 hook_add ='''
 au User asyncomplete_setup call asyncomplete#register_source({
     \ 'name': 'look',
