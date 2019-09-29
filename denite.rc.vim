@@ -30,11 +30,12 @@ nmap     <Space>u      [denite]
 nnoremap [denite]u          :<C-u>Denite<Space>
 nnoremap [denite]<Space>    :<C-u>Denite<Space>
 nnoremap <silent> [denite]f :<C-u>Denite<Space>file<Space>file:new<CR>
-nnoremap <silent> [denite]b :<C-u>Denite<Space>buffer<CR>
+nnoremap <silent> [denite]b :<C-u>Denite<Space>buffer -auto-action=preview<CR>
 nnoremap <silent> [denite]o :<C-u>Denite<Space>dirmark<CR>
-nnoremap <silent> [denite]r :<C-u>Denite<Space>file_mru<CR>
+nnoremap <silent> [denite]r :<C-u>Denite<Space>file_mru -auto-action=preview<CR>
 nnoremap <silent> [denite]e :<C-u>Denite<Space>register<CR>
 nnoremap <silent> [denite]y :<C-u>Denite<Space>neoyank<CR>
 nnoremap <silent> [denite]l :<C-u>Denite<Space>line<CR>
 nnoremap <silent> [denite]h :<C-u>Denite<Space>help<CR>
+nnoremap <silent> [denite]g :<C-u>Denite<Space>grep -auto-action=preview<CR>
 nnoremap <silent> ,vr :Denite -resume<CR>
