@@ -86,6 +86,7 @@ repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
 let g:indent_guides_enable_on_vim_startup = 1
 autocmd FileType defx IndentGuidesDisable
+autocmd FileType neoterm IndentGuidesDisable
 '''
 
 [[plugins]]
@@ -208,6 +209,7 @@ on_ft = 'lilypond'
 repo = 'kassio/neoterm'
 hook_add = '''
 let g:neoterm_default_mod = 'vertical belowright'
+tnoremap <C-]> <C-\><C-n>
 nnoremap <C-g> :Ttoggle<CR><C-w>wi
 tnoremap <C-g> <C-\><C-n>:Ttoggle<CR>
 " Move window by name
@@ -227,7 +229,7 @@ function! NeotermRunAndOpen(cmd)
   call win_gotoid(l:current_winid)
 endfunction
 " use like quickrun
-autocmd FileType ruby nnoremap ,r :call NeoternRunAndOpen('ruby %')<CR>
-autocmd FileType python nnoremap ,r :call NeoternRunAndOpen('python %')<CR>
-autocmd FileType rust nnoremap ,r :call NeoternRunAndOpen('cargo run')<CR>
+autocmd FileType ruby nnoremap <Leader>r :call NeotermRunAndOpen('ruby %')<CR>
+autocmd FileType python nnoremap <Leader>r :call NeotermRunAndOpen('python %')<CR>
+autocmd FileType rust nnoremap <Leader>r :call NeotermRunAndOpen('cargo run')<CR>
 '''
