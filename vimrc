@@ -114,15 +114,21 @@ set softtabstop=2
 set shiftwidth=2
 " ソフトタブ
 set expandtab
-
-if has('nvim')
-  set inccommand=split
-endif
-
+" ファイルタイプごとのインデント深さ
 augroup MyAutoCmd
   autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType java setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
+" インデント深さ変更コマンド
+function! ChangeIndent(n)
+  execute 'setlocal tabstop=' . a:n . ' softtabstop=' . a:n . ' shiftwidth=' . a:n
+  IndentGuidesEnable
+endfunction
+command! -nargs=1 ChangeIndent call ChangeIndent(<f-args>)
+
+if has('nvim')
+  set inccommand=split
+endif
 
 " json
 augroup MyAutoCmd
@@ -186,9 +192,6 @@ set tags+=./tags;
 
 " 保存しなくてもバッファ間の移動ができるように
 set hidden
-
-" helpをqで閉じる
-autocmd MyAutoCmd FileType help nnoremap <buffer> q <C-w>c
 
 " cd to current file
 command! Cd lcd %:p:h
