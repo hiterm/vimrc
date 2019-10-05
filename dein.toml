@@ -208,14 +208,26 @@ on_ft = 'lilypond'
 repo = 'kassio/neoterm'
 hook_add = '''
 let g:neoterm_default_mod = 'vertical belowright'
-nnoremap <C-g> :Ttoggle<CR><C-w><C-w>i
+nnoremap <C-g> :Ttoggle<CR><C-w>wi
 tnoremap <C-g> <C-\><C-n>:Ttoggle<CR>
-" use like quickrun
-function! Neoterm_run_and_open(cmd)
+" Move window by name
+function! WinByBufname(bufname)
+    let bufmap = map(range(1, winnr('$')), '[bufname(winbufnr(v:val)), v:val]')
+    let thewindow = filter(bufmap, 'v:val[0] =~ a:bufname')[0][1]
+    execute thewindow 'wincmd w'
+endfunction
+" Run and open neoterm window
+function! NeotermRunAndOpen(cmd)
+  let l:current_winid = win_getid()
   execute 'T ' . a:cmd
   Topen
+  call WinByBufname('#neoterm')
+  " 自動スクロールするためにファイル末尾へ移動
+  normal G
+  call win_gotoid(l:current_winid)
 endfunction
-autocmd FileType ruby nnoremap ,r :call Neoterm_run_and_open('ruby %')<CR>
-autocmd FileType python nnoremap ,r :call Neoterm_run_and_open('python %')<CR>
-autocmd FileType rust nnoremap ,r :call Neoterm_run_and_open('cargo run')<CR>
+" use like quickrun
+autocmd FileType ruby nnoremap ,r :call NeoternRunAndOpen('ruby %')<CR>
+autocmd FileType python nnoremap ,r :call NeoternRunAndOpen('python %')<CR>
+autocmd FileType rust nnoremap ,r :call NeoternRunAndOpen('cargo run')<CR>
 '''
