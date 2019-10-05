@@ -100,11 +100,6 @@ set visualbell
 " マウス
 set mouse=a
 
-" current directoryを自動移動
-augroup MyAutoCmd
-  autocmd BufEnter * silent! lcd %:p:h
-augroup END
-
 " insertモードでEmacs風のカーソル移動
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
@@ -194,6 +189,22 @@ set hidden
 
 " helpをqで閉じる
 autocmd MyAutoCmd FileType help nnoremap <buffer> q <C-w>c
+
+" cd to current file
+command! Cd lcd %:p:h
+" cd to git root
+function! s:git_root_dir()
+    if(system('git rev-parse --is-inside-work-tree') == "true\n")
+        return system('git rev-parse --show-cdup')
+    else
+        echoerr '!!!current directory is outside git working tree!!!'
+    endif
+endfunction
+function! s:cd_git_root()
+  execute 'lcd ' . s:git_root_dir()
+  pwd
+endfunction
+command! Gcd call s:cd_git_root()
 
 " plugin, filetypeの設定 {{{1
 " vimtex and latex {{{2
