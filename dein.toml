@@ -147,6 +147,9 @@ repo = 'tpope/vim-surround'
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
+repo = 'terryma/vim-expand-region'
+
+[[plugins]]
 repo = 'Shougo/context_filetype.vim'
 depends = 'vim-precious'
 
