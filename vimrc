@@ -157,12 +157,6 @@ nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
 
-" jkで表示上の行を動くように
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
-
 " spell check
 set spelllang=en,cjk
 
