@@ -38,4 +38,5 @@ nnoremap <silent> [denite]y :<C-u>Denite<Space>neoyank<CR>
 nnoremap <silent> [denite]l :<C-u>Denite<Space>line<CR>
 nnoremap <silent> [denite]h :<C-u>Denite<Space>help<CR>
 nnoremap <silent> [denite]g :<C-u>Denite<Space>grep -auto-action=preview<CR>
+nnoremap <silent> [denite]c :<C-u>Denite<Space>command<CR>
 nnoremap <silent> ,vr :Denite -resume<CR>

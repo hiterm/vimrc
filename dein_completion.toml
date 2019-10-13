@@ -4,6 +4,10 @@ repo = 'prabirshrestha/async.vim'
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
+" for debug
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file = expand('~/vim-lsp.log')
+
 let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
 if executable('solargraph')
     " gem install solargraph
@@ -95,7 +99,7 @@ repo = 'htlsne/asyncomplete-look'
 hook_add ='''
 au User asyncomplete_setup call asyncomplete#register_source({
     \ 'name': 'look',
-    \ 'whitelist': ['text', 'gitcommit'],
+    \ 'whitelist': ['text', 'gitcommit', 'markdown'],
     \ 'completor': function('asyncomplete#sources#look#completor'),
     \ })
 '''
