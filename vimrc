@@ -147,6 +147,11 @@ augroup MyAutoCmd
   autocmd FileType json setlocal conceallevel=0
 augroup END
 
+" json
+augroup MyAutoCmd
+  autocmd FileType markdown setlocal conceallevel=0
+augroup END
+
 " MetaキーをOptionキーに
 if has('gui_macvim')
   set macmeta
