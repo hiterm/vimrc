@@ -44,3 +44,21 @@ repo = 'deoplete-plugins/deoplete-zsh'
 [[plugins]]
 repo = 'tbodt/deoplete-tabnine'
 build = './install.sh'
+
+[[plugins]]
+repo = 'ncm2/float-preview.nvim'
+hook_add = '''
+set completeopt-=preview
+function! s:set_preview_docked()
+  if winwidth('%') > 80
+    let g:float_preview#docked = 0
+  else
+    let g:float_preview#docked = 1
+  endif
+endfunction
+call s:set_preview_docked()
+augroup MyFloadPreview
+  autocmd!
+  autocmd VimResized * call s:set_preview_docked()
+augroup END
+'''
