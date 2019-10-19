@@ -2,7 +2,10 @@
 nnoremap <silent> <C-e> :Defx -split=vertical -winwidth=`max([30, &columns / 3])` -toggle<CR>
 
 " configuration
-autocmd FileType defx call s:defx_my_settings()
+augroup MyDefx
+  autocmd!
+  autocmd FileType defx call s:defx_my_settings()
+augroup END
 function! s:defx_my_settings() abort
   " Define mappings
   nnoremap <silent><buffer><expr> <CR>

@@ -1,7 +1,10 @@
 " denite
 
 " Define mappings
-autocmd FileType denite call s:denite_my_settings()
+augroup MyDenite
+  autocmd!
+  autocmd FileType denite call s:denite_my_settings()
+augroup END
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>
         \ denite#do_map('do_action')

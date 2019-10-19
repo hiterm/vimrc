@@ -85,8 +85,11 @@ merged = 0
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
 let g:indent_guides_enable_on_vim_startup = 1
-autocmd FileType defx IndentGuidesDisable
-autocmd FileType neoterm IndentGuidesDisable
+augroup MyIndentGuides
+  autocmd!
+  autocmd FileType defx IndentGuidesDisable
+  autocmd FileType neoterm IndentGuidesDisable
+augroup END
 '''
 
 [[plugins]]
@@ -99,7 +102,10 @@ hook_add = '''
 let g:better_whitespace_enabled=1
 let g:better_whitespace_filetypes_blacklist = ['defx', 'markdown']
 let g:better_whitespace_operator=''
-autocmd FileType help DisableWhitespace
+augroup MyIndentGuides
+  autocmd!
+  autocmd FileType help DisableWhitespace
+augroup END
 '''
 
 
@@ -230,7 +236,10 @@ function! NeotermRunAndOpen(cmd)
   call win_gotoid(l:current_winid)
 endfunction
 " use like quickrun
-autocmd FileType ruby nnoremap <Leader>r :call NeotermRunAndOpen('ruby %')<CR>
-autocmd FileType python nnoremap <Leader>r :call NeotermRunAndOpen('python %')<CR>
-autocmd FileType rust nnoremap <Leader>r :call NeotermRunAndOpen('cargo run')<CR>
+augroup MyNeoterm
+  autocmd!
+  autocmd FileType ruby nnoremap <Leader>r :call NeotermRunAndOpen('ruby %')<CR>
+  autocmd FileType python nnoremap <Leader>r :call NeotermRunAndOpen('python %')<CR>
+  autocmd FileType rust nnoremap <Leader>r :call NeotermRunAndOpen('cargo run')<CR>
+augroup END
 '''
