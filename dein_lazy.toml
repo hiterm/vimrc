@@ -29,10 +29,6 @@ on_ft = 'html'
 # filetype pluins ここまで
 
 [[plugins]]
-repo = 'easymotion/vim-easymotion'
-on_map = '<Plug>'
-
-[[plugins]]
 repo = 'Shougo/neosnippet'
 depends = 'neosnippet-snippets'
 on_event = 'InsertEnter'

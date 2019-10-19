@@ -297,38 +297,6 @@ if has('mac')
   augroup END
 endif
 
-
-" easymotion {{{2
-map <Leader> <Plug>(easymotion-prefix)
-if executable('cmigemo')
-  let g:EasyMotion_use_migemo = 1
-endif
-" keep cursor colum JK motion
-let g:EasyMotion_startofline = 0
-" s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
-xmap s <Plug>(easymotion-bd-f2)
-omap s <Plug>(easymotion-bd-f2)
-" Extend search motions with vital-over command line interface
-" " `<Tab>` & `<S-Tab>` to scroll up/down a page of next match
-" " :h easymotion-command-line
-nmap ,/ <Plug>(easymotion-sn)
-xmap ,/ <Plug>(easymotion-sn)
-omap ,/ <Plug>(easymotion-tn)
-" overwrite f, F
-nmap f <Plug>(easymotion-fl)
-xmap f <Plug>(easymotion-fl)
-omap f <Plug>(easymotion-fl)
-nmap F <Plug>(easymotion-Fl)
-xmap F <Plug>(easymotion-Fl)
-omap F <Plug>(easymotion-Fl)
-nmap t <Plug>(easymotion-tl)
-xmap t <Plug>(easymotion-tl)
-omap t <Plug>(easymotion-tl)
-nmap T <Plug>(easymotion-Tl)
-xmap T <Plug>(easymotion-Tl)
-omap T <Plug>(easymotion-Tl)
-
 " surround.vim {{{2
 " $でも効くように
 nnoremap ds$ f$x<Esc>F$x<Esc>
