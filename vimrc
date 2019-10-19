@@ -301,8 +301,3 @@ nnoremap ds$ f$x<Esc>F$x<Esc>
 augroup MyAutoCmd
   autocmd FileType gitcommit setlocal spell
 augroup END
-
-" shiba {{{2
-if executable('shiba')
-  command! ShibaPreview !shiba --detach %
-endif

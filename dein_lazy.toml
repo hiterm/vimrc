@@ -10,19 +10,6 @@ repo = 'lervag/vimtex'
 on_ft = 'tex'
 
 [[plugins]]
-repo = 'derekwyatt/vim-scala'
-on_ft = 'scala'
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-hook_add = '''
-augroup MyAutoCmd
-  autocmd BufRead,BufNewFile *.toml setfiletype toml
-augroup END
-'''
-
-[[plugins]]
 repo = 'alvan/vim-closetag'
 on_ft = 'html'
 
@@ -77,6 +64,22 @@ repo = 'Shougo/unite-outline'
 repo = 'rhysd/git-messenger.vim'
 on_cmd = 'GitMessenger'
 on_map = '<Plug>(git-messenger'
+
+[[plugins]]
+repo = 'Shougo/echodoc.vim'
+on_event = 'CompleteDone'
+hook_source = '''
+let g:echodoc#type = 'virtual'
+call echodoc#enable()
+'''
+
+[[plugins]]
+repo = 'kana/vim-niceblock'
+on_map = '<Plug>'
+hook_add = '''
+  xmap I  <Plug>(niceblock-I)
+  xmap A  <Plug>(niceblock-A)
+'''
 
 # colorscheme
 [[plugins]]

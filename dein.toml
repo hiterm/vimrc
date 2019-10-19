@@ -99,6 +99,7 @@ hook_add = '''
 let g:better_whitespace_enabled=1
 let g:better_whitespace_filetypes_blacklist = ['defx', 'markdown']
 let g:better_whitespace_operator=''
+autocmd FileType help DisableWhitespace
 '''
 
 
@@ -184,6 +185,12 @@ hook_add = '''
 let g:gitgutter_map_keys = 0
 '''
 
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+let g:fugitive_no_maps = 1
+'''
+
 # Japanese
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
@@ -193,23 +200,10 @@ repo = 'deton/jasegment.vim'
 
 # filetype
 [[plugins]]
-repo = 'pangloss/vim-javascript'
-
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = 'typescript'
-
-[[plugins]]
-repo = 'neovimhaskell/haskell-vim'
-on_ft = ['haskell']
-
-[[plugins]]
-repo = 'hynek/vim-python-pep8-indent'
-on_ft = 'python'
-
-[[plugins]]
-repo = 'matze/vim-lilypond'
-on_ft = 'lilypond'
+repo = 'sheerun/vim-polyglot'
+hook_add = '''
+let g:polyglot_disabled = ['tex']
+'''
 
 # others
 [[plugins]]
