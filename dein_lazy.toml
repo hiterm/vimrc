@@ -81,6 +81,14 @@ hook_add = '''
   xmap A  <Plug>(niceblock-A)
 '''
 
+[[plugins]]
+repo = 'kannokanno/previm'
+on_cmd = 'PrevimOpen'
+depends = 'open-browser.vim'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
 # colorscheme
 [[plugins]]
 repo = 'arcticicestudio/nord-vim'
