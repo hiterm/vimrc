@@ -58,9 +58,9 @@ repo = 'Shougo/defx.nvim'
 hook_add = 'source ~/.vim/defx.rc.vim'
 hook_post_source = '''
 call defx#custom#column('icon', {
-    \ 'directory_icon': '▸',
-    \ 'opened_icon': '▾',
-    \ })
+      \ 'directory_icon': '▸',
+      \ 'opened_icon': '▾',
+      \ })
 '''
 
 [[plugins]]
@@ -215,9 +215,9 @@ nnoremap <C-g> :Ttoggle<CR><C-w>wi
 tnoremap <C-g> <C-\><C-n>:Ttoggle<CR>
 " Move window by name
 function! WinByBufname(bufname)
-    let bufmap = map(range(1, winnr('$')), '[bufname(winbufnr(v:val)), v:val]')
-    let thewindow = filter(bufmap, 'v:val[0] =~ a:bufname')[0][1]
-    execute thewindow 'wincmd w'
+  let bufmap = map(range(1, winnr('$')), '[bufname(winbufnr(v:val)), v:val]')
+  let thewindow = filter(bufmap, 'v:val[0] =~ a:bufname')[0][1]
+  execute thewindow 'wincmd w'
 endfunction
 " Run and open neoterm window
 function! NeotermRunAndOpen(cmd)
