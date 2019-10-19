@@ -98,6 +98,7 @@ repo = 'ntpeters/vim-better-whitespace'
 hook_add = '''
 let g:better_whitespace_enabled=1
 let g:better_whitespace_filetypes_blacklist = ['defx', 'markdown']
+let g:better_whitespace_operator=''
 '''
 
 
@@ -179,6 +180,9 @@ endif
 # git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+hook_add = '''
+let g:gitgutter_map_keys = 0
+'''
 
 # Japanese
 [[plugins]]

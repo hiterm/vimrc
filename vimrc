@@ -61,7 +61,7 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-let g:mapleader = ','
+let g:mapleader = ' '
 let g:maplocalleader = ' '
 
 " フォント
@@ -116,10 +116,6 @@ set mouse=a
 " insertモードでEmacs風のカーソル移動
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
-
-" indentLine
-let g:indentLine_char = '¦'
-:set list lcs=tab:\|\ 
 
 " インデントの深さ
 set tabstop=2

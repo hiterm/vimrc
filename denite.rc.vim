@@ -35,8 +35,9 @@ nnoremap <silent> [denite]o :<C-u>Denite<Space>dirmark<CR>
 nnoremap <silent> [denite]r :<C-u>Denite<Space>file_mru -auto-action=preview<CR>
 nnoremap <silent> [denite]e :<C-u>Denite<Space>register<CR>
 nnoremap <silent> [denite]y :<C-u>Denite<Space>neoyank<CR>
-nnoremap <silent> [denite]l :<C-u>Denite<Space>line<CR>
 nnoremap <silent> [denite]h :<C-u>Denite<Space>help<CR>
 nnoremap <silent> [denite]g :<C-u>Denite<Space>grep -auto-action=preview<CR>
 nnoremap <silent> [denite]c :<C-u>Denite<Space>command<CR>
-nnoremap <silent> ,vr :Denite -resume<CR>
+nnoremap <silent> [denite]d :<C-u>Denite<Space>contextMenu<CR>
+" nnoremap <silent> ,vr :Denite -resume<CR>
+nnoremap <silent> <Space>/ :<C-u>Denite<Space>line<CR>

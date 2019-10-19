@@ -9,4 +9,13 @@ let g:LanguageClient_serverCommands = {
       \ 'python': ['pyls'],
       \ 'ruby': ['solargraph', 'stdio'],
       \ }
+
+" The prefix key.
+nnoremap [lsp] <Nop>
+nmap     <Space>l      [lsp]
+
+nnoremap [lsp]l :call LanguageClient_contextMenu()<CR>
+nnoremap [lsp]h :call LanguageClient#textDocument_hover()<CR>
+nnoremap [lsp]d :call LanguageClient#textDocument_definition()<CR>
+nnoremap [lsp]r :call LanguageClient#textDocument_rename()<CR>
 '''
