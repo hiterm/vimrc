@@ -18,8 +18,10 @@ function! s:denite_my_settings() abort
         \ denite#do_map('quit')
   nnoremap <silent><buffer><expr> i
         \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space>
+  nnoremap <silent><buffer><expr> s
         \ denite#do_map('toggle_select').'j'
+  nnoremap <silent><buffer><expr> *
+        \ denite#do_map('toggle_select_all')
   nnoremap <silent><buffer><expr> <Tab>
         \ denite#do_map('choose_action')
 endfunction
@@ -35,7 +37,7 @@ nnoremap [denite]<Space>    :<C-u>Denite<Space>
 nnoremap <silent> [denite]f :<C-u>Denite<Space>file<Space>file:new<CR>
 nnoremap <silent> [denite]b :<C-u>Denite<Space>buffer -auto-action=preview<CR>
 nnoremap <silent> [denite]o :<C-u>Denite<Space>dirmark<CR>
-nnoremap <silent> [denite]r :<C-u>Denite<Space>file_mru -auto-action=preview<CR>
+nnoremap <silent> [denite]r :<C-u>Denite<Space>file_mru<CR>
 nnoremap <silent> [denite]e :<C-u>Denite<Space>register<CR>
 nnoremap <silent> [denite]y :<C-u>Denite<Space>neoyank<CR>
 nnoremap <silent> [denite]h :<C-u>Denite<Space>help<CR>

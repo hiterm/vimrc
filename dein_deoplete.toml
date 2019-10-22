@@ -30,6 +30,7 @@ if = "executable('look')"
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
+if = "!executable('pyls')"
 on_ft = 'python'
 
 [[plugins]]
