@@ -22,6 +22,7 @@ endfunction
 hook_post_source = '''
 call deoplete#custom#source('look', 'rank', 50)
 call deoplete#custom#source('tabnine', 'rank', 80)
+call deoplete#custom#source('neosnippet', 'rank', 1500)
 '''
 
 [[plugins]]

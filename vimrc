@@ -74,7 +74,7 @@ elseif has('unix')
 endif
 
 " 全角文字の幅
-set ambiwidth=double
+set ambiwidth=single
 
 " 行番号を表示
 set number
