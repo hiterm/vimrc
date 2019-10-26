@@ -13,6 +13,16 @@ on_ft = 'tex'
 repo = 'alvan/vim-closetag'
 on_ft = 'html'
 
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = 'python'
+hook_add = '''
+" let g:jedi#auto_initialization = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#completions_enabled = 0
+command! JediRename call jedi#rename()
+'''
+
 # filetype pluins ここまで
 
 [[plugins]]

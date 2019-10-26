@@ -62,7 +62,7 @@ augroup MyAutoCmd
 augroup END
 
 let g:mapleader = ' '
-let g:maplocalleader = ' '
+" let g:maplocalleader = ' '
 
 " フォント
 if has('mac')
