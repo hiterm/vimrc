@@ -44,5 +44,6 @@ nnoremap <silent> [denite]h :<C-u>Denite<Space>help<CR>
 nnoremap <silent> [denite]g :<C-u>Denite<Space>grep -auto-action=preview<CR>
 nnoremap <silent> [denite]c :<C-u>Denite<Space>command<CR>
 nnoremap <silent> [denite]d :<C-u>Denite<Space>contextMenu<CR>
+nnoremap <silent> [denite]q :<C-u>Denite<Space>quickfix<CR>
 " nnoremap <silent> ,vr :Denite -resume<CR>
 nnoremap <silent> <Space>/ :<C-u>Denite<Space>line<CR>
