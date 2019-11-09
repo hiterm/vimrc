@@ -103,7 +103,6 @@ let g:polyglot_disabled = ['tex']
 
 [[plugins]]
 repo = 'lervag/vimtex'
-on_ft = 'tex'
 
 # fzf
 [[plugins]]

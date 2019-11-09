@@ -92,7 +92,7 @@ hook_post_source = 'source ~/.vim/lexima.rc.vim'
 
 # filetype plugins
 [[plugins]]
-repo = 'alvan/vim-closetag'
+repo = 'mattn/emmet-vim'
 on_ft = 'html'
 
 [[plugins]]
