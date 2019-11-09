@@ -7,45 +7,7 @@ let g:dein#types#git#clone_depth=1
 [[plugins]]
 repo = 'haya14busa/dein-command.vim'
 
-# denite and unite
-[[plugins]]
-repo = 'Shougo/denite.nvim'
-if = "(has('nvim') || v:version >= 800) && has('python3')"
-hook_add = 'source ~/.vim/denite.rc.vim'
-hook_post_source = '''
-call denite#custom#var('file/rec', 'command',
-    \ ['rg', '--files', '--glob', '!.git'])
-call denite#custom#option('default', {
-      \ 'prompt': '>',
-      \ 'split': 'floating',
-      \ })
-
-" Ripgrep command on grep source
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts',
-    \ ['-i', '--vimgrep', '--no-heading'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-'''
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-depends = 'unite-outline'
-hook_add = '''
-if !((has('nvim') || v:version >= 800) && has('python3'))
-  source ~/.vim/unite.rc.vim
-endif
-'''
-if = "!((has('nvim') || v:version >= 800) && has('python3'))"
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[plugins]]
-repo = 'Shougo/neoyank.vim'
-
+# denite
 [[plugins]]
 repo = 'chemzqm/unite-location'
 

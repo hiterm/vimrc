@@ -1,3 +1,35 @@
+# denite
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+if = "(has('nvim') || v:version >= 800) && has('python3')"
+hook_add = 'source ~/.vim/denite.rc.vim'
+hook_post_source = '''
+call denite#custom#var('file/rec', 'command',
+    \ ['rg', '--files', '--glob', '!.git'])
+call denite#custom#option('default', {
+      \ 'prompt': '>',
+      \ 'split': 'floating',
+      \ })
+
+" Ripgrep command on grep source
+call denite#custom#var('grep', 'command', ['rg'])
+call denite#custom#var('grep', 'default_opts',
+    \ ['-i', '--vimgrep', '--no-heading'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = 'denite.nvim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_source = 'denite.nvim'
+
 [[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
@@ -66,9 +98,6 @@ let g:precious_enable_switchers = {
       \},
       \}
 '''
-
-[[plugins]]
-repo = 'Shougo/unite-outline'
 
 [[plugins]]
 repo = 'rhysd/git-messenger.vim'
