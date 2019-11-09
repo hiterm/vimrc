@@ -52,18 +52,45 @@ repo = 'roxma/vim-hug-neovim-rpc'
 on_source = 'defx.nvim'
 if = "!has('nvim')"
 
+# vim-precious
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+on_event = ['InsertEnter', 'CursorMoved']
+depends = 'context_filetype.vim'
+hook_add = '''
+" カーソル移動時の自動切り替えを無効化
+let g:precious_enable_switchers = {
+      \	"*" : {
+      \		"setfiletype" : 0
+      \	},
+      \	"toml" : {
+      \		"setfiletype" : 1
+      \	},
+      \'markdown' : {
+      \   "setfiletype" : 1
+      \},
+      \}
+'''
 
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+# tig-explorer
+[[plugins]]
+repo = 'iberianpig/tig-explorer.vim'
+on_cmd = ['Tig', 'TigBlame']
+depends = 'bclose.vim'
+
+[[plugins]]
+repo = 'rbgrouleff/bclose.vim'
+
+# lexima
 [[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 hook_post_source = 'source ~/.vim/lexima.rc.vim'
 
-# filetype pluins
-
-[[plugins]]
-repo = 'lervag/vimtex'
-on_ft = 'tex'
-
+# filetype plugins
 [[plugins]]
 repo = 'alvan/vim-closetag'
 on_ft = 'html'
@@ -78,16 +105,11 @@ let g:jedi#completions_enabled = 0
 command! JediRename call jedi#rename()
 '''
 
-# filetype pluins ここまで
-
+# neosnippet
 [[plugins]]
 repo = 'Shougo/neosnippet'
-depends = 'neosnippet-snippets'
 on_event = 'InsertEnter'
 on_ft = 'snippet'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'rhysd/committia.vim'
@@ -196,36 +218,6 @@ let g:expand_region_text_objects = {
       \ }
 """
 
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-on_event = ['InsertEnter', 'CursorMoved']
-depends = 'context_filetype.vim'
-hook_add = '''
-" カーソル移動時の自動切り替えを無効化
-let g:precious_enable_switchers = {
-      \	"*" : {
-      \		"setfiletype" : 0
-      \	},
-      \	"toml" : {
-      \		"setfiletype" : 1
-      \	},
-      \'markdown' : {
-      \   "setfiletype" : 1
-      \},
-      \}
-'''
-
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
-repo = 'iberianpig/tig-explorer.vim'
-on_cmd = ['Tig', 'TigBlame']
-depends = 'bclose.vim'
-
-[[plugins]]
-repo = 'rbgrouleff/bclose.vim'
-
 # terminal
 [[plugins]]
 repo = 'kassio/neoterm'
@@ -261,11 +253,6 @@ augroup END
 '''
 
 # fzf
-[[plugins]]
-repo = "junegunn/fzf"
-on_cmd = 'FZF'
-merged = 0
-
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'

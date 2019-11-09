@@ -1,8 +1,8 @@
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if = "has('nvim') && has('python3')"
+depends = 'context_filetype.vim'
 on_event = 'InsertEnter'
-depends = 'neco-look'
 hook_add = '''
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
@@ -28,6 +28,7 @@ call deoplete#custom#source('neosnippet', 'rank', 1500)
 [[plugins]]
 repo = 'ujihisa/neco-look'
 if = "executable('look')"
+lazy = 0
 
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
@@ -36,19 +37,24 @@ on_ft = 'python'
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
+on_ft = 'vim'
 
 [[plugins]]
 repo = 'wellle/tmux-complete.vim'
+on_source = 'deoplete.nvim'
 
 [[plugins]]
 repo = 'deoplete-plugins/deoplete-zsh'
+lazy = 0
 
 [[plugins]]
 repo = 'tbodt/deoplete-tabnine'
+lazy = 0
 build = './install.sh'
 
 [[plugins]]
 repo = 'ncm2/float-preview.nvim'
+on_source = 'deoplete.nvim'
 hook_add = '''
 set completeopt-=preview
 function! s:set_preview_docked()

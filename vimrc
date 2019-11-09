@@ -23,7 +23,7 @@ if dein#load_state(s:dein_dir)  " 失敗したら
 
   call dein#load_toml('~/.vim/dein.toml', {'lazy': 0})
   call dein#load_toml('~/.vim/dein_lazy.toml', {'lazy': 1})
-  call dein#load_toml('~/.vim/dein_deoplete.toml', {'lazy': 0})
+  call dein#load_toml('~/.vim/dein_deoplete.toml', {'lazy': 1})
   call dein#load_toml('~/.vim/dein_lsp.toml', {'lazy': 0})
 
   " Required:
