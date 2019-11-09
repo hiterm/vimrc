@@ -206,10 +206,11 @@ let g:gitgutter_map_keys = 0
 '''
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-hook_add = '''
-let g:fugitive_no_maps = 1
-'''
+repo = 'iberianpig/tig-explorer.vim'
+depends = 'bclose.vim'
+
+[[plugins]]
+repo = 'rbgrouleff/bclose.vim'
 
 # Japanese
 [[plugins]]
