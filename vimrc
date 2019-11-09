@@ -281,7 +281,6 @@ endif
 " snippets directory
 let g:neosnippet#snippets_directory = '~/.vim/snippets'
 
-
 " lilypond {{{2
 augroup MyAutoCmd
   autocmd FileType lilypond setlocal tabstop=2 shiftwidth=2
@@ -305,3 +304,9 @@ augroup END
 " スペースなどを可視化
 set list
 set listchars=tab:»-,trail:~
+
+" jsx, tsx
+augroup MyAutoCmd
+  autocmd BufNewFile,BufRead *.jsx setlocal filetype=javascript.jsx
+  autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+augroup END

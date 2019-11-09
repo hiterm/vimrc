@@ -93,7 +93,7 @@ hook_post_source = 'source ~/.vim/lexima.rc.vim'
 # filetype plugins
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = 'html'
+on_ft = ['html', 'javascript', 'typescript']
 
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
