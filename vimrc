@@ -301,3 +301,7 @@ nnoremap ds$ f$x<Esc>F$x<Esc>
 augroup MyAutoCmd
   autocmd FileType gitcommit setlocal spell
 augroup END
+
+" スペースなどを可視化
+set list
+set listchars=tab:»-,trail:~
