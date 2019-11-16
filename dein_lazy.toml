@@ -221,6 +221,7 @@ let g:expand_region_text_objects = {
 # fzf
 [[plugins]]
 repo = "junegunn/fzf"
+## 意図した挙動をしていない可能性あり
 on_cmd = ['FZF']
 on_map = ['[lsp]']
 merged = 0
