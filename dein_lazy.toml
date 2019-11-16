@@ -220,6 +220,13 @@ let g:expand_region_text_objects = {
 
 # fzf
 [[plugins]]
+repo = "junegunn/fzf"
+on_cmd = ['FZF']
+on_map = ['[lsp]']
+merged = 0
+hook_source = 'unlet g:loaded_fzf'
+
+[[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 on_cmd = ['Files', 'GFiles', 'GFiles?', 'Buffers', 'Colors', 'Ag', 'Rg', 'Lines', 'BLines', 'Tags', 'BTags', 'Marks', 'Windows', 'Locate', 'History', 'History:', 'History/', 'Snippets', 'Commits', 'BCommits', 'Commands', 'Maps', 'Helptags', 'Filetypes']

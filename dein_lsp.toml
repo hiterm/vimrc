@@ -3,6 +3,7 @@ repo = 'autozimu/LanguageClient-neovim'
 rev = 'next'
 build = 'bash install.sh'
 hook_add = '''
+let g:loaded_fzf = 1
 let g:LanguageClient_diagnosticsEnable = 1
 let g:LanguageClient_useVirtualText = 0
 let g:LanguageClient_selectionUI = 'fzf'

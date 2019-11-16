@@ -104,11 +104,6 @@ let g:polyglot_disabled = ['tex']
 [[plugins]]
 repo = 'lervag/vimtex'
 
-# fzf
-[[plugins]]
-repo = "junegunn/fzf"
-merged = 0
-
 # terminal
 [[plugins]]
 repo = 'kassio/neoterm'
