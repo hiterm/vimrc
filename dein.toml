@@ -9,6 +9,9 @@ repo = 'haya14busa/dein-command.vim'
 
 # denite
 [[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
 repo = 'chemzqm/unite-location'
 
 [[plugins]]
@@ -98,8 +101,11 @@ repo = 'deton/jasegment.vim'
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
-let g:polyglot_disabled = ['tex']
+let g:polyglot_disabled = ['tex', 'typescript', 'tsx', 'typescript.tsx']
 '''
+
+[[plugins]]
+repo = 'HerringtonDarkholme/yats.vim'
 
 [[plugins]]
 repo = 'lervag/vimtex'

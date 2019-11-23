@@ -23,10 +23,6 @@ call denite#custom#var('grep', 'final_opts', [])
 '''
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-on_source = 'denite.nvim'
-
-[[plugins]]
 repo = 'Shougo/neoyank.vim'
 on_source = 'denite.nvim'
 
