@@ -95,6 +95,9 @@ else
 endif
 '''
 
+[[plugins]]
+repo = 'kkoomen/vim-doge'
+
 # git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
