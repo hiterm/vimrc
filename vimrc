@@ -217,6 +217,10 @@ function! s:cd_git_root()
 endfunction
 command! Gcd call s:cd_git_root()
 
+" buffer移動
+nnoremap [b :bprevious<CR>
+nnoremap ]b :bnext<CR>
+
 " plugin, filetypeの設定 {{{1
 " vimtex and latex {{{2
 let g:tex_flavor='latex'
