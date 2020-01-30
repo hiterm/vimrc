@@ -9,3 +9,13 @@ snippet debugln
 
 snippet ddebugln
     debugln!("{:?}", ${1})
+
+snippet tests
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+
+        fn ${1} {
+            ${2}
+        }
+    }
