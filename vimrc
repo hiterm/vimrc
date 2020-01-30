@@ -2,6 +2,7 @@
 
 scriptencoding utf-8
 
+" dein{{{1
 " dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -43,8 +44,9 @@ syntax enable
 autocmd VimEnter * call dein#call_hook('post_source')
 
 " End dein Scripts-------------------------
+" }}}
 
-" Load settings for each location.
+" Load settings for each location.{{{
 augroup vimrc-local
   autocmd!
   autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
@@ -104,8 +106,9 @@ let g:lightline.colorscheme = 'nord'
 set ignorecase
 set smartcase
 
-" 検索結果をハイライト
+" search
 set hlsearch
+set incsearch
 
 " ビープ音をvisualbellに
 set visualbell
@@ -200,6 +203,9 @@ set tags+=./tags;
 
 " 保存しなくてもバッファ間の移動ができるように
 set hidden
+
+" fold
+set foldmethod=marker
 
 " cd to current file
 command! Cd lcd %:p:h
