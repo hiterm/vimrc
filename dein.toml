@@ -98,6 +98,12 @@ endif
 [[plugins]]
 repo = 'kkoomen/vim-doge'
 
+[[plugins]]
+repo = 'justinmk/vim-sneak'
+hook_add = '''
+let g:sneak#label = 1
+'''
+
 # git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
