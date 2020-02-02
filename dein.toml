@@ -104,6 +104,15 @@ hook_add = '''
 let g:sneak#label = 1
 '''
 
+[[plugins]]
+repo = 'michaeljsmith/vim-indent-object'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'kana/vim-textobj-line'
+
 # git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
