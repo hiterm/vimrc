@@ -1,21 +1,34 @@
 snippet println
-    println!("{}", ${1})
+    println!("{}", ${1});
 
 snippet dprintln
-    println!("{:?}", ${1})
+    println!("{:?}", ${1});
 
 snippet debugln
-    debugln!("{}", ${1})
+    debugln!("{}", ${1});
 
 snippet ddebugln
-    debugln!("{:?}", ${1})
+    debugln!("{:?}", ${1});
+
+snippet eprintln
+    eprintln!("{}", ${1});
+
+snippet deprintln
+    eprintln!("{:?}", ${1});
+
+snippet assert_eq
+    assert_eq!(${1}, ${2});
+
+snippet assert_ne
+    assert_ne!(${1}, ${2});
 
 snippet tests
     #[cfg(test)]
     mod tests {
         use super::*;
 
-        fn ${1} {
+        #[test]
+        fn ${1}() {
             ${2}
         }
     }
