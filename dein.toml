@@ -113,6 +113,9 @@ repo = 'kana/vim-textobj-user'
 [[plugins]]
 repo = 'kana/vim-textobj-line'
 
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
 # git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
