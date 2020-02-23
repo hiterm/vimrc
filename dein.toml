@@ -72,7 +72,11 @@ let g:shebang#shebangs = {
 repo = 'w0rp/ale'
 hook_add = '''
 let g:ale_lint_on_text_changed = 0
-let g:ale_linters = {'ruby': ['ruby', 'rubocop']}
+let g:ale_linters = {
+      \ 'ruby': ['ruby', 'rubocop'],
+      \ 'sh': ['shell', 'shellcheck'],
+      \ 'csh': ['shell', 'shellcheck'],
+      \ }
 
 if !exists('g:ale_fixers')
   let g:ale_fixers = {}
