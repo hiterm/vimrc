@@ -123,9 +123,6 @@ repo = 'tpope/vim-repeat'
 # git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
-hook_add = '''
-let g:gitgutter_map_keys = 0
-'''
 
 # Japanese
 [[plugins]]
