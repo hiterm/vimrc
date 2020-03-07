@@ -90,13 +90,9 @@ let g:ale_fixers['typescript'] = s:ale_fixer_js
 let g:ale_fixers['javascript'] = s:ale_fixer_js
 
 let g:ale_disable_lsp = 1
-if !has('gui_macvim')
-  let g:ale_sign_error = '❌'
-  let g:ale_sign_warning = '⚠'
-  let g:ale_statusline_format = ['❌ %d', '⚠ %d', '']
-else
-  let g:ale_statusline_format = ['%d error(s)', '%d warning(s)', '']
-endif
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+let g:ale_statusline_format = [' %d', ' %d', '']
 '''
 
 [[plugins]]
