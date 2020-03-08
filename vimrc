@@ -165,6 +165,10 @@ nnoremap Q <Nop>
 
 " spell check
 set spelllang=en,cjk
+augroup MyAutoCmd
+  autocmd FileType text setlocal spell
+  autocmd FileType markdown setlocal spell
+augroup END
 
 " migemo
 if executable('cmigemo')
