@@ -10,6 +10,7 @@ call denite#custom#var('file/rec', 'command',
 call denite#custom#option('default', {
       \ 'prompt': '>',
       \ 'split': 'floating',
+      \ 'start_filter': v:true,
       \ })
 
 " Ripgrep command on grep source
@@ -80,12 +81,6 @@ depends = 'bclose.vim'
 [[plugins]]
 repo = 'rbgrouleff/bclose.vim'
 
-# lexima
-[[plugins]]
-repo = 'cohama/lexima.vim'
-on_event = 'InsertEnter'
-hook_post_source = 'source ~/.vim/lexima.rc.vim'
-
 # filetype plugins
 [[plugins]]
 repo = 'mattn/emmet-vim'
@@ -113,14 +108,12 @@ on_path = 'COMMIT_EDITMSG'
 
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
-on_map = '<Plug>'
+on_map = '<Plug>(anzu-'
 hook_add = '''
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
-" clear status
-nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 '''
 
 [[plugins]]
