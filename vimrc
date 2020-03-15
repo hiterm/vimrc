@@ -232,6 +232,9 @@ command! Gcd call s:cd_git_root()
 nnoremap [b :bprevious<CR>
 nnoremap ]b :bnext<CR>
 
+" Python
+let g:python3_host_prog = '/usr/bin/python'
+
 " plugin, filetypeの設定 {{{1
 " vimtex and latex {{{2
 let g:tex_flavor='latex'
