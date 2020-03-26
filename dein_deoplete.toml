@@ -1,6 +1,5 @@
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-rev = '5.2'
 if = "has('nvim') && has('python3')"
 depends = 'context_filetype.vim'
 on_event = 'InsertEnter'
