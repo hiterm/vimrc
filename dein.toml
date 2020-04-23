@@ -33,6 +33,7 @@ augroup MyIndentGuides
   autocmd!
   autocmd FileType defx IndentGuidesDisable
   autocmd FileType neoterm IndentGuidesDisable
+  autocmd FileType fzf IndentGuidesDisable
 augroup END
 '''
 
