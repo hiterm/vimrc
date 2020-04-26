@@ -10,4 +10,5 @@ nnoremap <silent> [fzf]b :<C-u>Buffers<CR>
 nnoremap <silent> [fzf]r :<C-u>History<CR>
 nnoremap <silent> [fzf]h :<C-u>Help<CR>
 nnoremap <silent> [fzf]c :<C-u>Commands<CR>
-nnoremap <silent> [fzf]l :<C-u>Lines<CR>
+
+nnoremap <silent> <Space>/ :<C-u>Lines<CR>
