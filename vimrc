@@ -216,12 +216,14 @@ command! Cd lcd %:p:h
 " cd to git root
 function! s:git_root_dir()
     if(system('git rev-parse --is-inside-work-tree') == "true\n")
-        return system('git rev-parse --show-cdup')
+        return system('git rev-parse --show-toplevel')
     else
-        echoerr '!!!current directory is outside git working tree!!!'
+        echoerr '!!!This file is outside of git working tree!!!'
     endif
 endfunction
 function! s:cd_git_root()
+  lcd %:p:h
+
   execute 'lcd ' . s:git_root_dir()
   pwd
 endfunction
