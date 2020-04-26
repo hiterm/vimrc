@@ -69,7 +69,7 @@ hook_add = 'let g:rainbow_active = 1'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'tomtom/tcomment_vim'
+repo = 'tpope/vim-commentary'
 
 # lexima
 [[plugins]]
