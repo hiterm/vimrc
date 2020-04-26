@@ -124,6 +124,7 @@ hook_add = '''
 let g:sneak#label = 1
 '''
 
+# textobj
 [[plugins]]
 repo = 'michaeljsmith/vim-indent-object'
 

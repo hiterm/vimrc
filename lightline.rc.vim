@@ -1,4 +1,4 @@
-" lightline {{{2
+" lightline
 set laststatus=2
 let g:lightline = {}
 let g:lightline.active = {
