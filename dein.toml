@@ -20,6 +20,13 @@ repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 merged = 0
 
+[[plugins]]
+repo = 'dominickng/fzf-session.vim.git'
+depends = 'fzf'
+hook_add = '''
+let g:fzf_session_path = '~/.vim_sessions'
+'''
+
 # neosnippet
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
