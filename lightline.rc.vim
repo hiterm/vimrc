@@ -4,7 +4,7 @@ let g:lightline = {}
 let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste' ],
       \           [ 'readonly', 'filename', 'modified' ],
-      \           [ 'fugitive', 'gitgutter' ] ],
+      \           [ 'gitgutter' ] ],
       \ 'right': [ [ 'ale_error', 'ale_warning', 'ale_ok', 'lineinfo' ],
       \            [ 'percent' ],
       \            [ 'myfileencoding', 'filetype' ] ]
@@ -25,7 +25,6 @@ let g:lightline.component = {
       \ }
 
 let g:lightline.component_function = {
-      \ 'fugitive': 'LightlineFugitive',
       \ 'gitgutter': 'LightlineGitgutter',
       \ }
 
@@ -40,13 +39,6 @@ let g:lightline.component_type = {
       \ 'ale_warning': 'warning',
       \ 'ale_ok':      'ok',
       \ }
-
-function! LightlineFugitive()
-  if exists('*fugitive#head')
-    return fugitive#head()
-  endif
-  return ''
-endfunction
 
 " From http://qiita.com/yuyuchu3333/items/20a0acfe7e0d0e167ccc
 
