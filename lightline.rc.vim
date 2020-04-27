@@ -1,6 +1,8 @@
 " lightline
 set laststatus=2
-let g:lightline = {}
+if !exists('g:lightline')
+  let g:lightline = {}
+endif
 let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste' ],
       \           [ 'readonly', 'filename', 'modified' ],
