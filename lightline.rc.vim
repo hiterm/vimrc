@@ -5,9 +5,12 @@ let g:lightline.active = {
       \ 'left': [ [ 'mode', 'paste' ],
       \           [ 'readonly', 'filename', 'modified' ],
       \           [ 'gitgutter' ] ],
-      \ 'right': [ [ 'ale_error', 'ale_warning', 'ale_ok', 'lineinfo' ],
-      \            [ 'percent' ],
-      \            [ 'myfileencoding', 'filetype' ] ]
+      \ 'right': [
+      \     [ 'lineinfo' ],
+      \     [ 'percent' ],
+      \     [ 'myfileencoding', 'filetype' ],
+      \     [ 'lc_error', 'lc_warning' ],
+      \   ]
       \ }
 let g:lightline.inactive = {
       \ 'left': [ [ 'filename' ] ],
@@ -32,16 +35,20 @@ let g:lightline.component_expand = {
       \ 'ale_error':   'Lightline_ale_error',
       \ 'ale_warning': 'Lightline_ale_warning',
       \ 'ale_ok':      'Lightline_ale_ok',
+      \ 'lc_error': 'LC_error_count',
+      \ 'lc_warning': 'LC_warning_count',
       \ }
 
 let g:lightline.component_type = {
       \ 'ale_error':   'error',
       \ 'ale_warning': 'warning',
       \ 'ale_ok':      'ok',
+      \ 'lc_error':    'error',
+      \ 'lc_warning':    'warning',
       \ }
 
+" GitGutter
 " From http://qiita.com/yuyuchu3333/items/20a0acfe7e0d0e167ccc
-
 function! LightlineGitgutter()
   if !exists('*GitGutterGetHunkSummary')
         \ || !get(g:, 'gitgutter_enabled', 0)
@@ -63,39 +70,28 @@ function! LightlineGitgutter()
   return join(ret, ' ')
 endfunction
 
-" From delphinus/lightline-delphinus
-
-function! Lightline_ale_error() abort
-  return s:ale_string(0)
+" LanguageClient
+" From https://github.com/autozimu/LanguageClient-neovim/issues/374
+function! LC_warning_count()
+  let current_buf_number = bufnr('%')
+  let qflist = getqflist()
+  let current_buf_diagnostics = filter(qflist, {index, dict -> dict['bufnr'] == current_buf_number && dict['type'] == 'W'})
+  let count = len(current_buf_diagnostics)
+  return count > 0 && g:LanguageClient_loaded ? nr2char('0xf071') . count : ''
 endfunction
 
-function! Lightline_ale_warning() abort
-  return s:ale_string(1)
+function! LC_error_count()
+  let current_buf_number = bufnr('%')
+  let qflist = getqflist()
+  let current_buf_diagnostics = filter(qflist, {index, dict -> dict['bufnr'] == current_buf_number && dict['type'] == 'E'})
+  let count = len(current_buf_diagnostics)
+  return count > 0 && g:LanguageClient_loaded ? nr2char('0xf057') . count : ''
 endfunction
 
-function! Lightline_ale_ok() abort
-  return s:ale_string(2)
+function! LightLineLC()
 endfunction
 
-function! s:ale_string(mode)
-  if !exists('g:ale_buffer_info')
-    return ''
-  endif
-
-  let l:buffer = bufnr('%')
-  let [l:error_count, l:warning_count] = ale#statusline#Count(l:buffer)
-  let [l:error_format, l:warning_format, l:no_errors] = g:ale_statusline_format
-
-  if a:mode == 0 " Error
-    return l:error_count ? printf(l:error_format, l:error_count) : ''
-  elseif a:mode == 1 " Warning
-    return l:warning_count ? printf(l:warning_format, l:warning_count) : ''
-  endif
-
-  return l:error_count == 0 && l:warning_count == 0 ? l:no_errors : ''
-endfunction
-
-augroup LightLineALE
+augroup MyLightLineLC
   autocmd!
-  autocmd User ALELint call lightline#update()
+  autocmd User LanguageClientDiagnosticsChanged call lightline#update()
 augroup END
