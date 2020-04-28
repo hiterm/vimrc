@@ -117,11 +117,15 @@ depends = 'open-browser.vim'
 repo = 'tyru/open-browser.vim'
 
 [[plugins]]
-repo = 'rhysd/accelerated-jk'
+repo = 'tyru/columnskip.vim'
 on_map = {n = '<Plug>'}
 hook_add = '''
-nmap <silent>j <Plug>(accelerated_jk_j)
-nmap <silent>k <Plug>(accelerated_jk_k)
+nmap <C-j> <Plug>(columnskip:nonblank:next)
+omap <C-j> <Plug>(columnskip:nonblank:next)
+xmap <C-j> <Plug>(columnskip:nonblank:next)
+nmap <C-k> <Plug>(columnskip:nonblank:prev)
+omap <C-k> <Plug>(columnskip:nonblank:prev)
+xmap <C-k> <Plug>(columnskip:nonblank:prev)
 '''
 
 [[plugins]]

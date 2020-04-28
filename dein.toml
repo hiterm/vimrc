@@ -74,10 +74,6 @@ repo = 'tpope/vim-commentary'
 # lexima
 [[plugins]]
 repo = 'cohama/lexima.vim'
-hook_add = '''
-let g:lexima_map_escape = ''
-inoremap <silent> <Esc> <C-r>=lexima#insmode#escape()<CR><Esc>
-'''
 hook_post_source = 'source ~/.vim/lexima.rc.vim'
 
 [[plugins]]
