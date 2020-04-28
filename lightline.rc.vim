@@ -23,7 +23,6 @@ let g:lightline.tabline = {
       \ 'left': [ [ 'tabs' ] ],
       \ 'right': [ [ 'close' ] ]
       \ }
-let g:lightline.colorscheme = 'jellybeans'
 
 let g:lightline.component = {
       \ 'myfileencoding': '%{&fenc!=#""?&fenc:&enc}(%{&ff})',
