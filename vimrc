@@ -129,6 +129,7 @@ set expandtab
 augroup MyAutoCmd
   autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType java setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType neosnippet setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 " インデント深さ変更コマンド
