@@ -29,6 +29,9 @@ let g:fzf_session_path = '~/.vim_sessions'
 
 # neosnippet
 [[plugins]]
+repo = 'Shougo/neosnippet'
+
+[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 # appearance

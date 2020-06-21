@@ -67,12 +67,6 @@ let g:jedi#completions_enabled = 0
 command! JediRename call jedi#rename()
 '''
 
-# neosnippet
-[[plugins]]
-repo = 'Shougo/neosnippet'
-on_event = 'InsertEnter'
-on_ft = 'snippet'
-
 [[plugins]]
 repo = 'rhysd/committia.vim'
 on_path = 'COMMIT_EDITMSG'

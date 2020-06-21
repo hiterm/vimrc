@@ -6,7 +6,6 @@ hook_add = '''
 let g:LanguageClient_diagnosticsEnable = 1
 let g:LanguageClient_useVirtualText = 'CodeLens'
 let g:LanguageClient_selectionUI = 'fzf'
-let g:LanguageClient_hasSnippetSupport = 1
 
 let g:LanguageClient_settingsPath = '~/.vim/settings.json'
 
