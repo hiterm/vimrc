@@ -21,6 +21,13 @@ depends = 'fzf'
 merged = 0
 
 [[plugins]]
+repo = 'pbogut/fzf-mru.vim'
+hook_add = '''
+let g:fzf_mru_max = 1000
+let g:fzf_mru_no_sort = 1
+'''
+
+[[plugins]]
 repo = 'dominickng/fzf-session.vim.git'
 depends = 'fzf'
 hook_add = '''
