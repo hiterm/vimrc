@@ -114,6 +114,7 @@ let s:ale_fixer_js = [
 let g:ale_fixers.ruby = ['rubocop']
 let g:ale_fixers['typescript'] = s:ale_fixer_js
 let g:ale_fixers['javascript'] = s:ale_fixer_js
+let g:ale_fixers['typescriptreact'] = s:ale_fixer_js
 
 let g:ale_disable_lsp = 1
 let g:ale_sign_error = ''
