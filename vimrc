@@ -237,6 +237,12 @@ nnoremap ]b :bnext<CR>
 " Python
 let g:python3_host_prog = '/usr/bin/python'
 
+" 前にカーソルがあった場所を開く
+augroup ReopenGroup
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
+
 " plugin, filetypeの設定 {{{1
 " vimtex and latex {{{2
 let g:tex_flavor='latex'
