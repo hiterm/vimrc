@@ -102,6 +102,9 @@ let g:ale_linters = {
       \ 'ruby': ['ruby', 'rubocop'],
       \ 'sh': ['shell', 'shellcheck'],
       \ 'csh': ['shell', 'shellcheck'],
+      \ 'typescript': ['eslint'],
+      \ 'javascript': ['eslint'],
+      \ 'typescriptreact': ['eslint'],
       \ }
 
 if !exists('g:ale_fixers')
@@ -109,7 +112,6 @@ if !exists('g:ale_fixers')
 endif
 let s:ale_fixer_js = [
       \ 'eslint',
-      \ 'prettier'
       \]
 let g:ale_fixers.ruby = ['rubocop']
 let g:ale_fixers['typescript'] = s:ale_fixer_js
@@ -120,6 +122,11 @@ let g:ale_disable_lsp = 1
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 let g:ale_statusline_format = [' %d', ' %d', '']
+
+let g:ale_type_map = {'eslint': {'E': 'ES'}}
+'''
+hook_post_source = '''
+highlight! link ALEStyleError ALEWarning
 '''
 
 [[plugins]]
