@@ -171,6 +171,9 @@ repo = 'htlsne/vim-styled-components'
 [[plugins]]
 repo = 'lervag/vimtex'
 
+[[plugins]]
+repo = 'sophacles/vim-processing'
+
 # terminal
 [[plugins]]
 repo = 'kassio/neoterm'
