@@ -212,5 +212,6 @@ augroup MyNeoterm
   autocmd FileType ruby nnoremap <Leader>r :call NeotermRunAndOpen('ruby %')<CR>
   autocmd FileType python nnoremap <Leader>r :call NeotermRunAndOpen('python %')<CR>
   autocmd FileType rust nnoremap <Leader>r :call NeotermRunAndOpen('cargo run')<CR>
+  autocmd FileType rust nnoremap <Leader>t :call NeotermRunAndOpen('cargo test')<CR>
 augroup END
 '''
