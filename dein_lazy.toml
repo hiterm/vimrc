@@ -163,3 +163,6 @@ let g:easy_align_delimiters = {
 # colorscheme
 [[plugins]]
 repo = 'arcticicestudio/nord-vim'
+
+[[plugins]]
+repo = 'tyrannicaltoucan/vim-quantum'

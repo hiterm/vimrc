@@ -89,17 +89,9 @@ set cursorline
 
 " colorscheme
 set termguicolors
-call dein#source(['nord-vim'])
-let g:nord_cursor_line_number_background = 1
-let g:nord_uniform_diff_background = 1
-" override colors
-augroup nord-overrides
-  autocmd!
-  autocmd ColorScheme nord highlight LineNr guifg='#616E88'
-augroup END
-colorscheme nord
-" lightline
-let g:lightline.colorscheme = 'nord'
+call dein#source(['vim-quantum'])
+colorscheme quantum
+let g:lightline.colorscheme = 'quantum'
 
 " 大文字小文字を区別しない
 set ignorecase
