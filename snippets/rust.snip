@@ -32,3 +32,12 @@ snippet tests
             ${2}
         }
     }
+
+snippet yesno
+    fn yesno(yes: bool) -> &'static str {
+        if yes {
+            "Yes"
+        } else {
+            "No"
+        }
+    }
