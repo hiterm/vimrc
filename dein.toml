@@ -225,36 +225,18 @@ repo = 'sophacles/vim-processing'
 
 # terminal
 [[plugins]]
-repo = 'kassio/neoterm'
+repo = 'voldikss/vim-floaterm'
 on_cmd = ['T', 'Ttoggle']
 hook_add = '''
-let g:neoterm_default_mod = 'vertical belowright'
-tnoremap <C-]> <C-\><C-n>
-nnoremap <C-g> :Ttoggle<CR><C-w>wi
-tnoremap <C-g> <C-\><C-n>:Ttoggle<CR>
-" Move window by name
-function! WinByBufname(bufname)
-  let bufmap = map(range(1, winnr('$')), '[bufname(winbufnr(v:val)), v:val]')
-  let thewindow = filter(bufmap, 'v:val[0] =~ a:bufname')[0][1]
-  execute thewindow 'wincmd w'
-endfunction
-" Run and open neoterm window
-function! NeotermRunAndOpen(cmd)
-  let l:current_winid = win_getid()
-  execute 'T ' . a:cmd
-  Topen
-  call WinByBufname('#neoterm')
-  " 自動スクロールするためにファイル末尾へ移動
-  normal G
-  call win_gotoid(l:current_winid)
-endfunction
+" tnoremap <C-]> <C-\><C-n>
+nnoremap <C-g> :FloatermToggle<CR>
+tnoremap <C-g> <C-\><C-n>:FloatermToggle<CR>
+
 " use like quickrun
 augroup MyNeoterm
   autocmd!
-  autocmd FileType ruby nnoremap <Leader>r :call NeotermRunAndOpen('ruby %')<CR>
-  autocmd FileType python nnoremap <Leader>r :call NeotermRunAndOpen('python %')<CR>
-  autocmd FileType rust nnoremap <Leader>r :call NeotermRunAndOpen('cargo run')<CR>
-  autocmd FileType rust nnoremap <Leader>t :call NeotermRunAndOpen('cargo test')<CR>
+  autocmd FileType rust nnoremap <Leader>r :FloatermSend cargo run<CR>:FloatermToggle<CR>
+  autocmd FileType rust nnoremap <Leader>t :FloatermSend cargo test<CR>:FloatermToggle<CR>
 augroup END
 '''
 
