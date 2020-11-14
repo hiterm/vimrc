@@ -111,17 +111,11 @@ depends = 'open-browser.vim'
 repo = 'tyru/open-browser.vim'
 
 [[plugins]]
-repo = 'tyru/columnskip.vim'
+repo = 'haya14busa/vim-edgemotion'
 on_map = {n = '<Plug>'}
 hook_add = '''
-nmap <C-j> <Plug>(columnskip:nonblank:next)
-omap <C-j> <Plug>(columnskip:nonblank:next)
-xmap <C-j> <Plug>(columnskip:nonblank:next)
-vmap <C-j> <Plug>(columnskip:nonblank:next)
-nmap <C-k> <Plug>(columnskip:nonblank:prev)
-omap <C-k> <Plug>(columnskip:nonblank:prev)
-xmap <C-k> <Plug>(columnskip:nonblank:prev)
-vmap <C-k> <Plug>(columnskip:nonblank:prev)
+map <C-j> <Plug>(edgemotion-j)
+map <C-k> <Plug>(edgemotion-k)
 '''
 
 [[plugins]]
