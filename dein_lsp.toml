@@ -18,6 +18,19 @@ nnoremap [lsp]h <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap [lsp]r <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap [lsp]a <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap [lsp]f <cmd>lua vim.lsp.buf.formatting()<CR>
+
+highlight link LspDiagnosticsError WarningMsg
+highlight link LspDiagnosticsVirtualTextError WarningMsg
+highlight link LspDiagnosticsDefaultError WarningMsg
+highlight link LspDiagnosticsWarning Comment
+highlight link LspDiagnosticsVirtualTextWarning Comment
+highlight link LspDiagnosticsDefaultWarning Comment
+highlight link LspDiagnosticsInformation Comment
+highlight link LspDiagnosticsVirtualTextInformation Comment
+highlight link LspDiagnosticsDefaultInformation Comment
+highlight link LspDiagnosticsHint Comment
+highlight link LspDiagnosticsVirtualTextHint Comment
+highlight link LspDiagnosticsDefaultHint Comment
 '''
 
 [[plugins]]
