@@ -18,6 +18,8 @@ nnoremap [lsp]h <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap [lsp]r <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap [lsp]a <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap [lsp]f <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap [lsp]T <cmd>lua require'lsp_extensions'.inlay_hints()<CR>
+nnoremap [lsp]t <cmd>lua require'lsp_extensions'.inlay_hints{ only_current_line = true }<CR>
 
 highlight link LspDiagnosticsError WarningMsg
 highlight link LspDiagnosticsVirtualTextError WarningMsg
@@ -50,3 +52,6 @@ vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.docum
 vim.lsp.handlers['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
 EOF
 '''
+
+[[plugins]]
+repo = 'nvim-lua/lsp_extensions.nvim'
