@@ -21,9 +21,9 @@ nnoremap [lsp]f <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap [lsp]T <cmd>lua require'lsp_extensions'.inlay_hints()<CR>
 nnoremap [lsp]t <cmd>lua require'lsp_extensions'.inlay_hints{ only_current_line = true }<CR>
 
-highlight link LspDiagnosticsError WarningMsg
-highlight link LspDiagnosticsVirtualTextError WarningMsg
-highlight link LspDiagnosticsDefaultError WarningMsg
+highlight link LspDiagnosticsError ErrorMsg
+highlight link LspDiagnosticsVirtualTextError ErrorMsg
+highlight link LspDiagnosticsDefaultError ErrorMsg
 highlight link LspDiagnosticsWarning Comment
 highlight link LspDiagnosticsVirtualTextWarning Comment
 highlight link LspDiagnosticsDefaultWarning Comment

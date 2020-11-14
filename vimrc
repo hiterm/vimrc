@@ -89,9 +89,8 @@ set cursorline
 
 " colorscheme
 set termguicolors
-call dein#source(['vim-quantum'])
-colorscheme quantum
-let g:lightline.colorscheme = 'quantum'
+colorscheme edge
+let g:lightline.colorscheme = 'edge'
 
 " 大文字小文字を区別しない
 set ignorecase

@@ -257,3 +257,7 @@ augroup MyNeoterm
   autocmd FileType rust nnoremap <Leader>t :call NeotermRunAndOpen('cargo test')<CR>
 augroup END
 '''
+
+# colorscheme
+[[plugins]]
+repo = 'sainnhe/edge'
