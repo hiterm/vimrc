@@ -102,6 +102,12 @@ hlmap.error = nil
 hlmap["punctuation.delimiter"] = "Delimiter"
 hlmap["punctuation.bracket"] = nil
 EOF
+
+" tomlの中のVim scriptでPreciousが効くようにする
+augroup MyTreeSitter
+  autocmd!
+  autocmd User PreciousFileType_vim :TSBufDisable highlight
+augroup END
 '''
 
 [[plugins]]
