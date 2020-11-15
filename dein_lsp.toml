@@ -6,6 +6,14 @@ repo = 'Shougo/deoplete-lsp'
 hook_add = '''
 lua << EOF
 require'nvim_lsp'.rust_analyzer.setup{}
+
+-- define wrapper function for formatting
+-- to avoid cursor moving to first line
+function formatting_retain_line()
+  local line_number = vim.api.nvim_eval("line('.')")
+  vim.lsp.buf.formatting_sync()
+  vim.api.nvim_command('normal ' .. line_number .. 'G')
+end
 EOF
 
 " The prefix key.
@@ -17,24 +25,26 @@ nnoremap [lsp]d <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap [lsp]h <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap [lsp]r <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap [lsp]a <cmd>lua vim.lsp.buf.code_action()<CR>
-nnoremap [lsp]f <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap [lsp]f <cmd>lua formatting_retain_line()<CR>
 nnoremap [lsp]T <cmd>lua require'lsp_extensions'.inlay_hints()<CR>
 nnoremap [lsp]t <cmd>lua require'lsp_extensions'.inlay_hints{ only_current_line = true }<CR>
 
 " Define lsp commands
+" Use costum function for "formatting"
+command LspFormatting :lua formatting_retain_line()<CR>
 lua << EOF
 function define_lsp_command(cmd, fun)
   local def_cmd = 'command Lsp' .. cmd .. ' :lua vim.lsp.buf.' .. fun .. '()<CR>'
   vim.api.nvim_command(def_cmd)
 end
 
+-- Define command except for "formatting"
 define_lsp_command('ClearReference', 'clear_reference')
 define_lsp_command('CodeAction', 'code_action')
 define_lsp_command('Declaration', 'declaration')
 define_lsp_command('Definition', 'definition')
 define_lsp_command('DocumentHighlight', 'document_highLight')
 define_lsp_command('DocumentSynbol', 'document_synbol')
-define_lsp_command('Formatting', 'formatting')
 define_lsp_command('Hover', 'hover')
 define_lsp_command('Inplementation', 'inplementation')
 define_lsp_command('IncomingCalls', 'incoming_calls')
