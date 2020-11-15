@@ -5,7 +5,7 @@ repo = 'neovim/nvim-lspconfig'
 repo = 'Shougo/deoplete-lsp'
 hook_add = '''
 lua << EOF
-require'nvim_lsp'.rust_analyzer.setup{}
+require'lspconfig'.rust_analyzer.setup{}
 
 -- define wrapper function for formatting
 -- to avoid cursor moving to first line
