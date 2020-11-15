@@ -130,6 +130,9 @@ function! ChangeIndent(n)
 endfunction
 command! -nargs=1 ChangeIndent call ChangeIndent(<f-args>)
 
+" vim scriptの中のluaのシンタックスハイライトを有効化する
+let g:vimsyn_embed = 'l'
+
 if has('nvim')
   set inccommand=split
 endif

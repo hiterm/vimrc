@@ -34,9 +34,6 @@ let g:precious_enable_switchers = {
       \	"toml" : {
       \		"setfiletype" : 1
       \	},
-      \	"vim" : {
-      \		"setfiletype" : 1
-      \	},
       \'markdown' : {
       \   "setfiletype" : 1
       \},
