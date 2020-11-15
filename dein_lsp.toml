@@ -70,6 +70,13 @@ highlight link LspDiagnosticsVirtualTextHint Comment
 highlight link LspDiagnosticsDefaultHint Comment
 
 lua << EOF
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    update_in_insert = false,
+  }
+)
+
+-- a workaround for rust_analyzer
 vim.lsp.handlers["textDocument/rename"] = function(_err, _method, result)
     if not result then return end
     if result.documentChanges then
