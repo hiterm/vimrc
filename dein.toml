@@ -226,17 +226,19 @@ repo = 'sophacles/vim-processing'
 # terminal
 [[plugins]]
 repo = 'voldikss/vim-floaterm'
-on_cmd = ['T', 'Ttoggle']
 hook_add = '''
 " tnoremap <C-]> <C-\><C-n>
-nnoremap <C-g> :FloatermToggle<CR>
-tnoremap <C-g> <C-\><C-n>:FloatermToggle<CR>
+let g:floaterm_keymap_toggle = '<C-g>'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
 
 " use like quickrun
 augroup MyNeoterm
   autocmd!
-  autocmd FileType rust nnoremap <Leader>r :FloatermSend cargo run<CR>:FloatermToggle<CR>
-  autocmd FileType rust nnoremap <Leader>t :FloatermSend cargo test<CR>:FloatermToggle<CR>
+  autocmd FileType rust nnoremap <Leader>r :FloatermNew cargo run<CR>
+  autocmd FileType rust nnoremap <Leader>R :FloatermSend cargo run<CR>:FloatermToggle<CR>
+  autocmd FileType rust nnoremap <Leader>t :FloatermNew cargo test<CR>
+  autocmd FileType rust nnoremap <Leader>T :FloatermSend cargo test<CR>:FloatermToggle<CR>
 augroup END
 '''
 
