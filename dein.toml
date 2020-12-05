@@ -62,7 +62,7 @@ hook_add = 'source ~/.vim/lightline.rc.vim'
 repo = 'ntpeters/vim-better-whitespace'
 hook_add = '''
 let g:better_whitespace_enabled=1
-let g:better_whitespace_filetypes_blacklist = ['defx', 'markdown']
+let g:better_whitespace_filetypes_blacklist = ['defx', 'markdown', 'gitcommit']
 let g:better_whitespace_operator=''
 augroup MyIndentGuides
   autocmd!
