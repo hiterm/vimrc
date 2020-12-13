@@ -70,11 +70,30 @@ highlight link LspDiagnosticsVirtualTextHint Comment
 highlight link LspDiagnosticsDefaultHint Comment
 
 lua << EOF
+-- https://github.com/nvim-lua/diagnostic-nvim/issues/73
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     update_in_insert = false,
   }
 )
+-- quickfix
+-- https://github.com/neovim/nvim-lspconfig/issues/69
+do
+  local method = "textDocument/publishDiagnostics"
+  local default_callback = vim.lsp.callbacks[method]
+  vim.lsp.callbacks[method] = function(err, method, result, client_id)
+    default_callback(err, method, result, client_id)
+    if result and result.diagnostics then
+      for _, v in ipairs(result.diagnostics) do
+        v.bufnr = client_id
+        v.lnum = v.range.start.line + 1
+        v.col = v.range.start.character + 1
+        v.text = v.message
+      end
+      vim.lsp.util.set_qflist(result.diagnostics)
+    end
+  end
+end
 
 -- a workaround for rust_analyzer
 vim.lsp.handlers["textDocument/rename"] = function(_err, _method, result)
