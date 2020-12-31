@@ -5,7 +5,35 @@ repo = 'neovim/nvim-lspconfig'
 repo = 'Shougo/deoplete-lsp'
 hook_add = '''
 lua << EOF
-require'lspconfig'.rust_analyzer.setup{}
+
+require'lspconfig'.rust_analyzer.setup({
+  settings = {
+    ["rust-analyzer"] = {
+      assist = {
+        importMergeBehaviour = "full",
+        importPrefix = "by_crate",
+      },
+
+      callInfo = {
+        full = true,
+      };
+
+      cargo = {
+        loadOutDirsFromCheck = true
+      },
+
+      checkOnSave = {
+        allFeatures = true,
+      },
+
+      procMacro = {
+        enable = true,
+      },
+    },
+  },
+})
+
+require'lspconfig'.tsserver.setup{}
 
 -- define wrapper function for formatting
 -- to avoid cursor moving to first line
@@ -131,22 +159,37 @@ EOF
 '''
 
 [[plugins]]
-repo = 'RishabhRD/popfix'
+repo = 'nvim-lua/lsp_extensions.nvim'
 
 [[plugins]]
-repo = 'RishabhRD/nvim-lsputils'
+repo = 'ojroques/nvim-lspfuzzy'
 hook_add = '''
-lua <<EOF
-vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
-vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
-vim.lsp.handlers['textDocument/definition'] = require'lsputil.locations'.definition_handler
-vim.lsp.handlers['textDocument/declaration'] = require'lsputil.locations'.declaration_handler
-vim.lsp.handlers['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler
-vim.lsp.handlers['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
-vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
-vim.lsp.handlers['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
+lua << EOF
+require('lspfuzzy').setup {}
 EOF
 '''
 
 [[plugins]]
-repo = 'nvim-lua/lsp_extensions.nvim'
+repo = 'nvim-lua/popup.nvim'
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+hook_add = '''
+lua << EOF
+local actions = require('telescope.actions')
+-- Global remapping
+------------------------------
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      n = {
+        ["<esc>"] = actions.close
+      },
+    },
+  }
+}
+EOF
+'''
