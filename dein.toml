@@ -78,6 +78,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true,              -- false will disable the whole extension
+    disable = { "toml" },
   },
   incremental_selection = {
     enable = true,
@@ -103,11 +104,12 @@ hlmap["punctuation.delimiter"] = "Delimiter"
 hlmap["punctuation.bracket"] = nil
 EOF
 
+" Currently not working
 " tomlの中のVim scriptでPreciousが効くようにする
-augroup MyTreeSitter
-  autocmd!
-  autocmd User PreciousFileType_vim TSBufDisable highlight
-augroup END
+" augroup MyTreeSitter
+"   autocmd!
+"   autocmd User PreciousFileType_vim TSBufDisable highlight
+" augroup END
 '''
 
 [[plugins]]
