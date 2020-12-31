@@ -106,7 +106,7 @@ EOF
 " tomlの中のVim scriptでPreciousが効くようにする
 augroup MyTreeSitter
   autocmd!
-  autocmd User PreciousFileType_vim :TSBufDisable highlight
+  autocmd User PreciousFileType_vim TSBufDisable highlight
 augroup END
 '''
 
