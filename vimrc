@@ -237,6 +237,8 @@ augroup ReopenGroup
   \ exe "normal g`\"" | endif
 augroup END
 
+set scrolloff=3
+
 " plugin, filetypeの設定 {{{1
 " vimtex and latex {{{2
 let g:tex_flavor='latex'
