@@ -168,28 +168,3 @@ lua << EOF
 require('lspfuzzy').setup {}
 EOF
 '''
-
-[[plugins]]
-repo = 'nvim-lua/popup.nvim'
-
-[[plugins]]
-repo = 'nvim-lua/plenary.nvim'
-
-[[plugins]]
-repo = 'nvim-telescope/telescope.nvim'
-hook_add = '''
-lua << EOF
-local actions = require('telescope.actions')
--- Global remapping
-------------------------------
-require('telescope').setup{
-  defaults = {
-    mappings = {
-      n = {
-        ["<esc>"] = actions.close
-      },
-    },
-  }
-}
-EOF
-'''
