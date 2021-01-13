@@ -67,12 +67,15 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " The prefix key.
 nnoremap [lsp] <Nop>
 nmap     <Space>l      [lsp]
+vnoremap [lsp] <Nop>
+vmap     <Space>l      [lsp]
 
 nnoremap [lsp]l :CocList<CR>
 nnoremap [lsp]h :call <SID>show_documentation()<CR>
 nmap [lsp]d <Plug>(coc-definition)
 nmap [lsp]r <Plug>(coc-rename)
-nmap [lsp]a <Plug>(coc-codeaction-line)
+nmap [lsp]a v<Plug>(coc-codeaction-selected)
+vmap [lsp]a <Plug>(coc-codeaction-selected)
 nmap [lsp]s <Plug>(coc-codelens-action)
 nnoremap [lsp]f :call CocAction('format')<CR>
 
