@@ -75,10 +75,13 @@ vmap     <Space>l      [lsp]
 nnoremap [lsp]l :CocList<CR>
 nnoremap [lsp]h :call <SID>show_documentation()<CR>
 nmap [lsp]d <Plug>(coc-definition)
-nmap [lsp]r <Plug>(coc-rename)
+nmap [lsp]rn <Plug>(coc-rename)
 nmap [lsp]a v<Plug>(coc-codeaction-selected)
 vmap [lsp]a <Plug>(coc-codeaction-selected)
 nmap [lsp]s <Plug>(coc-codelens-action)
+nmap [lsp]t <Plug>(coc-type-definition)
+nmap [lsp]i <Plug>(coc-implementation)
+nmap [lsp]rf <Plug>(coc-references)
 nnoremap [lsp]f :call CocAction('format')<CR>
 
 " GoTo code navigation.
