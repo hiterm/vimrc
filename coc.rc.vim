@@ -34,6 +34,11 @@ else
   set signcolumn=yes
 endif
 
+augroup MyCoc
+  autocmd!
+  autocmd FileType list set winhighlight=CursorLine:CocUnderline
+augroup END
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
