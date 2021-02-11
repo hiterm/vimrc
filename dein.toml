@@ -148,9 +148,6 @@ let g:shebang#shebangs = {
 '''
 
 [[plugins]]
-repo = 'kkoomen/vim-doge'
-
-[[plugins]]
 repo = 'justinmk/vim-sneak'
 hook_add = '''
 let g:sneak#label = 1
