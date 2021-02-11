@@ -184,7 +184,7 @@ repo = 'deton/jasegment.vim'
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
-let g:polyglot_disabled = ['tex', 'typescript', 'jsx']
+let g:polyglot_disabled = ['tex', 'typescript', 'jsx', 'rust']
 '''
 
 [[plugins]]
