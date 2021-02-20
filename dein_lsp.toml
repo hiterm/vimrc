@@ -4,3 +4,6 @@ merged = 0
 hook_add = '''
 source ~/.vim/coc.rc.vim
 '''
+
+[[plugins]]
+repo = 'wellle/tmux-complete.vim'
