@@ -7,3 +7,6 @@ source ~/.vim/coc.rc.vim
 
 [[plugins]]
 repo = 'wellle/tmux-complete.vim'
+
+[[plugins]]
+repo = 'josa42/vim-lightline-coc'

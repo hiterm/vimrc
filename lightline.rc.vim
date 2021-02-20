@@ -11,6 +11,8 @@ let g:lightline.active = {
       \     [ 'lineinfo' ],
       \     [ 'percent' ],
       \     [ 'myfileencoding', 'filetype' ],
+      \     [  'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ],
+      \     [ 'coc_status'  ],
       \   ]
       \ }
 let g:lightline.inactive = {
@@ -30,6 +32,9 @@ let g:lightline.component = {
 let g:lightline.component_function = {
       \ 'gitgutter': 'LightlineGitgutter',
       \ }
+
+" coc
+call lightline#coc#register()
 
 " GitGutter
 " From http://qiita.com/yuyuchu3333/items/20a0acfe7e0d0e167ccc
