@@ -24,7 +24,6 @@ if dein#load_state(s:dein_dir)  " 失敗したら
 
   call dein#load_toml('~/.vim/dein.toml', {'lazy': 0})
   call dein#load_toml('~/.vim/dein_lazy.toml', {'lazy': 1})
-  call dein#load_toml('~/.vim/dein_deoplete.toml', {'lazy': 1})
   call dein#load_toml('~/.vim/dein_lsp.toml', {'lazy': 0})
 
   " Required:
@@ -89,9 +88,8 @@ set cursorline
 
 " colorscheme
 set termguicolors
-call dein#source(['vim-quantum'])
-colorscheme quantum
-let g:lightline.colorscheme = 'quantum'
+colorscheme edge
+let g:lightline.colorscheme = 'edge'
 
 " 大文字小文字を区別しない
 set ignorecase
@@ -123,6 +121,7 @@ augroup MyAutoCmd
   autocmd FileType java setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType neosnippet setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType css setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 " インデント深さ変更コマンド
 function! ChangeIndent(n)
@@ -130,6 +129,9 @@ function! ChangeIndent(n)
   IndentGuidesEnable
 endfunction
 command! -nargs=1 ChangeIndent call ChangeIndent(<f-args>)
+
+" vim scriptの中のluaのシンタックスハイライトを有効化する
+let g:vimsyn_embed = 'l'
 
 if has('nvim')
   set inccommand=split
@@ -234,6 +236,8 @@ augroup ReopenGroup
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
   \ exe "normal g`\"" | endif
 augroup END
+
+set scrolloff=3
 
 " plugin, filetypeの設定 {{{1
 " vimtex and latex {{{2

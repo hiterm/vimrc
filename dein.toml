@@ -62,7 +62,7 @@ hook_add = 'source ~/.vim/lightline.rc.vim'
 repo = 'ntpeters/vim-better-whitespace'
 hook_add = '''
 let g:better_whitespace_enabled=1
-let g:better_whitespace_filetypes_blacklist = ['defx', 'markdown']
+let g:better_whitespace_filetypes_blacklist = ['defx', 'markdown', 'gitcommit']
 let g:better_whitespace_operator=''
 augroup MyIndentGuides
   autocmd!
@@ -78,6 +78,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true,              -- false will disable the whole extension
+    disable = { "toml" },
   },
   incremental_selection = {
     enable = true,
@@ -102,6 +103,13 @@ hlmap.error = nil
 hlmap["punctuation.delimiter"] = "Delimiter"
 hlmap["punctuation.bracket"] = nil
 EOF
+
+" Currently not working
+" tomlの中のVim scriptでPreciousが効くようにする
+" augroup MyTreeSitter
+"   autocmd!
+"   autocmd User PreciousFileType_vim TSBufDisable highlight
+" augroup END
 '''
 
 [[plugins]]
@@ -110,7 +118,10 @@ hook_add = 'let g:rainbow_active = 1'
 
 # edit
 [[plugins]]
-repo = 'tpope/vim-surround'
+repo = 'machakann/vim-sandwich'
+hook_add = '''
+runtime macros/sandwich/keymap/surround.vim
+'''
 
 [[plugins]]
 repo = 'tpope/vim-commentary'
@@ -135,44 +146,6 @@ let g:shebang#shebangs = {
       \ 'sh': '#!/bin/bash',
       \ }
 '''
-
-[[plugins]]
-repo = 'w0rp/ale'
-hook_add = '''
-let g:ale_lint_on_text_changed = 0
-let g:ale_linters = {
-      \ 'ruby': ['ruby', 'rubocop'],
-      \ 'sh': ['shell', 'shellcheck'],
-      \ 'csh': ['shell', 'shellcheck'],
-      \ 'typescript': ['eslint'],
-      \ 'javascript': ['eslint'],
-      \ 'typescriptreact': ['eslint'],
-      \ }
-
-if !exists('g:ale_fixers')
-  let g:ale_fixers = {}
-endif
-let s:ale_fixer_js = [
-      \ 'eslint',
-      \]
-let g:ale_fixers.ruby = ['rubocop']
-let g:ale_fixers['typescript'] = s:ale_fixer_js
-let g:ale_fixers['javascript'] = s:ale_fixer_js
-let g:ale_fixers['typescriptreact'] = s:ale_fixer_js
-
-let g:ale_disable_lsp = 1
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
-let g:ale_statusline_format = [' %d', ' %d', '']
-
-let g:ale_type_map = {'eslint': {'E': 'ES'}}
-'''
-hook_post_source = '''
-highlight! link ALEStyleError ALEWarning
-'''
-
-[[plugins]]
-repo = 'kkoomen/vim-doge'
 
 [[plugins]]
 repo = 'justinmk/vim-sneak'
@@ -208,7 +181,7 @@ repo = 'deton/jasegment.vim'
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
-let g:polyglot_disabled = ['tex', 'typescript', 'jsx']
+let g:polyglot_disabled = ['tex', 'typescript', 'jsx', 'rust']
 '''
 
 [[plugins]]
@@ -226,16 +199,22 @@ repo = 'sophacles/vim-processing'
 # terminal
 [[plugins]]
 repo = 'voldikss/vim-floaterm'
-on_cmd = ['T', 'Ttoggle']
 hook_add = '''
 " tnoremap <C-]> <C-\><C-n>
-nnoremap <C-g> :FloatermToggle<CR>
-tnoremap <C-g> <C-\><C-n>:FloatermToggle<CR>
+let g:floaterm_keymap_toggle = '<C-g>'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
 
 " use like quickrun
 augroup MyNeoterm
   autocmd!
-  autocmd FileType rust nnoremap <Leader>r :FloatermSend cargo run<CR>:FloatermToggle<CR>
-  autocmd FileType rust nnoremap <Leader>t :FloatermSend cargo test<CR>:FloatermToggle<CR>
+  autocmd FileType rust nnoremap <Leader>r :FloatermNew cargo run<CR>
+  autocmd FileType rust nnoremap <Leader>R :FloatermSend cargo run<CR>:FloatermToggle<CR>
+  autocmd FileType rust nnoremap <Leader>t :FloatermNew cargo test<CR>
+  autocmd FileType rust nnoremap <Leader>T :FloatermSend cargo test<CR>:FloatermToggle<CR>
 augroup END
 '''
+
+# colorscheme
+[[plugins]]
+repo = 'sainnhe/edge'

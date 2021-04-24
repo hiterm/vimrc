@@ -58,41 +58,13 @@ repo = 'mattn/emmet-vim'
 on_ft = ['html', 'javascript', 'typescript']
 
 [[plugins]]
-repo = 'davidhalter/jedi-vim'
-on_ft = 'python'
-hook_add = '''
-" let g:jedi#auto_initialization = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#completions_enabled = 0
-command! JediRename call jedi#rename()
-'''
-
-[[plugins]]
 repo = 'rhysd/committia.vim'
 on_path = 'COMMIT_EDITMSG'
-
-[[plugins]]
-repo = 'osyo-manga/vim-anzu'
-on_map = '<Plug>(anzu-'
-hook_add = '''
-nmap n <Plug>(anzu-n-with-echo)
-nmap N <Plug>(anzu-N-with-echo)
-nmap * <Plug>(anzu-star-with-echo)
-nmap # <Plug>(anzu-sharp-with-echo)
-'''
 
 [[plugins]]
 repo = 'rhysd/git-messenger.vim'
 on_cmd = 'GitMessenger'
 on_map = '<Plug>(git-messenger'
-
-[[plugins]]
-repo = 'Shougo/echodoc.vim'
-on_event = 'CompleteDone'
-hook_source = '''
-let g:echodoc#type = 'virtual'
-call echodoc#enable()
-'''
 
 [[plugins]]
 repo = 'kana/vim-niceblock'
@@ -153,10 +125,3 @@ let g:easy_align_delimiters = {
       \   }
       \ }
 '''
-
-# colorscheme
-[[plugins]]
-repo = 'arcticicestudio/nord-vim'
-
-[[plugins]]
-repo = 'tyrannicaltoucan/vim-quantum'

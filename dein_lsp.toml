@@ -1,72 +1,12 @@
 [[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
+repo = 'neoclide/coc.nvim'
+merged = 0
 hook_add = '''
-let g:LanguageClient_diagnosticsEnable = 1
-let g:LanguageClient_useVirtualText = 'CodeLens'
-let g:LanguageClient_selectionUI = 'fzf'
-
-let g:LanguageClient_settingsPath = '~/.vim/settings.json'
-
-let g:LanguageClient_serverCommands = {
-      \ 'rust': ['rust-analyzer'],
-      \ 'python': ['pyls'],
-      \ 'ruby': ['solargraph', 'stdio'],
-      \ 'javascript': ['typescript-language-server', '--stdio'],
-      \ 'typescript': ['typescript-language-server', '--stdio'],
-      \ 'typescriptreact': ['typescript-language-server', '--stdio'],
-      \ 'cpp': ['clangd'],
-      \ 'go': ['gopls'],
-      \ }
-
-let g:LanguageClient_rootMarkers = {
-" other root markers....
-      \ 'javascript': ['jsconfig.json'],
-      \ 'typescript': ['tsconfig.json'],
-      \ }
-
-let g:LanguageClient_diagnosticsDisplay =
-      \ {
-      \     1: {
-      \         "name": "Error",
-      \         "texthl": "ALEError",
-      \         "signText": "",
-      \         "signTexthl": "ALEErrorSign",
-      \         "virtualTexthl": "Error",
-      \     },
-      \     2: {
-      \         "name": "Warning",
-      \         "texthl": "ALEWarning",
-      \         "signText": "",
-      \         "signTexthl": "ALEWarningSign",
-      \         "virtualTexthl": "Todo",
-      \     },
-      \     3: {
-      \         "name": "Information",
-      \         "texthl": "ALEInfo",
-      \         "signText": "",
-      \         "signTexthl": "ALEInfoSign",
-      \         "virtualTexthl": "Todo",
-      \     },
-      \     4: {
-      \         "name": "Hint",
-      \         "texthl": "ALEInfo",
-      \         "signText": "ﯦ",
-      \         "signTexthl": "ALEInfoSign",
-      \         "virtualTexthl": "Todo",
-      \     },
-      \ }
-
-" The prefix key.
-nnoremap [lsp] <Nop>
-nmap     <Space>l      [lsp]
-
-nnoremap [lsp]l :call LanguageClient_contextMenu()<CR>
-nnoremap [lsp]h :call LanguageClient#textDocument_hover()<CR>
-nnoremap [lsp]d :call LanguageClient#textDocument_definition()<CR>
-nnoremap [lsp]r :call LanguageClient#textDocument_rename()<CR>
-nnoremap [lsp]a :call LanguageClient#textDocument_codeAction()<CR>
-nnoremap [lsp]s :call LanguageClient#handleCodeLensAction()<CR>
-nnoremap [lsp]f :call LanguageClient#textDocument_formatting()<CR>
+source ~/.vim/coc.rc.vim
 '''
+
+[[plugins]]
+repo = 'wellle/tmux-complete.vim'
+
+[[plugins]]
+repo = 'josa42/vim-lightline-coc'

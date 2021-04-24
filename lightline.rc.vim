@@ -11,7 +11,8 @@ let g:lightline.active = {
       \     [ 'lineinfo' ],
       \     [ 'percent' ],
       \     [ 'myfileencoding', 'filetype' ],
-      \     [ 'lc_error', 'lc_warning' ],
+      \     [  'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ],
+      \     [ 'coc_status'  ],
       \   ]
       \ }
 let g:lightline.inactive = {
@@ -32,21 +33,8 @@ let g:lightline.component_function = {
       \ 'gitgutter': 'LightlineGitgutter',
       \ }
 
-let g:lightline.component_expand = {
-      \ 'ale_error':   'Lightline_ale_error',
-      \ 'ale_warning': 'Lightline_ale_warning',
-      \ 'ale_ok':      'Lightline_ale_ok',
-      \ 'lc_error': 'LC_error_count',
-      \ 'lc_warning': 'LC_warning_count',
-      \ }
-
-let g:lightline.component_type = {
-      \ 'ale_error':   'error',
-      \ 'ale_warning': 'warning',
-      \ 'ale_ok':      'ok',
-      \ 'lc_error':    'error',
-      \ 'lc_warning':    'warning',
-      \ }
+" coc
+call lightline#coc#register()
 
 " GitGutter
 " From http://qiita.com/yuyuchu3333/items/20a0acfe7e0d0e167ccc
@@ -70,29 +58,3 @@ function! LightlineGitgutter()
   endfor
   return join(ret, ' ')
 endfunction
-
-" LanguageClient
-" From https://github.com/autozimu/LanguageClient-neovim/issues/374
-function! LC_warning_count()
-  let current_buf_number = bufnr('%')
-  let qflist = getqflist()
-  let current_buf_diagnostics = filter(qflist, {index, dict -> dict['bufnr'] == current_buf_number && dict['type'] == 'W'})
-  let count = len(current_buf_diagnostics)
-  return count > 0 && g:LanguageClient_loaded ? nr2char('0xf071') . count : ''
-endfunction
-
-function! LC_error_count()
-  let current_buf_number = bufnr('%')
-  let qflist = getqflist()
-  let current_buf_diagnostics = filter(qflist, {index, dict -> dict['bufnr'] == current_buf_number && dict['type'] == 'E'})
-  let count = len(current_buf_diagnostics)
-  return count > 0 && g:LanguageClient_loaded ? nr2char('0xf057') . count : ''
-endfunction
-
-function! LightLineLC()
-endfunction
-
-augroup MyLightLineLC
-  autocmd!
-  autocmd User LanguageClientDiagnosticsChanged call lightline#update()
-augroup END
