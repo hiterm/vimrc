@@ -88,6 +88,7 @@ nmap [lsp]t <Plug>(coc-type-definition)
 nmap [lsp]i <Plug>(coc-implementation)
 nmap [lsp]rf <Plug>(coc-references)
 nnoremap [lsp]f :call CocAction('format')<CR>
+nmap [lsp]fr :CocCommand workspace.renameCurrentFile<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
