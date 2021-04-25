@@ -4,5 +4,7 @@
     "<C-p>": "normal:k"
   },
   "rust-analyzer.cargo.loadOutDirsFromCheck": true,
-  "rust-analyzer.procMacro.enable": true
+  "rust-analyzer.procMacro.enable": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "eslint.autoFixOnSave": true
 }

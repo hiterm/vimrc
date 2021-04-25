@@ -55,7 +55,7 @@ repo = 'rbgrouleff/bclose.vim'
 # filetype plugins
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html', 'javascript', 'typescript']
+on_ft = ['html', 'javascript', 'typescript', 'typescriptreact']
 
 [[plugins]]
 repo = 'rhysd/committia.vim'
