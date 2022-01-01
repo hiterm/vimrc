@@ -5,6 +5,7 @@ let g:coc_global_extensions = [
       \   'coc-neosnippet',
       \   'coc-json',
       \   'coc-tsserver',
+      \   'coc-prettier',
       \   'coc-diagnostic',
       \ ]
 
