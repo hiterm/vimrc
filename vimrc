@@ -325,3 +325,7 @@ set listchars=tab:»-,trail:~
 augroup MyAutoCmd
   autocmd BufNewFile,BufRead *.pde set ft=processing
 augroup END
+
+" jsx, tsx {{{2
+autocmd BufNewFile,BufRead *.jsx set ft=javascript.jsx
+autocmd BufNewFile,BufRead *.tsx set ft=typescript.tsx

@@ -91,6 +91,9 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true
+  },
+  context_commentstring = {
+    enable = true
   }
 }
 
@@ -195,6 +198,14 @@ repo = 'lervag/vimtex'
 
 [[plugins]]
 repo = 'sophacles/vim-processing'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+merged = 0
+
+[[plugins]]
+repo = 'JoosepAlviste/nvim-ts-context-commentstring'
+merged = 0
 
 # terminal
 [[plugins]]

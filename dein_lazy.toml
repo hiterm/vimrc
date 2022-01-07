@@ -40,9 +40,6 @@ let g:precious_enable_switchers = {
       \}
 '''
 
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
 # tig-explorer
 [[plugins]]
 repo = 'iberianpig/tig-explorer.vim'
