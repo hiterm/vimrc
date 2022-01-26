@@ -34,7 +34,7 @@ let g:lightline.component_function = {
       \ }
 
 " coc
-call lightline#coc#register()
+" call lightline#coc#register()
 
 " GitGutter
 " From http://qiita.com/yuyuchu3333/items/20a0acfe7e0d0e167ccc

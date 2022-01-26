@@ -1,13 +1,34 @@
+# [[plugins]]
+# repo = 'neoclide/coc.nvim'
+# rev = 'release'
+# merged = 0
+# hook_add = '''
+# source ~/.vim/coc.rc.vim
+# '''
+
+# [[plugins]]
+# repo = 'wellle/tmux-complete.vim'
+
+# [[plugins]]
+# repo = 'josa42/vim-lightline-coc'
+
 [[plugins]]
-repo = 'neoclide/coc.nvim'
-rev = 'release'
-merged = 0
-hook_add = '''
-source ~/.vim/coc.rc.vim
+repo = 'neovim/nvim-lspconfig'
+
+[[plugins]]
+repo = 'hrsh7th/nvim-cmp'
+
+[[plugins]]
+repo = 'hrsh7th/cmp-nvim-lsp'
+hook_source = '''
+lua require('config/nvim_cmp')
 '''
 
 [[plugins]]
-repo = 'wellle/tmux-complete.vim'
+repo = 'hrsh7th/cmp-buffer'
 
 [[plugins]]
-repo = 'josa42/vim-lightline-coc'
+repo = 'hrsh7th/cmp-path'
+
+[[plugins]]
+repo = 'hrsh7th/cmp-cmdline'
