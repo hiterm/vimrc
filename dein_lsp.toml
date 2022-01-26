@@ -1,17 +1,3 @@
-# [[plugins]]
-# repo = 'neoclide/coc.nvim'
-# rev = 'release'
-# merged = 0
-# hook_add = '''
-# source ~/.vim/coc.rc.vim
-# '''
-
-# [[plugins]]
-# repo = 'wellle/tmux-complete.vim'
-
-# [[plugins]]
-# repo = 'josa42/vim-lightline-coc'
-
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 
@@ -29,6 +15,3 @@ repo = 'hrsh7th/cmp-buffer'
 
 [[plugins]]
 repo = 'hrsh7th/cmp-path'
-
-[[plugins]]
-repo = 'hrsh7th/cmp-cmdline'
