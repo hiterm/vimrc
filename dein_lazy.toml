@@ -40,12 +40,6 @@ let g:precious_enable_switchers = {
       \}
 '''
 
-# tig-explorer
-[[plugins]]
-repo = 'iberianpig/tig-explorer.vim'
-on_cmd = ['Tig', 'TigBlame']
-depends = 'bclose.vim'
-
 [[plugins]]
 repo = 'rbgrouleff/bclose.vim'
 
@@ -70,14 +64,6 @@ hook_add = '''
 xmap I  <Plug>(niceblock-I)
 xmap A  <Plug>(niceblock-A)
 '''
-
-[[plugins]]
-repo = 'kannokanno/previm'
-on_cmd = 'PrevimOpen'
-depends = 'open-browser.vim'
-
-[[plugins]]
-repo = 'tyru/open-browser.vim'
 
 [[plugins]]
 repo = 'haya14busa/vim-edgemotion'
