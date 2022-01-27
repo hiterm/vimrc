@@ -26,6 +26,9 @@ repo = 'hrsh7th/cmp-buffer'
 repo = 'hrsh7th/cmp-path'
 
 [[plugins]]
+repo = 'uga-rosa/cmp-dictionary'
+
+[[plugins]]
 repo = 'j-hui/fidget.nvim'
 hook_source = '''
 lua require"fidget".setup{}

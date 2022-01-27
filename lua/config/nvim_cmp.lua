@@ -23,7 +23,19 @@ cmp.setup({
     { name = 'nvim_lsp' },
   }, {
     { name = 'buffer' },
+    { name = 'path' },
+  }, {
+    {
+      name = "dictionary",
+      keyword_length = 2,
+    },
   })
+})
+
+require("cmp_dictionary").setup({
+    dic = {
+        ["*"] = { "/usr/share/dict/words" },
+    },
 })
 
 -- nvim-lsp
