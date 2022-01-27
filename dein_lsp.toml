@@ -26,9 +26,6 @@ repo = 'hrsh7th/cmp-buffer'
 repo = 'hrsh7th/cmp-path'
 
 [[plugins]]
-repo = 'nvim-lua/lsp-status.nvim'
-
-[[plugins]]
 repo = 'j-hui/fidget.nvim'
 hook_source = '''
 lua require"fidget".setup{}
