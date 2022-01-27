@@ -26,15 +26,13 @@ repo = 'Shougo/neosnippet-snippets'
 
 # appearance
 [[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
-hook_add = '''
-let g:indent_guides_enable_on_vim_startup = 1
-augroup MyIndentGuides
-  autocmd!
-  autocmd FileType defx IndentGuidesDisable
-  autocmd FileType neoterm IndentGuidesDisable
-  autocmd FileType fzf IndentGuidesDisable
-augroup END
+repo = 'lukas-reineke/indent-blankline.nvim'
+hook_source = '''
+lua << EOF
+require("indent_blankline").setup {
+  show_end_of_line = true,
+}
+EOF
 '''
 
 [[plugins]]
