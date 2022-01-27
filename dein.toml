@@ -7,31 +7,14 @@ let g:dein#types#git#clone_depth=1
 [[plugins]]
 repo = 'haya14busa/dein-command.vim'
 
-# fzf
+# telescope
 [[plugins]]
-repo = "junegunn/fzf"
-merged = 0
-hook_add = '''
-source ~/.vim/fzf.rc.vim
-'''
+repo = 'nvim-lua/plenary.nvim'
 
 [[plugins]]
-repo = 'junegunn/fzf.vim'
-depends = 'fzf'
-merged = 0
-
-[[plugins]]
-repo = 'pbogut/fzf-mru.vim'
+repo = 'nvim-telescope/telescope.nvim'
 hook_add = '''
-let g:fzf_mru_max = 1000
-let g:fzf_mru_no_sort = 1
-'''
-
-[[plugins]]
-repo = 'dominickng/fzf-session.vim.git'
-depends = 'fzf'
-hook_add = '''
-let g:fzf_session_path = '~/.vim_sessions'
+source ~/.vim/telescope.rc.vim
 '''
 
 # neosnippet
