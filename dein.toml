@@ -87,13 +87,6 @@ hlmap.error = nil
 hlmap["punctuation.delimiter"] = "Delimiter"
 hlmap["punctuation.bracket"] = nil
 EOF
-
-" Currently not working
-" tomlの中のVim scriptでPreciousが効くようにする
-" augroup MyTreeSitter
-"   autocmd!
-"   autocmd User PreciousFileType_vim TSBufDisable highlight
-" augroup END
 '''
 
 [[plugins]]
@@ -173,10 +166,6 @@ repo = 'lervag/vimtex'
 
 [[plugins]]
 repo = 'sophacles/vim-processing'
-
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-merged = 0
 
 [[plugins]]
 repo = 'JoosepAlviste/nvim-ts-context-commentstring'
