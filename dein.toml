@@ -145,7 +145,8 @@ repo = 'tpope/vim-repeat'
 
 # git
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
+repo = 'lewis6991/gitsigns.nvim'
+hook_add = "lua require('gitsigns').setup()"
 
 # Japanese
 [[plugins]]
