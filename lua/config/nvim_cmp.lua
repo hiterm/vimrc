@@ -154,7 +154,7 @@ end)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers2 = { 'rust_analyzer', 'tsserver' }
+local servers2 = { 'tsserver', 'hls' }
 for _, lsp in pairs(servers2) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
