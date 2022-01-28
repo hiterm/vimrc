@@ -32,6 +32,18 @@ cmp.setup({
   })
 })
 
+require'cmp'.setup.cmdline(':', {
+  sources = {
+    { name = 'cmdline' }
+  }
+})
+
+require'cmp'.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
 require("cmp_dictionary").setup({
     dic = {
         ["*"] = { "/usr/share/dict/words" },
