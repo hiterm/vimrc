@@ -75,6 +75,10 @@ vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', ke
 vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', keymap_opts)
 vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', keymap_opts)
 
+local lsp_status = require('lsp-status')
+-- Register the progress handler
+lsp_status.register_progress()
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -95,7 +99,12 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', keymap_opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', keymap_opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', keymap_opts)
+
+  lsp_status.on_attach(client)
 end
+
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 
 -- for lsp_installer lsps
 lsp_installer.on_server_ready(function(server)
@@ -108,6 +117,7 @@ lsp_installer.on_server_ready(function(server)
     table.insert(runtime_path, "lua/?/init.lua")
 
     opts = {
+      capabilities = capabilities,
       settings = {
         Lua = {
           runtime = {
@@ -141,11 +151,11 @@ end)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local servers = { 'rust_analyzer', 'tsserver' }
-for _, lsp in pairs(servers) do
+local servers2 = { 'rust_analyzer', 'tsserver' }
+for _, lsp in pairs(servers2) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities
   }
 end
+
