@@ -37,7 +37,11 @@ EOF
 
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
-hook_add = "lua require('config/lualine')"
+hook_add = 'lua require("config/lualine")'
+
+[[plugins]]
+repo = 'akinsho/bufferline.nvim'
+hook_add = 'lua require("bufferline").setup{}'
 
 [[plugins]]
 repo = 'ntpeters/vim-better-whitespace'
