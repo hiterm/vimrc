@@ -36,8 +36,8 @@ EOF
 '''
 
 [[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = 'source ~/.vim/lightline.rc.vim'
+repo = 'nvim-lualine/lualine.nvim'
+hook_add = "lua require('config/lualine')"
 
 [[plugins]]
 repo = 'ntpeters/vim-better-whitespace'
