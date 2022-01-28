@@ -1,13 +1,94 @@
 [[plugins]]
-repo = 'neoclide/coc.nvim'
-rev = 'release'
-merged = 0
+repo = 'neovim/nvim-lspconfig'
+
+[[plugins]]
+repo = 'williamboman/nvim-lsp-installer'
+
+[[plugins]]
+repo = 'nvim-lua/lsp-status.nvim'
+
+[[plugins]]
+repo = 'hrsh7th/nvim-cmp'
+
+[[plugins]]
+repo = 'hrsh7th/cmp-vsnip'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+
+[[plugins]]
+repo = 'hrsh7th/cmp-nvim-lsp'
 hook_add = '''
-source ~/.vim/coc.rc.vim
+lua require('config/nvim_cmp')
 '''
 
 [[plugins]]
-repo = 'wellle/tmux-complete.vim'
+repo = 'hrsh7th/cmp-buffer'
 
 [[plugins]]
-repo = 'josa42/vim-lightline-coc'
+repo = 'hrsh7th/cmp-path'
+
+[[plugins]]
+repo = 'uga-rosa/cmp-dictionary'
+
+[[plugins]]
+repo = 'hrsh7th/cmp-cmdline'
+
+[[plugins]]
+repo = 'j-hui/fidget.nvim'
+hook_source = '''
+lua require"fidget".setup{}
+'''
+
+[[plugins]]
+repo = 'tami5/lspsaga.nvim'
+hook_source = '''
+lua << EOF
+local lspsaga = require 'lspsaga'
+lspsaga.setup { -- defaults ...
+  debug = false,
+  use_saga_diagnostic_sign = true,
+  -- diagnostic sign
+  error_sign = "",
+  warn_sign = "",
+  hint_sign = "",
+  infor_sign = "",
+  diagnostic_header_icon = "   ",
+  -- code action title icon
+  code_action_icon = " ",
+  code_action_prompt = {
+    enable = true,
+    sign = true,
+    sign_priority = 40,
+    virtual_text = true,
+  },
+  finder_definition_icon = "  ",
+  finder_reference_icon = "  ",
+  max_preview_lines = 10,
+  finder_action_keys = {
+    open = "o",
+    vsplit = "s",
+    split = "i",
+    quit = "q",
+    scroll_down = "<C-f>",
+    scroll_up = "<C-b>",
+  },
+  code_action_keys = {
+    quit = "q",
+    exec = "<CR>",
+  },
+  rename_action_keys = {
+    quit = "<C-c>",
+    exec = "<CR>",
+  },
+  definition_preview_icon = "  ",
+  border_style = "single",
+  rename_prompt_prefix = "➤",
+  server_filetype_map = {},
+  diagnostic_prefix_format = "%d. ",
+}
+EOF
+'''
+
+[[plugins]]
+repo = 'jose-elias-alvarez/nvim-lsp-ts-utils'

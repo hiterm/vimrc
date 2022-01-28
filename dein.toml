@@ -7,31 +7,14 @@ let g:dein#types#git#clone_depth=1
 [[plugins]]
 repo = 'haya14busa/dein-command.vim'
 
-# fzf
+# telescope
 [[plugins]]
-repo = "junegunn/fzf"
-merged = 0
-hook_add = '''
-source ~/.vim/fzf.rc.vim
-'''
+repo = 'nvim-lua/plenary.nvim'
 
 [[plugins]]
-repo = 'junegunn/fzf.vim'
-depends = 'fzf'
-merged = 0
-
-[[plugins]]
-repo = 'pbogut/fzf-mru.vim'
+repo = 'nvim-telescope/telescope.nvim'
 hook_add = '''
-let g:fzf_mru_max = 1000
-let g:fzf_mru_no_sort = 1
-'''
-
-[[plugins]]
-repo = 'dominickng/fzf-session.vim.git'
-depends = 'fzf'
-hook_add = '''
-let g:fzf_session_path = '~/.vim_sessions'
+source ~/.vim/telescope.rc.vim
 '''
 
 # neosnippet
@@ -43,20 +26,22 @@ repo = 'Shougo/neosnippet-snippets'
 
 # appearance
 [[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
-hook_add = '''
-let g:indent_guides_enable_on_vim_startup = 1
-augroup MyIndentGuides
-  autocmd!
-  autocmd FileType defx IndentGuidesDisable
-  autocmd FileType neoterm IndentGuidesDisable
-  autocmd FileType fzf IndentGuidesDisable
-augroup END
+repo = 'lukas-reineke/indent-blankline.nvim'
+hook_source = '''
+lua << EOF
+require("indent_blankline").setup {
+  show_end_of_line = true,
+}
+EOF
 '''
 
 [[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = 'source ~/.vim/lightline.rc.vim'
+repo = 'nvim-lualine/lualine.nvim'
+hook_add = 'lua require("config/lualine")'
+
+[[plugins]]
+repo = 'akinsho/bufferline.nvim'
+hook_add = 'lua require("bufferline").setup{}'
 
 [[plugins]]
 repo = 'ntpeters/vim-better-whitespace'
@@ -106,13 +91,6 @@ hlmap.error = nil
 hlmap["punctuation.delimiter"] = "Delimiter"
 hlmap["punctuation.bracket"] = nil
 EOF
-
-" Currently not working
-" tomlの中のVim scriptでPreciousが効くようにする
-" augroup MyTreeSitter
-"   autocmd!
-"   autocmd User PreciousFileType_vim TSBufDisable highlight
-" augroup END
 '''
 
 [[plugins]]
@@ -171,7 +149,8 @@ repo = 'tpope/vim-repeat'
 
 # git
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
+repo = 'lewis6991/gitsigns.nvim'
+hook_add = "lua require('gitsigns').setup()"
 
 # Japanese
 [[plugins]]
@@ -188,20 +167,10 @@ let g:polyglot_disabled = ['tex', 'typescript', 'jsx', 'rust']
 '''
 
 [[plugins]]
-repo = 'HerringtonDarkholme/yats.vim'
-
-[[plugins]]
-repo = 'htlsne/vim-styled-components'
-
-[[plugins]]
 repo = 'lervag/vimtex'
 
 [[plugins]]
 repo = 'sophacles/vim-processing'
-
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-merged = 0
 
 [[plugins]]
 repo = 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -229,31 +198,3 @@ augroup END
 # colorscheme
 [[plugins]]
 repo = 'sainnhe/edge'
-
-# misc
-[[plugins]]
-repo = 'gelguy/wilder.nvim'
-hook_post_source = '''
-call wilder#enable_cmdline_enter()
-set wildcharm=<Tab>
-cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
-cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
-
-" only / and ? are enabled by default
-call wilder#set_option('modes', ['/', '?', ':'])
-" history
-call wilder#set_option('pipeline', [
-      \   wilder#branch(
-      \     [
-      \       wilder#check({_, x -> empty(x)}),
-      \       wilder#history(),
-      \     ],
-      \     wilder#cmdline_pipeline(),
-      \     wilder#search_pipeline(),
-      \   ),
-      \ ])
-" 'highlighter' : applies highlighting to the candidates
-call wilder#set_option('renderer', wilder#popupmenu_renderer({
-      \ 'highlighter': wilder#basic_highlighter(),
-      \ }))
-'''
