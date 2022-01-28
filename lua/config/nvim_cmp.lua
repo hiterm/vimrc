@@ -108,7 +108,9 @@ capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 
 -- for lsp_installer lsps
 lsp_installer.on_server_ready(function(server)
-  local opts = {}
+  local opts = {
+    capabilities = capabilities,
+  }
 
   -- (optional) Customize the options passed to the server
   if server.name == "sumneko_lua" then
@@ -116,8 +118,7 @@ lsp_installer.on_server_ready(function(server)
     table.insert(runtime_path, "lua/?.lua")
     table.insert(runtime_path, "lua/?/init.lua")
 
-    opts = {
-      capabilities = capabilities,
+    local lua_opts = {
       settings = {
         Lua = {
           runtime = {
@@ -141,6 +142,8 @@ lsp_installer.on_server_ready(function(server)
         },
       },
     }
+
+    opts = vim.tbl_extend('keep', opts, lua_opts)
   end
 
   -- This setup() function will take the provided server configuration and decorate it with the necessary properties
