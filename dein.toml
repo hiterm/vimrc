@@ -89,10 +89,6 @@ require'nvim-treesitter.configs'.setup {
 EOF
 '''
 
-# [[plugins]]
-# repo = 'luochen1990/rainbow'
-# hook_add = 'let g:rainbow_active = 1'
-
 [[plugins]]
 repo = 'p00f/nvim-ts-rainbow'
 
