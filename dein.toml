@@ -167,3 +167,7 @@ augroup END
 # colorscheme
 [[plugins]]
 repo = 'sainnhe/edge'
+
+[[plugins]]
+repo = 'EdenEast/nightfox.nvim'
+hook_add = 'colorscheme nightfox'

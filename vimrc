@@ -86,9 +86,8 @@ set wildmenu
 " 現在行をハイライト
 set cursorline
 
-" colorscheme
+" color
 set termguicolors
-colorscheme edge
 
 " 大文字小文字を区別しない
 set ignorecase
