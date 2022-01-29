@@ -106,6 +106,8 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]ca', '<cmd>lua require("lspsaga.codeaction").code_action()<CR>', keymap_opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'v', '[nvimlsp]ca', ':<C-U>lua require("lspsaga.codeaction").range_code_action()<CR>', keymap_opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]rf', '<cmd>lua require"telescope.builtin".lsp_references{}<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]hd', '<cmd>lua require"telescope.builtin".diagnostics{}<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]g', '<cmd>lua require"telescope.builtin".lsp_workspace_symbols{}<CR>', keymap_opts)
 
   lsp_status.on_attach(client)
 end
