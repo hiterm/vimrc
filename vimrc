@@ -164,6 +164,12 @@ augroup MyAutoCmd
   autocmd FileType markdown setlocal spell
 augroup END
 
+" ripgrep
+if executable('rg')
+  let &grepprg = 'rg --vimgrep --hidden'
+  set grepformat=%f:%l:%c:%m
+endif
+
 " migemo
 if executable('cmigemo')
   nnoremap g/ :Migemo<CR>
