@@ -68,12 +68,17 @@ end
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+
+-- The prefix key.
+vim.api.nvim_set_keymap('n', '[nvimlsp]', '<Nop>', {noremap=true})
+vim.api.nvim_set_keymap('n', '<Space>l', '[nvimlsp]', {})
+
 local keymap_opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', keymap_opts)
+vim.api.nvim_set_keymap('n', '[nvimlsp]e', '<cmd>lua vim.diagnostic.open_float()<CR>', keymap_opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua require"lspsaga.diagnostic".lsp_jump_diagnostic_prev()<CR>', keymap_opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua require"lspsaga.diagnostic".lsp_jump_diagnostic_next()<CR>', keymap_opts)
-vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', keymap_opts)
-vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', keymap_opts)
+vim.api.nvim_set_keymap('n', '[nvimlsp]q', '<cmd>lua vim.diagnostic.setloclist()<CR>', keymap_opts)
+vim.api.nvim_set_keymap('n', '[nvimlsp]f', '<cmd>lua vim.lsp.buf.formatting()<CR>', keymap_opts)
 
 local lsp_status = require('lsp-status')
 -- Register the progress handler
@@ -87,21 +92,20 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua require"telescope.builtin".lsp_definitions{}<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gh', '<cmd>lua require"lspsaga.provider".lsp_finder()<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>pd', '<cmd>lua require"lspsaga.provider".lsp_finder()<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]D', '<cmd>lua vim.lsp.buf.declaration()<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]d', '<cmd>lua require"telescope.builtin".lsp_definitions{}<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]F', '<cmd>lua require"lspsaga.provider".lsp_finder()<CR>', keymap_opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua require("lspsaga.hover").render_hover_doc()<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua require"telescope.builtin".lsp_implementations{}<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]i', '<cmd>lua require"telescope.builtin".lsp_implementations{}<CR>', keymap_opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua require("lspsaga.signaturehelp").signature_help()<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua require"telescope.builtin".lsp_type_definitions{}<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua require("lspsaga.rename").rename()<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua require("lspsaga.codeaction").code_action()<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'v', '<space>ca', ':<C-U>lua require("lspsaga.codeaction").range_code_action()<CR>', keymap_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua require"telescope.builtin".lsp_references{}<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]td', '<cmd>lua require"telescope.builtin".lsp_type_definitions{}<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]rn', '<cmd>lua require("lspsaga.rename").rename()<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]ca', '<cmd>lua require("lspsaga.codeaction").code_action()<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'v', '[nvimlsp]ca', ':<C-U>lua require("lspsaga.codeaction").range_code_action()<CR>', keymap_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[nvimlsp]rf', '<cmd>lua require"telescope.builtin".lsp_references{}<CR>', keymap_opts)
 
   lsp_status.on_attach(client)
 end
