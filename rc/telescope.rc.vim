@@ -9,7 +9,7 @@ nnoremap [telescope] <Nop>
 nmap     <Space>u [telescope]
 
 " telescope.nvim keymap
-nnoremap <silent> [telescope]l <cmd>Telescope builtin<cr>
+nnoremap <silent> [telescope]u <cmd>Telescope builtin<cr>
 nnoremap <silent> [telescope]f <cmd>Telescope find_files<cr>
 nnoremap <silent> [telescope]b <cmd>Telescope buffers<cr>
 nnoremap <silent> [telescope]r <cmd>Telescope oldfiles<cr>
