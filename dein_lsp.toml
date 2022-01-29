@@ -36,13 +36,15 @@ repo = 'hrsh7th/cmp-cmdline'
 
 [[plugins]]
 repo = 'j-hui/fidget.nvim'
-hook_source = '''
-lua require"fidget".setup{}
-'''
+hook_add = 'lua require"fidget".setup{}'
+
+[[plugins]]
+repo = 'folke/trouble.nvim'
+hook_add = 'lua require("trouble").setup{}'
 
 [[plugins]]
 repo = 'tami5/lspsaga.nvim'
-hook_source = '''
+hook_add = '''
 lua << EOF
 local lspsaga = require 'lspsaga'
 lspsaga.setup { -- defaults ...
