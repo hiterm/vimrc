@@ -244,64 +244,12 @@ augroup END
 
 set scrolloff=3
 
+" スペースなどを可視化
+set list
+set listchars=tab:--▸,trail:~
+
+
 " plugin, filetypeの設定 {{{1
-" vimtex and latex {{{2
-let g:tex_flavor='latex'
-let g:tex_conceal = ''
-let g:vimtex_imaps_enabled = 0
-" latexmk
-let g:vimtex_compiler_latexmk_engines = {
-      \ '_'                : '-pdfdvi',
-      \ 'uplatex'          : '-pdfdvi',
-      \ 'pdflatex'         : '-pdf',
-      \ 'lualatex'         : '-lualatex',
-      \ 'xelatex'          : '-xelatex',
-      \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
-      \ 'context (luatex)' : '-pdf -pdflatex=context',
-      \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
-      \}
-" viewer
-if has('mac')
-  let g:vimtex_view_method='skim'
-else
-  let g:vimtex_view_method='zathura'
-endif
-if has('nvim')
-  let g:vimtex_compiler_progname
-        \ = 'nvr'
-endif
-augroup MyAutoCmd
-  autocmd FileType tex syntax spell toplevel
-augroup END
-" template commands
-command! TeXTemplateLuaTeX 0r ~/.vim/template/luatex.tex
-command! TeXTemplateUpLaTeX 0r ~/.vim/template/uplatex.tex
-" load template
-augroup MyAutoCmd
-  autocmd BufNewFile *.tex 0r ~/.vim/template/uplatex.tex
-augroup END
-" 句読点の設定
-augroup MyAutoCmd
-  autocmd FileType tex imap <buffer> 、 ，
-  autocmd FileType tex imap <buffer> 。 ．
-augroup END
-
-" neosnippet {{{2
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-" snippets directory
-let g:neosnippet#snippets_directory = '~/.vim/snippets'
 
 " lilypond {{{2
 augroup MyAutoCmd
@@ -314,19 +262,12 @@ if has('mac')
   augroup END
 endif
 
-" surround.vim {{{2
-" $でも効くように
-nnoremap ds$ f$x<Esc>F$x<Esc>
-
 " git {{{2
 augroup MyAutoCmd
   autocmd FileType gitcommit setlocal spell
 augroup END
 
-" スペースなどを可視化
-set list
-set listchars=tab:--▸,trail:~
-
+" processing
 augroup MyAutoCmd
   autocmd BufNewFile,BufRead *.pde set ft=processing
 augroup END
