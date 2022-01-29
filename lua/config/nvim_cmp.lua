@@ -82,9 +82,9 @@ vim.api.nvim_set_keymap("n", "[nvimlsp]q", "<cmd>lua vim.diagnostic.setloclist()
 vim.api.nvim_set_keymap("n", "[nvimlsp]f", "<cmd>lua vim.lsp.buf.formatting()<CR>", keymap_opts)
 -- stylua: ignore end
 
-local lsp_status = require("lsp-status")
+-- local lsp_status = require("lsp-status")
 -- Register the progress handler
-lsp_status.register_progress()
+-- lsp_status.register_progress()
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -113,7 +113,7 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[nvimlsp]g", '<cmd>lua require"telescope.builtin".lsp_workspace_symbols{}<CR>', keymap_opts)
 	-- stylua: ignore end
 
-	lsp_status.on_attach(client)
+	-- lsp_status.on_attach(client)
 end
 
 -- option for lua
@@ -144,7 +144,7 @@ local lua_opts = {
 }
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities = vim.tbl_extend("keep", capabilities, lsp_status.capabilities)
+-- capabilities = vim.tbl_extend("keep", capabilities, lsp_status.capabilities)
 
 -- for lsp_installer lsps
 lsp_installer.on_server_ready(function(server)
