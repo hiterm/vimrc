@@ -326,7 +326,7 @@ augroup END
 
 " スペースなどを可視化
 set list
-set listchars=tab:»-,trail:~
+set listchars=tab:--▸,trail:~
 
 augroup MyAutoCmd
   autocmd BufNewFile,BufRead *.pde set ft=processing
