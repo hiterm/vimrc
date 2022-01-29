@@ -14,7 +14,7 @@ repo = 'nvim-lua/plenary.nvim'
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
 hook_add = '''
-source ~/.vim/telescope.rc.vim
+source ~/.config/nvim/rc/telescope.rc.vim
 '''
 
 # appearance
@@ -90,7 +90,7 @@ repo = 'thinca/vim-qfreplace'
 # lexima
 [[plugins]]
 repo = 'cohama/lexima.vim'
-hook_post_source = 'source ~/.vim/lexima.rc.vim'
+hook_post_source = 'source ~/.config/nvim/rc/lexima.rc.vim'
 
 [[plugins]]
 repo = "sbdchd/vim-shebang"
@@ -134,7 +134,7 @@ repo = 'deton/jasegment.vim'
 # filetype
 [[plugins]]
 repo = 'lervag/vimtex'
-hook_add = 'runtime rc/vimtex.rc.vim'
+hook_add = 'source ~/.config/nvim/rc/vimtex.rc.vim'
 
 [[plugins]]
 repo = 'sophacles/vim-processing'
