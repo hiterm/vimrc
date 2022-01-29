@@ -121,6 +121,7 @@ augroup MyAutoCmd
   autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType neosnippet setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType css setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType lua setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 augroup END
 " インデント深さ変更コマンド
 function! ChangeIndent(n)
