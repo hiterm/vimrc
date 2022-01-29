@@ -17,13 +17,6 @@ hook_add = '''
 source ~/.vim/telescope.rc.vim
 '''
 
-# neosnippet
-[[plugins]]
-repo = 'Shougo/neosnippet'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
 # appearance
 [[plugins]]
 repo = 'lukas-reineke/indent-blankline.nvim'
@@ -141,6 +134,7 @@ repo = 'deton/jasegment.vim'
 # filetype
 [[plugins]]
 repo = 'lervag/vimtex'
+hook_add = 'runtime rc/vimtex.rc.vim'
 
 [[plugins]]
 repo = 'sophacles/vim-processing'
