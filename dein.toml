@@ -79,23 +79,22 @@ require'nvim-treesitter.configs'.setup {
   },
   context_commentstring = {
     enable = true
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
   }
 }
-
--- for rainbow plugin
-require "nvim-treesitter.highlight"
-local hlmap = vim.treesitter.highlighter.hl_map
-
---Misc
-hlmap.error = nil
-hlmap["punctuation.delimiter"] = "Delimiter"
-hlmap["punctuation.bracket"] = nil
 EOF
 '''
 
+# [[plugins]]
+# repo = 'luochen1990/rainbow'
+# hook_add = 'let g:rainbow_active = 1'
+
 [[plugins]]
-repo = 'luochen1990/rainbow'
-hook_add = 'let g:rainbow_active = 1'
+repo = 'p00f/nvim-ts-rainbow'
 
 # edit
 [[plugins]]
