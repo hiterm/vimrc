@@ -36,10 +36,6 @@ repo = 'j-hui/fidget.nvim'
 hook_add = 'lua require"fidget".setup{}'
 
 [[plugins]]
-repo = 'folke/trouble.nvim'
-hook_add = 'lua require("trouble").setup{}'
-
-[[plugins]]
 repo = 'tami5/lspsaga.nvim'
 hook_add = '''
 lua << EOF
