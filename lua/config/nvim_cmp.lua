@@ -76,8 +76,8 @@ vim.api.nvim_set_keymap("n", "<Space>l", "[nvimlsp]", {})
 local keymap_opts = { noremap = true, silent = true }
 -- stylua: ignore start
 vim.api.nvim_set_keymap("n", "[nvimlsp]e", "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", keymap_opts)
-vim.api.nvim_set_keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", keymap_opts)
-vim.api.nvim_set_keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", keymap_opts)
+vim.api.nvim_set_keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", keymap_opts)
+vim.api.nvim_set_keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", keymap_opts)
 vim.api.nvim_set_keymap("n", "[nvimlsp]q", "<cmd>lua vim.diagnostic.setloclist()<CR>", keymap_opts)
 vim.api.nvim_set_keymap("n", "[nvimlsp]f", "<cmd>lua vim.lsp.buf.formatting()<CR>", keymap_opts)
 -- stylua: ignore end
