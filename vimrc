@@ -246,7 +246,7 @@ set scrolloff=3
 
 " スペースなどを可視化
 set list
-set listchars=tab:--▸,trail:~
+set listchars=tab:‒‒►,trail:~
 
 
 " plugin, filetypeの設定 {{{1
