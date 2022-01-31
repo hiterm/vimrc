@@ -57,9 +57,6 @@ lua require('config/treesitter')
 '''
 
 [[plugins]]
-repo = 'RRethy/nvim-treesitter-textsubjects'
-
-[[plugins]]
 repo = 'p00f/nvim-ts-rainbow'
 
 [[plugins]]
