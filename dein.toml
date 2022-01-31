@@ -57,6 +57,9 @@ lua require('config/treesitter')
 '''
 
 [[plugins]]
+repo = 'nvim-treesitter/playground'
+
+[[plugins]]
 repo = 'p00f/nvim-ts-rainbow'
 
 [[plugins]]
