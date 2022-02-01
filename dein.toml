@@ -151,11 +151,6 @@ endfunction
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
 
-# lexima
-[[plugins]]
-repo = 'cohama/lexima.vim'
-hook_post_source = 'source ~/.config/nvim/rc/lexima.rc.vim'
-
 [[plugins]]
 repo = "sbdchd/vim-shebang"
 hook_add = '''

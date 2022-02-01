@@ -1,4 +1,8 @@
-# filetype plugins
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_event = 'InsertEnter'
+hook_post_source = 'source ~/.config/nvim/rc/lexima.rc.vim'
+
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html', 'javascript', 'typescript', 'typescriptreact']
