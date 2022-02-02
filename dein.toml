@@ -183,6 +183,11 @@ hook_add = "lua require('gitsigns').setup()"
 # Japanese
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
+hook_add = '''
+if executable('cmigemo')
+  " nnoremap g/ :Migemo<CR>
+endif
+'''
 
 [[plugins]]
 repo = 'deton/jasegment.vim'

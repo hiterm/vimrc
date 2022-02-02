@@ -169,11 +169,6 @@ if executable('rg')
   set grepformat=%f:%l:%c:%m
 endif
 
-" migemo
-if executable('cmigemo')
-  nnoremap g/ :Migemo<CR>
-endif
-
 " Linux fcitx IME制御
 if has('unix') && !(has('mac'))
   if has('gui_running')
