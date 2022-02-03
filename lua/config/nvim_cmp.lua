@@ -101,8 +101,6 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[nvimlsp]hd", '<cmd>lua require"telescope.builtin".diagnostics{}<CR>', keymap_opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[nvimlsp]g", '<cmd>lua require"telescope.builtin".lsp_workspace_symbols{}<CR>', keymap_opts)
 	-- stylua: ignore end
-
-	-- lsp_status.on_attach(client)
 end
 
 -- option for lua
@@ -139,6 +137,7 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 lsp_installer.on_server_ready(function(server)
 	local opts = {
 		capabilities = capabilities,
+		on_attach = on_attach,
 	}
 
 	-- (optional) Customize the options passed to the server
@@ -157,8 +156,8 @@ end)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers2 = { "tsserver", "hls" }
-for _, lsp in pairs(servers2) do
+local manually_installed_servers = { "hls" }
+for _, lsp in pairs(manually_installed_servers) do
 	require("lspconfig")[lsp].setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
