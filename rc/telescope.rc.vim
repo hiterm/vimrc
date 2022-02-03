@@ -16,3 +16,4 @@ nnoremap <silent> [telescope]r <cmd>Telescope oldfiles<cr>
 nnoremap <silent> [telescope]h <cmd>Telescope help_tags<cr>
 nnoremap <silent> [telescope]c <cmd>Telescope commands<cr>
 nnoremap <silent> [telescope]g <cmd>Telescope live_grep<cr>
+nnoremap <silent> [telescope]l <cmd>Telescope current_buffer_fuzzy_find<cr>
