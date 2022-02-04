@@ -110,6 +110,14 @@ let g:clever_f_use_migemo = 1
 '''
 
 [[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_use_migemo = 1
+nmap s <Plug>(easymotion-s2)
+'''
+
+[[plugins]]
 repo = 'thinca/vim-qfreplace'
 
 [[plugins]]
@@ -118,14 +126,6 @@ hook_add = '''
 let g:shebang#shebangs = {
       \ 'sh': '#!/bin/bash',
       \ }
-'''
-
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
-hook_add = '''
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_use_migemo = 1
-nmap s <Plug>(easymotion-s2)
 '''
 
 # textobj
