@@ -87,6 +87,13 @@ require'nvim-treesitter.configs'.setup {
 EOF
 '''
 
+# filer
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+hook_add = '''
+nmap <C-e> <CMD>Fern . -reveal=% -drawer -toggle<Cr>
+'''
+
 # edit
 [[plugins]]
 repo = 'machakann/vim-sandwich'
