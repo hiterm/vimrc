@@ -17,6 +17,10 @@ hook_add = '''
 source ~/.config/nvim/rc/telescope.rc.vim
 '''
 
+[[plugins]]
+repo = 'nvim-telescope/telescope-fzf-native.nvim'
+build = 'make'
+
 # appearance
 [[plugins]]
 repo = 'lukas-reineke/indent-blankline.nvim'
