@@ -11,18 +11,6 @@ local lspmenu = function(opts)
 		finder = finders.new_table({
 			results = {
 				{
-					name = "Declaration",
-					fun = vim.lsp.buf.declaration,
-				},
-				{
-					name = "Definition",
-					fun = require("telescope.builtin").lsp_definitions,
-				},
-				{
-					name = "Hover doc",
-					fun = require("lspsaga.hover").render_hover_doc,
-				},
-				{
 					name = "Show line diagnostics",
 					fun = require("lspsaga.diagnostic").show_line_diagnostics,
 				},
@@ -33,6 +21,54 @@ local lspmenu = function(opts)
 				{
 					name = "Formatting",
 					fun = vim.lsp.buf.formatting,
+				},
+				{
+					name = "Declaration",
+					fun = vim.lsp.buf.declaration,
+				},
+				{
+					name = "Definitions",
+					fun = require("telescope.builtin").lsp_definitions,
+				},
+				{
+					name = "LSP finder (lspsaga)",
+					fun = require("lspsaga.provider").lsp_finder,
+				},
+				{
+					name = "Hover doc",
+					fun = require("lspsaga.hover").render_hover_doc,
+				},
+				{
+					name = "Implementation",
+					fun = require("telescope.builtin").lsp_implementations,
+				},
+				{
+					name = "Signature help",
+					fun = require("lspsaga.signaturehelp").signature_help,
+				},
+				{
+					name = "Type definitions",
+					fun = require("telescope.builtin").lsp_type_definitions,
+				},
+				{
+					name = "Rename",
+					fun = require("lspsaga.rename").rename,
+				},
+				{
+					name = "Code action",
+					fun = require("lspsaga.codeaction").code_action,
+				},
+				{
+					name = "References",
+					fun = require("telescope.builtin").lsp_references,
+				},
+				{
+					name = "Diagnostics (Telescope)",
+					fun = require("telescope.builtin").diagnostics,
+				},
+				{
+					name = "LSP workspace symbols (Telescope)",
+					fun = require("telescope.builtin").lsp_workspace_symbols,
 				},
 			},
 			entry_maker = function(entry)
