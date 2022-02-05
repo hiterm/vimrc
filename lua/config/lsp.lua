@@ -20,15 +20,10 @@ cmp.setup({
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	},
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-	}, {
-		{ name = "buffer" },
-		{ name = "path" },
-	}, {
-		{
-			name = "dictionary",
-			keyword_length = 2,
-		},
+		{ name = "nvim_lsp", priority = 100 },
+		{ name = "buffer", priority = 80 },
+		{ name = "path", priority = 50 },
+		{ name = "dictionary", keyword_length = 2, priority = 10 },
 	}),
 	formatting = {
 		format = require("lspkind").cmp_format({
@@ -54,6 +49,7 @@ require("cmp_dictionary").setup({
 	dic = {
 		["*"] = { "/usr/share/dict/words" },
 	},
+	first_case_insensitive = true,
 })
 
 -- nvim-lsp
