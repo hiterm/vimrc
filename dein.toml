@@ -91,8 +91,15 @@ EOF
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 hook_add = '''
+let g:fern#renderer = "nerdfont"
 nmap <C-e> <CMD>Fern . -reveal=% -drawer -toggle<Cr>
 '''
+
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
 
 # edit
 [[plugins]]
@@ -187,6 +194,10 @@ augroup MyNeoterm
   autocmd FileType rust nnoremap <Leader>T :FloatermSend cargo test<CR>:FloatermToggle<CR>
 augroup END
 '''
+
+# devicons
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
 
 # colorscheme
 [[plugins]]

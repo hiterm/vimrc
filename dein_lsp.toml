@@ -5,6 +5,9 @@ repo = 'neovim/nvim-lspconfig'
 repo = 'williamboman/nvim-lsp-installer'
 
 [[plugins]]
+repo = 'onsails/lspkind-nvim'
+
+[[plugins]]
 repo = 'hrsh7th/nvim-cmp'
 
 [[plugins]]
