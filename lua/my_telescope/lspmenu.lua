@@ -15,7 +15,7 @@ local lspmenu = function(opts)
 					fun = require("lspsaga.diagnostic").show_line_diagnostics,
 				},
 				{
-					name = "Diagnostics set loclist",
+					name = "Set diagnostics to loclist",
 					fun = vim.diagnostic.setloclist,
 				},
 				{
@@ -92,4 +92,4 @@ local lspmenu = function(opts)
 	}):find()
 end
 
-lspmenu()
+return { lspmenu = lspmenu }

@@ -86,6 +86,7 @@ local on_attach = function(client, bufnr)
 	-- Mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	-- stylua: ignore start
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "[nvimlsp]l", "<cmd>lua require('my_telescope.lspmenu').lspmenu()<CR>", keymap_opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[nvimlsp]D", "<cmd>lua vim.lsp.buf.declaration()<CR>", keymap_opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[nvimlsp]d", '<cmd>lua require"telescope.builtin".lsp_definitions{}<CR>', keymap_opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "[nvimlsp]F", '<cmd>lua require"lspsaga.provider".lsp_finder()<CR>', keymap_opts)
