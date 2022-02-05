@@ -20,6 +20,11 @@ source ~/.config/nvim/rc/telescope.rc.vim
 [[plugins]]
 repo = 'nvim-telescope/telescope-fzf-native.nvim'
 build = 'make'
+hook_post_source = '''
+lua << EOF
+require('telescope').load_extension('fzf')
+EOF
+'''
 
 # appearance
 [[plugins]]
