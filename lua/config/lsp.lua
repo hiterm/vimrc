@@ -168,8 +168,14 @@ for _, lsp in pairs(manually_installed_servers) do
 end
 
 -- null-ls
-require("null-ls").setup({
-	sources = {
-		require("null-ls").builtins.formatting.stylua,
-	},
-})
+local null_ls = require("null-ls")
+
+-- register any number of sources simultaneously
+local sources = {
+	null_ls.builtins.formatting.prettier.with({ prefer_local = "node_modules/.bin" }),
+	null_ls.builtins.formatting.stylua,
+	null_ls.builtins.formatting.black,
+	null_ls.builtins.code_actions.gitsigns,
+}
+
+null_ls.setup({ sources = sources })
