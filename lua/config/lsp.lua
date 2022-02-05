@@ -150,6 +150,14 @@ lsp_installer.on_server_ready(function(server)
 
 		opts = vim.tbl_extend("keep", opts, lua_opts)
 	end
+	if server.name == "tsserver" then
+		opts.on_attach = function(client, bufnr)
+			on_attach(client, bufnr)
+			-- Use null-ls prettier formatter
+			-- https://github.com/jose-elias-alvarez/null-ls.nvim/discussions/244
+			client.resolved_capabilities.document_formatting = false
+		end
+	end
 
 	-- This setup() function will take the provided server configuration and decorate it with the necessary properties
 	-- before passing it onwards to lspconfig.
