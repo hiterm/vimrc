@@ -169,3 +169,10 @@ for _, lsp in pairs(manually_installed_servers) do
 		capabilities = capabilities,
 	})
 end
+
+-- null-ls
+require("null-ls").setup({
+	sources = {
+		require("null-ls").builtins.formatting.stylua,
+	},
+})
