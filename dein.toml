@@ -143,14 +143,6 @@ nmap s <Plug>(easymotion-s2)
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
 
-[[plugins]]
-repo = "sbdchd/vim-shebang"
-hook_add = '''
-let g:shebang#shebangs = {
-      \ 'sh': '#!/bin/bash',
-      \ }
-'''
-
 # textobj
 [[plugins]]
 repo = 'kana/vim-textobj-user'
@@ -173,9 +165,6 @@ if = "executable('cmigemo')"
 hook_add = '''
 nnoremap g/ :Migemo<CR>
 '''
-
-[[plugins]]
-repo = 'deton/jasegment.vim'
 
 # filetype
 [[plugins]]

@@ -20,14 +20,6 @@ xmap A  <Plug>(niceblock-A)
 '''
 
 [[plugins]]
-repo = 'haya14busa/vim-edgemotion'
-on_map = {n = '<Plug>'}
-hook_add = '''
-map <C-j> <Plug>(edgemotion-j)
-map <C-k> <Plug>(edgemotion-k)
-'''
-
-[[plugins]]
 repo = 'junegunn/vim-easy-align'
 on_map = ['<Plug>(EasyAlign)', '<Plug>(LiveEasyAlign)']
 on_cmd = ['EasyAlign', 'LiveEasyAlign']
