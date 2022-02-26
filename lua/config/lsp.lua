@@ -187,3 +187,17 @@ local sources = {
 }
 
 null_ls.setup({ sources = sources })
+
+local inlay_enabled = false
+local function toggle_inlay()
+	if inlay_enabled then
+		inlay_enabled = false
+		require("lsp_extensions").inlay_hints({
+			enabled = {},
+		})
+	else
+		inlay_enabled = true
+		require("lsp_extensions").inlay_hints()
+	end
+end
+vim.api.nvim_add_user_command("RustInlayToggle", toggle_inlay, {})

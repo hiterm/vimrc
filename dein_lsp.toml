@@ -93,3 +93,6 @@ EOF
 
 [[plugins]]
 repo = 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
+[[plugins]]
+repo = 'nvim-lua/lsp_extensions.nvim'
