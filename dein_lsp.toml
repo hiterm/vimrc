@@ -38,10 +38,6 @@ repo = 'uga-rosa/cmp-dictionary'
 repo = 'hrsh7th/cmp-cmdline'
 
 [[plugins]]
-repo = 'j-hui/fidget.nvim'
-hook_add = 'lua require"fidget".setup{}'
-
-[[plugins]]
 repo = 'tami5/lspsaga.nvim'
 hook_add = '''
 lua << EOF
@@ -96,3 +92,6 @@ repo = 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 [[plugins]]
 repo = 'nvim-lua/lsp_extensions.nvim'
+
+[[plugins]]
+repo = 'arkav/lualine-lsp-progress'
