@@ -103,6 +103,10 @@ set visualbell
 " マウス
 set mouse=a
 
+set signcolumn=auto:9
+
+set laststatus=3
+
 " insertモードでEmacs風のカーソル移動
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
