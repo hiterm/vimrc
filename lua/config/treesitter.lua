@@ -4,6 +4,7 @@ require("nvim-treesitter.configs").setup({
 		"comment",
 		"css",
 		"dockerfile",
+		"graphql",
 		"html",
 		"javascript",
 		"jsdoc",
