@@ -21,7 +21,7 @@ repo = 'hrsh7th/vim-vsnip'
 
 [[plugins]]
 repo = 'hrsh7th/cmp-nvim-lsp'
-hook_post_source = '''
+hook_add = '''
 lua require('config/lsp')
 '''
 
