@@ -8,7 +8,8 @@ cmp.setup({
 			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
 		end,
 	},
-	mapping = {
+	mapping = cmp.mapping.preset.insert({
+		-- Your configuration here.
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -18,7 +19,7 @@ cmp.setup({
 			c = cmp.mapping.close(),
 		}),
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-	},
+	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp", priority = 100 },
 		{ name = "buffer", priority = 80 },
@@ -37,12 +38,14 @@ require("cmp").setup.cmdline(":", {
 	sources = {
 		{ name = "cmdline" },
 	},
+	mapping = cmp.mapping.preset.cmdline({}),
 })
 
 require("cmp").setup.cmdline("/", {
 	sources = {
 		{ name = "buffer" },
 	},
+	mapping = cmp.mapping.preset.cmdline({}),
 })
 
 require("cmp_dictionary").setup({
