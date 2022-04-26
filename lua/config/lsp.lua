@@ -203,4 +203,4 @@ local function toggle_inlay()
 		require("lsp_extensions").inlay_hints()
 	end
 end
-vim.api.nvim_add_user_command("RustInlayToggle", toggle_inlay, {})
+vim.api.nvim_create_user_command("RustInlayToggle", toggle_inlay, {})
