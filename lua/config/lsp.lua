@@ -154,6 +154,10 @@ lsp_installer.on_server_ready(function(server)
 		opts = vim.tbl_extend("keep", opts, lua_opts)
 	end
 	if server.name == "tsserver" then
+		local ts_utils = require("nvim-lsp-ts-utils")
+		ts_utils.setup({
+			auto_inlay_hints = false,
+		})
 		opts.on_attach = function(client, bufnr)
 			on_attach(client, bufnr)
 			-- Use null-ls prettier formatter
