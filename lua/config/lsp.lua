@@ -57,9 +57,6 @@ require("cmp_dictionary").setup({
 
 -- nvim-lsp
 
--- installation
-local lsp_installer = require("nvim-lsp-installer")
-
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 
@@ -140,20 +137,35 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 -- capabilities = vim.tbl_extend("keep", capabilities, lsp_status.capabilities)
 
 -- for lsp_installer lsps
-lsp_installer.on_server_ready(function(server)
+require("nvim-lsp-installer").setup({})
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = {
+	"graphql",
+	"pyright",
+	"rust_analyzer",
+	"sumneko_lua",
+	"taplo",
+	"tsserver",
+	"vimls",
+	"hls",
+}
+
+for _, lsp in pairs(servers) do
 	local opts = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 	}
 
 	-- (optional) Customize the options passed to the server
-	if server.name == "sumneko_lua" then
+	if lsp == "sumneko_lua" then
 		table.insert(runtime_path, "lua/?.lua")
 		table.insert(runtime_path, "lua/?/init.lua")
 
 		opts = vim.tbl_extend("keep", opts, lua_opts)
 	end
-	if server.name == "tsserver" then
+	if lsp == "tsserver" then
 		local ts_utils = require("nvim-lsp-ts-utils")
 		ts_utils.setup({
 			auto_inlay_hints = false,
@@ -169,17 +181,7 @@ lsp_installer.on_server_ready(function(server)
 	-- This setup() function will take the provided server configuration and decorate it with the necessary properties
 	-- before passing it onwards to lspconfig.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-	server:setup(opts)
-end)
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local manually_installed_servers = { "hls" }
-for _, lsp in pairs(manually_installed_servers) do
-	require("lspconfig")[lsp].setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-	})
+	require("lspconfig")[lsp].setup(opts)
 end
 
 -- null-ls
