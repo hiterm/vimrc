@@ -150,6 +150,7 @@ local servers = {
 	"tsserver",
 	"vimls",
 	"hls",
+	"eslint",
 }
 
 for _, lsp in pairs(servers) do
@@ -176,6 +177,15 @@ for _, lsp in pairs(servers) do
 			-- https://github.com/jose-elias-alvarez/null-ls.nvim/discussions/244
 			client.resolved_capabilities.document_formatting = false
 		end
+	end
+	if lsp == "rust_analyzer" then
+		opts.settings = {
+			["rust-analyzer"] = {
+				checkOnSave = {
+					command = "clippy",
+				},
+			},
+		}
 	end
 
 	-- This setup() function will take the provided server configuration and decorate it with the necessary properties
