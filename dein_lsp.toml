@@ -2,7 +2,10 @@
 repo = 'neovim/nvim-lspconfig'
 
 [[plugins]]
-repo = 'williamboman/nvim-lsp-installer'
+repo = 'williamboman/mason.nvim'
+
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
 
 [[plugins]]
 repo = 'onsails/lspkind-nvim'
