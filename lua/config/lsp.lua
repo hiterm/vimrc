@@ -146,7 +146,7 @@ local servers = {
 	"graphql",
 	"pyright",
 	"rust_analyzer",
-	"sumneko_lua",
+	"lua_ls",
 	"taplo",
 	"tsserver",
 	"vimls",
@@ -161,7 +161,7 @@ for _, lsp in pairs(servers) do
 	}
 
 	-- (optional) Customize the options passed to the server
-	if lsp == "sumneko_lua" then
+	if lsp == "lua_ls" then
 		table.insert(runtime_path, "lua/?.lua")
 		table.insert(runtime_path, "lua/?/init.lua")
 
